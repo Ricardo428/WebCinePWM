@@ -1,0 +1,45 @@
+
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1a4b82;
+    padding: 2rem;
+}
+
+.columna{
+    flex: 1;
+    min-width: 12rem;
+    margin-right: 1rem;
+    position: relative;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    margin-bottom: 0.6rem;
+}
+a{
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+a:hover {
+    color: #FF7F50;
+}
+
+h3 {
+    display: inline-block;
+    color: #FF7F50;
+    width: 100%;
+    border-bottom: 0.06rem solid #f2f2f2;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+
+}
+
+
