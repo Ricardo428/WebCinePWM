@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCREEN&EAT</title>
+    <style>
+        .barra-pasos{
+            background-color: #d3d3d3;
+            padding-top: 1rem;
+        }
+        .barra-pasos ul{
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin-top: 0.25rem;
+        }
+
+        .barra-pasos li{
+            flex: 1;
+            text-align: center;
+            margin: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .pasos-acitvo{
+            color: #000;
+            font-weight: bold;
+        }
+
+        #pista-progreso {
+            width: 100%;
+            height: 0.25rem;
+            background-color: #b3b3b3;
+        }
+
+        #linea {
+            height: 100%;
+            background-color: #cc0000;
+            width: 40%;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>SCREEN&EAT</h1>
+</header>
+<nav class="barra-pasos">
+    <ul>
+        <li class="pasos-acitvo">1 Butacas</li>
+        <li class="pasos-acitvo">2 Entradas</li>
+        <li>3 Comida</li>
+        <li>4 Resumen</li>
+        <li>5 Pago</li>
+    </ul>
+    <div id="pista-progreso">
+        <div id="linea"></div>
+    </div>
+</nav>
+</body>
+</html>
