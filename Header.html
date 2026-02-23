@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía moderna */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Gris muy clarito y limpio */
+            min-height: 100vh;
+        }
+
+        /* 2. CABECERA (Se mantiene similar pero más limpia) */
+        .header-gris {
+            background-color: #7a7a7a;
+            width: 100%;
+            height: 500%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+        }
+
+        .circulo_logo {
+            position: absolute;
+            left: 30px;
+            top: 15px;
+            width: 90px;
+            height: 90px;
+            background-color: white;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .circulo_logo img { width: 80%; height: auto; }
+
+        .buscador-principal {
+            width: 400px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+
+        .btn-sesion {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            background-color: #e6194b; /* Rojo más elegante */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav-superior {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .btn-negro-amarillo {
+            background-color: black;
+            color: white;
+            border: 1px solid #ffd700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-gris">
+        <div class="circulo_logo">
+            <img src="CinesO.png" alt="Logo">
+        </div>
+        <button class="btn-sesion">Iniciar Sesión</button>
+        <button class="buscador-principal">Buscador</button>
+        
+        <nav class="nav-superior">
+            <button class="btn-negro-amarillo">Cartelera</button>
+            <button class="btn-negro-amarillo">Zona Socio</button>
+            <button class="btn-negro-amarillo">Para ti</button>
+            <button class="btn-negro-amarillo">Perfil</button>
+        </nav>
+    </header>
+</body>
+</html>
