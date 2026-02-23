@@ -9,3 +9,11 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 .idea/
+=======
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/.idea
+
