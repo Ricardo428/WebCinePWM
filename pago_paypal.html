@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pasarela de Pago</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="contenedor-pago">
+
+    <header class="pago-cabecera">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo de PayPal" class="logo-paypal">
+
+        <div class="temporizador-caja">
+            <span class="temporizador-etiqueta">Tiempo de reserva</span>
+            <div class="temporizador-tiempo">18:56</div>
+        </div>
+    </header>
+
+    <section class="pago-contenido">
+        <h2 class="pago-pregunta">¿Cómo desea pagar sus compras?</h2>
+
+        <form action="#" method="POST">
+
+            <div class="grupo-formulario">
+                <label for="tipo-pago">Tipo de pago</label>
+                <select id="tipo-pago" name="tipo_pago" class="input-gris">
+                    <option value="saldo">Saldo de PayPal</option>
+                    <option value="tarjeta">Visa terminada en 4321</option>
+                    <option value="cuenta">Cuenta Bancaria</option>
+                </select>
+            </div>
+
+            <div class="grupo-formulario direccion-bloque">
+                <label>Dirección de facturación:</label>
+                <div class="direccion-datos">
+                    <p><strong>84937, Etiopa, Ghana</strong></p>
+                    <a href="#" class="enlace-cambiar">Cambiar</a>
+                </div>
+            </div>
+
+            <div class="pago-botones">
+                <button type="submit" class="btn-pago btn-continuar">Continuar</button>
+                <a href="snacks.html" class="btn-pago btn-volver">Volver</a>
+            </div>
+
+        </form>
+    </section>
+
+</main>
+</body>
+</html>
