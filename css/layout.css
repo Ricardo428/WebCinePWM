@@ -5,15 +5,8 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.header-top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 75rem;
-}
 
-/* 2. CABECERA (Se mantiene similar pero más limpia) */
+
 .header-gris {
     background-color: black;
     width: 100%;
@@ -24,6 +17,14 @@
     align-items: center;
     border-radius: 0 0 1rem 1rem;
     position: relative;
+}
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 80rem; /* Ancho de los objetos */
 }
 
 .circulo_logo {
