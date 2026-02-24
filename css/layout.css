@@ -6,7 +6,6 @@
 }
 
 
-
 .header-gris {
     background-color: black;
     width: 100%;
@@ -96,14 +95,13 @@ footer{
     flex-wrap: wrap;
     background-color: black;
     padding: 2rem;
+    justify-content: center;
+    gap: 4rem;
     margin-top: 5rem;
 }
 
 .columna{
-    flex: 1;
-    min-width: 12rem;
-    margin-right: 1rem;
-    position: relative;
+    width: 14rem;
 }
 
 footer ul{
@@ -170,3 +168,68 @@ footer h3 {
     background-color: #cc0000;
     width: 40%;
 }
+
+
+
+:root {
+    --color-fondo: #f4f4f9;
+    --color-tarjeta: #ffffff;
+    --color-texto: #333333;
+    --color-primario: #1e1e1e; /* El gris oscuro de tus wireframes */
+    --color-primario-hover: #444444;
+    --color-borde: #cccccc;
+    --radio-borde: 8px;
+}
+
+.perfil-acciones {
+    display: flex;
+    gap: 15px; /* Espacio entre los dos botones */
+    margin-top: 30px; /* Separación con los datos de arriba */
+}
+
+/* Base común para ambos botones */
+.btn-perfil {
+    flex: 1; /* Esto hace que ambos botones midan exactamente lo mismo (50% y 50%) */
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none; /* Quitamos el subrayado típico de los enlaces */
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+/* Estilo del botón principal (Relleno) */
+.btn-primario {
+    background-color: var(--color-primario);
+    color: white;
+    border: 2px solid var(--color-primario);
+}
+
+.btn-primario:hover {
+    background-color: var(--color-primario-hover);
+    border-color: var(--color-primario-hover);
+    color: white;
+}
+
+/* Estilo del botón secundario (Borde o "Fantasma") */
+.btn-secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+
+/*Temporizador */
+
+.contador-header {
+    display: flex;
+    flex-direction: column;
+}
+.contador-header span { font-size: 20px; color: #555; }
+.contador-header strong { font-size: 40px; color: #333; font-weight: normal; }

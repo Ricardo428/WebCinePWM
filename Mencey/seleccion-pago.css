@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía moderna */
+}
+
+
+/* 3. BARRA DE PROGRESO MODERNA (Stepper) */
+.stepper-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px 0;
+}
+
+.stepper-line {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    background-color: #f8f9fa; /* Para tapar la línea debajo */
+    padding: 0 10px;
+    gap: 5px;
+}
+
+.step-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #aaa; /* Gris para los completados */
+    cursor: pointer;
+}
+
+.step-circle.active {
+    background-color: #fbd300; /* Amarillo para el actual */
+    width: 26px;
+    height: 26px;
+    margin-top: -3px; /* Para centrarlo con la línea */
+}
+
+.step-text {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.step-text span {
+    display: block;
+    font-size: 14px;
+    color: #777;
+}
+
+.contador-header {
+    position: absolute;
+    display: flex;
+    margin-top: 19rem;
+    flex-direction: column;
+    align-self: self-start;
+    margin-left: 10rem;
+}
+.contador-header span { font-size: 40px; color: #555; }
+.contador-header strong { font-size: 60px; color: #333; font-weight: normal; }
+
+.cuadrado-metodo {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin-top: 13rem;
+    font-size: 30px;
+    margin-left: 30px;
+    justify-content: center;
+}
+
+.rectangulo-opciones {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    flex-direction: row;
+    width: 100%;
+    height: 350px;
+    gap: 70px;
+}
+
+.cuadrado-opcion {
+    flex-direction: column;
+    justify-items: center;
+    width: 370px;
+    background-color: rgb(216, 214, 214);
+    height: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.cuadrado-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+}
+
+.cuadrado-logo img {
+    width: 90%;
+    height: 100%;
+}
+
+.informacion-opcion {
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.botones{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 3rem;
+}
+
+.botones button{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 5rem;
+    cursor: pointer;
+}

@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/css/estilos.css">
-  <style>
+    <link rel="stylesheet" href="/css/layout.css">
 
 
-  </style>
+    <script src="xLuIncludeFile.js"></script>
 </head>
 <body>
+<header xlu-include-file="header.html"></header>
 
 <div id="container-hall">
+
+
+  <div class="contador-header">
+    <span>Tiempo de reserva</span>
+    <strong>19:08</strong>
+  </div>
+
   <div id="imagen">
     <img src="img/butacas.png" alt="BUTCASAAAAAAAAAA">
   </div>
@@ -34,12 +42,17 @@
     </table>
   </div>
 
-  <div class="botones">
-    <button>Volver</button>
-    <button>Siguiente</button>
+  <div class="perfil-acciones">
+    <a href="InfoFilm.html" class="btn-perfil btn-primario">Volver</a>
+    <a href="#" class="btn-perfil btn-secundario">Siguiente</a>
   </div>
 
 </div>
 
+<script>
+
+  xLuIncludeFile();
+
+</script>
 </body>
 </html>
