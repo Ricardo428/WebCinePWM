@@ -4,6 +4,15 @@
 }
 
 
+.rectangulo-pasos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+
 /* 3. BARRA DE PROGRESO MODERNA (Stepper) */
 .stepper-container {
     display: flex;
@@ -61,13 +70,25 @@
     color: #777;
 }
 
-.contador-header {
-    position: absolute;
+.rectangulo-contador-total {
     display: flex;
-    margin-top: 19rem;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+}
+
+.rectangulo-contador {
+    display: flex;
+    justify-content: start;
+    width: 1500px;
+    height: 200px;
+}
+
+.contador-header {
+    display: flex;
+    margin-top: 1rem;
     flex-direction: column;
     align-self: self-start;
-    margin-left: 10rem;
 }
 .contador-header span { font-size: 40px; color: #555; }
 .contador-header strong { font-size: 60px; color: #333; font-weight: normal; }
@@ -76,7 +97,7 @@
     display: flex;
     width: 100%;
     height: 50px;
-    margin-top: 13rem;
+    margin-top: 1rem;
     font-size: 30px;
     margin-left: 30px;
     justify-content: center;
