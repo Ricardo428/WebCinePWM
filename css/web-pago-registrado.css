@@ -1,0 +1,268 @@
+/* 1. TIPOGRAFÍA Y RESETEO GENERAL */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía moderna */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Gris muy clarito y limpio */
+    min-height: 100vh;
+}
+
+/* 2. CABECERA (Se mantiene similar pero más limpia) */
+.header-gris {
+    background-color: #7a7a7a;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+}
+
+.circulo_logo {
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circulo_logo img { width: 80%; height: auto; }
+
+.buscador-principal {
+    width: 400px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.nav-superior {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-negro-amarillo {
+    background-color: black;
+    color: white;
+    border: 1px solid #ffd700;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 3. BARRA DE PROGRESO MODERNA (Stepper) */
+.stepper-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px 0;
+}
+
+.stepper-line {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    background-color: #f8f9fa; /* Para tapar la línea debajo */
+    padding: 0 10px;
+    gap: 5px;
+}
+
+.step-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #aaa; /* Gris para los completados */
+    cursor: pointer;
+}
+
+.step-circle.active {
+    background-color: #fbd300; /* Amarillo para el actual */
+    width: 26px;
+    height: 26px;
+    margin-top: -3px; /* Para centrarlo con la línea */
+}
+
+.step-text {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.step-text span {
+    display: block;
+    font-size: 14px;
+    color: #777;
+}
+
+/* 4. CONTENEDOR PRINCIPAL (Flexbox en lugar de absolute) */
+.main-content {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    gap: 50px;
+    margin-bottom: 50px;
+    align-items: flex-start; /* Para que la barra lateral no se estire */
+}
+
+/* 5. BARRA LATERAL (Póster e Info) */
+.sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cuadrado-peli img {
+    width: 100%;
+    border-radius: 8px; /* Bordes suaves */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-peli {
+    background-color: #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.iconos-peli {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.iconos-peli img {
+    width: 70px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* 6. CONTENIDO DERECHO (Resumen) */
+.right-content {
+    flex: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Reloj */
+.contador-header {
+    display: flex;
+    flex-direction: column;
+}
+.contador-header span { font-size: 20px; color: #555; }
+.contador-header strong { font-size: 40px; color: #333; font-weight: normal; }
+
+/* Tabla real para el resumen */
+.titulo-resumen {
+    font-size: 35px;
+    color: #444;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.tabla-resumen {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabla-resumen th {
+    font-size: 22px;
+    color: #333;
+    padding: 15px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.tabla-resumen td {
+    font-size: 22px;
+    color: #000;
+    padding: 20px 0;
+    border-bottom: 2px solid #ccc; /* Línea separadora sutil */
+}
+
+/* Botones de necesidades (Comida/Accesibilidad) */
+.tarjeta-opcion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ccc; /* Borde finito */
+    border-radius: 12px;
+    padding: 15px 35px;
+    gap: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra muy suave */
+}
+
+.tarjeta-opcion img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.texto-opcion {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    color: #111;
+    cursor: pointer;
+}
+
+.btn-accion {
+    background-color: #c4c6ca;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+.botones{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.botones button{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 3rem;
+    cursor: pointer;
+}
