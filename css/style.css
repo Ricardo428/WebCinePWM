@@ -24,9 +24,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    /* Centrar la tarjeta en la pantalla usando Flexbox */
+
+}
+
+
+.container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -37,10 +40,10 @@ body {
 main {
     background-color: var(--color-tarjeta);
     width: 100%;
-    max-width: 450px; /* Ancho máximo para que no se estire en pantallas grandes */
-    padding: 30px;
+    max-width: 450px; /* Ancho máximo para que no se estire en pantallas grandes */;
     border-radius: var(--radio-borde);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 30px;
 }
 
 h1, h2 {

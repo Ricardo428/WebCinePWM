@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preferencias</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="xLuIncludeFile.js"></script>
+</head>
+<body>
+<header xlu-include-file="header.html"></header>
+<div class="container">
+  <main>
+    <h1>Preferencias Cinematográficas</h1>
+    <form action="index.html" method="post">
+      <fieldset>
+        <legend>Géneros</legend>
+        <div>
+          <input type="checkbox" name="generos" id="gen-accion" value="accion">
+          <label for="gen-accion">Acción</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="generos" id="gen-comedia" value="comedia">
+          <label for="gen-comedia">Comedia</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="generos" id="gen-drama" value="drama">
+          <label for="gen-drama">Drama</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="generos" id="gen-terror" value="terror">
+          <label for="gen-terror">Terror</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="generos" id="gen-scifi" value="scifi">
+          <label for="gen-scifi">Sci-Fi</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="generos" id="gen-infantil" value="infantil">
+          <label for="gen-infantil">Infantil</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label for="actor-input">Actor o Actriz favoritos</label>
+
+        <div>
+          <input type="text" id="actor-input" list="lista-actores" placeholder="Escribe un nombre">
+          <button type="button">Añadir</button>
+        </div>
+
+        <datalist id="lista-actores">
+          <option value="Sylvester Stallone">
+          <option value="Arnold Schwarzenegger">
+          <option value="Brad Pitt">
+          <option value="Leonardo DiCaprio">
+          <option value="Jennifer Lawrence">
+          <option value="Tom Hanks">
+          <option value="Scarlett Johansson">
+          <option value="Robert Downey Jr.">
+        </datalist>
+      </fieldset>
+
+      <div>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+  </main>
+</div>
+<footer xlu-include-file="/footer.html"></footer>
+
+<script>
+
+  xLuIncludeFile();
+
+</script>
+</body>
+</html>

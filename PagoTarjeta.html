@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>SCREEN&EAT</title>
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="/Juan/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="xLuIncludeFile.js"></script>
     <style>
 
         #ContenidoPrincipal{
@@ -86,6 +87,8 @@
     </style>
 </head>
 <body>
+<header xlu-include-file="header.html"></header>
+<div xlu-include-file="Pasos.html"></div>
 <main id="ContenidoPrincipal">
 
     <div class="resumen-pago">
@@ -122,7 +125,7 @@
 
         <div class="perfil-acciones">
             <a href="InfoFilm.html" class="btn-perfil btn-primario">Volver</a>
-            <a href="/Juan/pago_realizado_con_exito.html" class="btn-perfil btn-secundario">Siguiente</a>
+            <a href="/pago_realizado_con_exito.html" class="btn-perfil btn-secundario">Siguiente</a>
         </div>
 
     </div>
@@ -130,5 +133,10 @@
 
 
 </main>
+<script>
+
+    xLuIncludeFile();
+
+</script>
 </body>
 </html>

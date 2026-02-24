@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <script src="xLuIncludeFile.js"></script>
+</head>
+<style>
+    /* ==========================================================================
+   14. PANTALLA DE ENTRADAS (Tabla)
+   ========================================================================== */
+
+    .contenedor-entradas {
+        max-width: 800px;
+        margin: 40px auto;
+        background-color: white;
+        padding: 30px;
+        border: 1px solid var(--color-borde);
+        border-radius: var(--radio-borde);
+    }
+
+    .fieldset-entradas {
+        border: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    /* --- Diseño de la Tabla --- */
+    .tabla-entradas {
+        width: 100%;
+        border-collapse: collapse; /* Fundamental para que las líneas se unan bien */
+        margin-top: 20px;
+    }
+
+    /* Estilo de los Títulos (Tipo de entrada, Cantidad...) */
+    .tabla-entradas th {
+        text-align: left;
+        padding: 15px 10px;
+        border-bottom: 2px solid #ccc; /* Línea separadora un poco más gruesa */
+        font-weight: normal;
+        color: #333;
+    }
+
+    /* Estilo de las Filas de datos */
+    .tabla-entradas td {
+        padding: 20px 10px;
+        border-bottom: 1px solid #ddd; /* Líneas finas entre las filas */
+        color: #555;
+    }
+
+    /* El cuadro para poner el número de entradas */
+    .input-cantidad {
+        width: 70px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /* Quitamos el borde inferior a la última fila para que quede más limpio */
+    .tabla-entradas tbody tr:last-child td {
+        border-bottom: none;
+    }
+</style>
+<body>
+<header xlu-include-file="header.html"></header>
+<div xlu-include-file="Pasos.html"></div>
+<div class="container">
+    <main class="contenedor-entradas">
+
+        <form method="post" action="snacks.html">
+            <fieldset class="fieldset-entradas">
+                <table class="tabla-entradas">
+                    <thead>
+                    <tr>
+                        <th>Tipo de entrada</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Normal</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>8,00 €</td>
+                        <td>0,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Pack familia Adulto</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>6,50 €</td>
+                        <td>0,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Pack familia Niño</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>5,00 €</td>
+                        <td>0,00 €</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <nav class="paginacion-inferior">
+                <a href="Sala.html" class="btn-enlace btn-secundario">VOLVER</a>
+                <button type="submit" class="btn-enlace btn-primario">SIGUIENTE</button>
+            </nav>
+        </form>
+
+    </main>
+
+</div>
+<script>
+
+    xLuIncludeFile();
+
+</script>
+</body>
+</html>

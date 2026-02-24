@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="xLuIncludeFile.js"></script>
 </head>
 <body>
+<header xlu-include-file="header.html"></header>
+<div class="container">
   <main>
     <fieldset>
       <legend>Registro</legend>
-      <form action="../index.html" method="post">
+      <form action="index.html" method="post">
         <div>
           <label for="name">Nombre</label>
           <input type="text" id="name" name="name" required>
@@ -41,5 +45,13 @@
     </fieldset>
 
   </main>
+</div>
+<footer xlu-include-file="/footer.html"></footer>
+
+<script>
+
+  xLuIncludeFile();
+
+</script>
 </body>
 </html>
