@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>CINE'S QUEVEDO</title>
+    <title>Web cine</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/web-inicio-sesion.css">
+    <link rel="stylesheet" href="web-inicio-sesión.css">
 </head>
 <body>
 
-    <header class="header-gris">
+<header class="header-gris">
+    <div class="header-top">
         <div class="circulo_logo">
             <img src="CinesO.png" alt="Logo">
         </div>
+        <label>
+            <input type="text" class="buscador-principal" placeholder="Buscar película...">
+        </label>
         <button class="btn-sesion">Iniciar Sesión</button>
-        <button class="buscador-principal">Buscador</button>
-        <nav class="nav-superior">
-            <button class="btn-negro-amarillo">Cartelera</button>
-            <button class="btn-negro-amarillo">Zona Socio</button>
-            <button class="btn-negro-amarillo">Para ti</button>
-            <button class="btn-negro-amarillo">Perfil</button>
-        </nav>
-    </header>
+    </div>
 
+
+    <nav class="nav-superior">
+        <button class="btn-negro-amarillo">Cartelera</button>
+        <button class="btn-negro-amarillo">Zona Socio</button>
+        <button class="btn-negro-amarillo">Para ti</button>
+        <button class="btn-negro-amarillo">Perfil</button>
+    </nav>
+</header>
+
+<div class="rectangulo-entero">
     <div class="flecha-banner flecha-izq" onclick="retroceder()">&larr;</div>
     <div class="flecha-banner flecha-der" onclick="avanzar()">&rarr;</div>
 
@@ -100,6 +107,7 @@
 
 
     </footer>
+</div>
 
 </body>
 </html>
