@@ -34,6 +34,7 @@
 }
 
 .buscador-principal {
+    margin-right: 435px;
     width: 400px;
     height: 40px;
     background-color: white ;
@@ -45,20 +46,6 @@
 
 .buscador-principal::placeholder {
     color: black;
-}
-
-.btn-sesion {
-    background-color: #e6194b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-sesion:hover {
-    background-color: red;
 }
 
 .nav-superior {
