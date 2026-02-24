@@ -1,55 +1,33 @@
-.stepper-container {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            width: 80%;
-            max-width: 900px;
-            margin: 40px 0;
-        }
-
-        .stepper-line {
-            position: absolute;
-            top: 10px;
-            left: 5%;
-            width: 90%;
-            height: 3px;
-            background-color: #ccc;
-            z-index: 1;
-        }
-
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 2;
-            background-color: #f8f9fa; /* Para tapar la línea debajo */
-            padding: 0 10px;
-            gap: 5px;
-        }
-
-        .step-circle {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #aaa; /* Gris para los completados */
-            cursor: pointer;
-        }
-
-        .step-circle.active {
-            background-color: #fbd300; /* Amarillo para el actual */
-            width: 26px;
-            height: 26px;
-            margin-top: -3px; /* Para centrarlo con la línea */
-        }
-
-        .step-text {
-            text-align: center;
-            color: #333;
-            font-size: 16px;
-        }
-
-        .step-text span {
-            display: block;
-            font-size: 14px;
-            color: #777;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="stepper-container">
+    <div class="stepper-line"></div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 1:</span> Butacas</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 2:</span> Entradas</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 3:</span> Comida</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 4:</span> Resumen</div>
+    </div>
+    <div class="step">
+        <div class="step-circle active"></div>
+        <div class="step-text"><span>Paso 5:</span> Pago</div>
+    </div>
+</div>
+</body>
+</html>
