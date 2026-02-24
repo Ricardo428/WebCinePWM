@@ -23,25 +23,6 @@
         </nav>
     </header>
 
-    <script>
-        // Tu "base de datos" de películas
-        const peliculas = [
-            { titulo: "The Batman", imagen: "ba" },
-            { titulo: "Superman", imagen: "superman.png" },
-            { titulo: "Spider-man", imagen: "spiderman.png" }
-        ];
-
-        let indice = 0;
-
-        function avanzar() {
-            indice++;
-            if (indice >= peliculas.length) indice = 0; // Reinicia si llega al final
-
-            document.getElementById("titulo-peli").innerHTML = peliculas[indice].titulo;
-            document.getElementById("imagen-peli").src = peliculas[indice].imagen;
-        }
-    </script>
-
     <div class="flecha-banner flecha-izq" onclick="retroceder()">&larr;</div>
     <div class="flecha-banner flecha-der" onclick="avanzar()">&rarr;</div>
 
