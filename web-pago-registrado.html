@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/web-pago-registrado.css">
+    <title>Reserva de Entradas</title>
+</head>
+<body>
+
+<header class="header-gris">
+    <div class="circulo_logo">
+        <img src="CinesO.png" alt="Logo">
+    </div>
+    <button class="buscador-principal">Buscador</button>
+
+    <nav class="nav-superior">
+        <button class="btn-negro-amarillo">Cartelera</button>
+        <button class="btn-negro-amarillo">Zona Socio</button>
+        <button class="btn-negro-amarillo">Para ti</button>
+        <button class="btn-negro-amarillo">Perfil</button>
+    </nav>
+</header>
+
+<div class="stepper-container">
+    <div class="stepper-line"></div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 1:</span> Butacas</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 2:</span> Entradas</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 3:</span> Comida</div>
+    </div>
+    <div class="step">
+        <div class="step-circle"></div>
+        <div class="step-text"><span>Paso 4:</span> Resumen</div>
+    </div>
+    <div class="step">
+        <div class="step-circle active"></div>
+        <div class="step-text"><span>Paso 5:</span> Pago</div>
+    </div>
+</div>
+
+<main class="main-content">
+
+    <aside class="sidebar">
+        <div class="cuadrado-peli">
+            <img src="Avatar.png" alt="Póster Avatar">
+        </div>
+        <div class="info-peli">Cine: Ocines</div>
+        <div class="info-peli">Día: 19/02/2026</div>
+        <div class="info-peli">Hora: 16:24</div>
+        <div class="info-peli">Butaca: 14B</div>
+        <div class="info-peli">Fila: 14</div>
+        <div class="iconos-peli">
+            <img src="ticket amarillo.png" alt="Ticket">
+            <img src="imagen audifonos pwm.png" alt="Audífonos">
+        </div>
+    </aside>
+
+    <section class="right-content">
+
+        <div class="contador-header">
+            <span>Tiempo de reserva</span>
+            <strong>19:08</strong>
+        </div>
+
+        <div>
+            <h2 class="titulo-resumen">Resumen entradas</h2>
+            <table class="tabla-resumen">
+                <thead>
+                <tr>
+                    <th>Entrada</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Normal</td>
+                    <td>1</td>
+                    <td>10€</td>
+                    <td>10€</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta-opcion">
+            <img src="comida cine.webp" alt="Sin gluten">
+            <div class="texto-opcion">¿Alguna comida especial?</div>
+            <button class="btn-accion">Canjear puntos</button>
+        </div>
+
+        <div class="tarjeta-opcion">
+            <img src="Subtitulos.png" alt="Necesidad especial">
+            <div class="texto-opcion" style="text-align: left; padding-left: 57px;">¿Alguna necesidad especial?</div>
+            <div style="width: 140px;"></div>
+        </div>
+
+        <div class="botones">
+            <button>Volver</button>
+            <a href="canejar-puntos.html">
+                <button>Siguiente</button>
+            </a>
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>
