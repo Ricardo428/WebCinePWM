@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>SCREEN&EAT</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Info Película - CINE'S QUEVEDO</title>
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
     <script src="xLuIncludeFile.js"></script>
 </head>
 <body>
 
 <header xlu-include-file="header.html"></header>
 
-<main id="container-film">
+<main class="contenedor-pelicula">
 
-    <h2 id="titulo-pelicula">Nombre de pelicula que ahora puede ser súper largo y ocupar todo lo que quiera</h2>
+    <h1 class="titulo-pelicula">Nombre de película que ahora puede ser súper largo y ocupar todo lo que quiera</h1>
 
-    <div id="contenido-columnas">
+    <div class="pelicula-grid">
 
-        <div id="columna-izquierda">
-            <img src="/img/images.jpg" alt="Descripción de la imagen">
-            <a href="#">Trailer</a>
+        <div class="pelicula-poster">
+            <img src="/img/images.jpg" alt="Póster de la película">
+            <a href="#" class="btn-trailer">Ver Tráiler</a>
         </div>
 
-        <div id="columna-derecha">
+        <div class="pelicula-datos">
 
-            <p>
-                Descripción de la película. Descripción de la película.
-                Descripción de la película. Descripción de la película.
-                Descripción de la película. Descripción de la película.
+            <p class="pelicula-sinopsis">
+                Descripción de la película. Un thriller apasionante donde el protagonista tendrá que descubrir la verdad antes de que sea demasiado tarde. Acción, suspense y giros inesperados.
             </p>
 
-            <div id="informacion">
-                <div id="pelicula">
-                    <ul>
-                        <li><strong>Duración:</strong> 120 minutos</li>
-                        <li><strong>Reparto:</strong> Santiago Segura</li>
-                        <li><strong>Género:</strong> Comedia</li>
-                        <li><strong>Calificación:</strong> 12 años</li>
-                    </ul>
-                </div>
+            <div class="pelicula-info-flex">
+                <ul class="lista-info">
+                    <li><strong>Duración:</strong> 120 minutos</li>
+                    <li><strong>Reparto:</strong> Santiago Segura, Javier Cámara</li>
+                    <li><strong>Género:</strong> Comedia / Acción</li>
+                    <li><strong>Calificación:</strong> +12 años</li>
+                </ul>
+            </div>
 
-                <div id="horarios">
-                    <ul>
-                        <li><a href="Sala.html">10:30</a></li>
-                        <li><a href="Sala.html">11:30</a></li>
-                        <li><a href="Sala.html">13:30</a></li>
-                        <li><a href="Sala.html">10:30</a></li>
-                        <li><a href="Sala.html">0:30</a></li>
-                        <li><a href="Sala.html">10:30</a></li>
-                        <li><a href="Sala.html">10:30</a></li>
-                        <li><a href="Sala.html">10:30</a></li>
-                        <li><a href="Sala.html">10:30</a></li>
-                    </ul>
-                </div>
+            <div class="horarios-contenedor">
+                <h3>Selecciona una sesión:</h3>
+                <ul class="lista-horarios">
+                    <li><a href="Sala.html" class="btn-hora">10:30</a></li>
+                    <li><a href="Sala.html" class="btn-hora">11:30</a></li>
+                    <li><a href="Sala.html" class="btn-hora">13:30</a></li>
+                    <li><a href="Sala.html" class="btn-hora">16:00</a></li>
+                    <li><a href="Sala.html" class="btn-hora">18:15</a></li>
+                    <li><a href="Sala.html" class="btn-hora">20:30</a></li>
+                    <li><a href="Sala.html" class="btn-hora">22:45</a></li>
+                </ul>
             </div>
 
         </div>

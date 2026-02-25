@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="css/layout.css">
     <script src="xLuIncludeFile.js"></script>
 </head>
-<body>
+<body class="paso-5">
 <header xlu-include-file="header.html"></header>
 <header xlu-include-file="Pasos.html"></header>
+<div class="contador-header">
+    <span>Tiempo de reserva</span>
+    <strong>19:08</strong>
+</div>
+
 <div class="container">
+
     <main class="contenedor-pago">
 
-        <header class="pago-cabecera">
+        <div class="pago-cabecera">
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo de PayPal" class="logo-paypal">
 
             <div class="temporizador-caja">
                 <span class="temporizador-etiqueta">Tiempo de reserva</span>
                 <div class="temporizador-tiempo">18:56</div>
             </div>
-        </header>
+        </div>
 
         <section class="pago-contenido">
             <h2 class="pago-pregunta">¿Cómo desea pagar sus compras?</h2>
 
-            <form action="#" method="POST">
+            <form action="pago_realizado_con_exito.html" method="POST">
 
                 <div class="grupo-formulario">
                     <label for="tipo-pago">Tipo de pago</label>

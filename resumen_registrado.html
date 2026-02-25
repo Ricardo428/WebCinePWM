@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/resumen_registrado.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <title>Reserva de Entradas</title>
+    <script src="xLuIncludeFile.js"></script>
+</head>
+<body class="paso-4">
+
+<header xlu-include-file="header.html"></header>
+<header xlu-include-file="pasos.html"></header>
+<div class="rectangulo-entero">
+
+    <div class="contador-header">
+        <span>Tiempo de reserva</span>
+        <strong>19:08</strong>
+    </div>
+
+
+    <main class="main-content">
+
+        <aside class="sidebar">
+            <div class="cuadrado-peli">
+                <img src="Avatar.png" alt="Póster Avatar">
+            </div>
+            <div class="info-peli">Cine: Ocines</div>
+            <div class="info-peli">Día: 19/02/2026</div>
+            <div class="info-peli">Hora: 16:24</div>
+            <div class="info-peli">Butaca: 14B</div>
+            <div class="info-peli">Fila: 14</div>
+            <div class="iconos-peli">
+                <img src="ticket amarillo.png" alt="Ticket">
+                <img src="imagen audifonos pwm.png" alt="Audífonos">
+            </div>
+        </aside>
+
+        <section class="right-content">
+
+
+
+            <div>
+                <h2 class="titulo-resumen">Resumen entradas</h2>
+                <table class="tabla-resumen">
+                    <thead>
+                    <tr>
+                        <th>Entrada</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Normal</td>
+                        <td>1</td>
+                        <td>10€</td>
+                        <td>10€</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tarjeta-opcion">
+                <img src="comida cine.webp" alt="Sin gluten">
+                <div class="texto-opcion">¿Alguna comida especial?</div>
+                <button class="btn-accion">Canjear puntos</button>
+            </div>
+
+            <div class="tarjeta-opcion">
+                <img src="Subtitulos.png" alt="Necesidad especial">
+                <div class="texto-opcion" style="text-align: left; padding-left: 57px;">¿Alguna necesidad especial?</div>
+                <div style="width: 140px;"></div>
+            </div>
+
+            <div class="perfil-acciones">
+                <a href="snacks.html" class="btn-perfil btn-primario">Volver</a>
+                <a href="seleccion-pago.html" class="btn-perfil btn-secundario">Siguiente</a>
+            </div>
+
+
+        </section>
+    </main>
+</div>
+
+<script>
+
+    xLuIncludeFile();
+
+</script>
+</body>
+</html>

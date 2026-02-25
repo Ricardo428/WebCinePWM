@@ -1,60 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/layout.css">
+  <meta charset="UTF-8">
+  <title>Selección de Butacas - CINE'S QUEVEDO</title>
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/estilos.css">
 
-
-    <script src="xLuIncludeFile.js"></script>
+  <script src="xLuIncludeFile.js"></script>
 </head>
-<body>
+<body class="paso-1">
+
 <header xlu-include-file="header.html"></header>
 <div xlu-include-file="Pasos.html"></div>
-<div id="container-hall">
 
+<main class="contenedor-sala">
 
   <div class="contador-header">
     <span>Tiempo de reserva</span>
     <strong>19:08</strong>
   </div>
 
-  <div id="imagen">
-    <img src="img/butacas.png" alt="BUTCASAAAAAAAAAA">
-  </div>
-  <div id="butacas">
-    <table>
-      <tbody>
-      <tr>
-        <td><img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/am.jpg" alt="BUTACA LIBRE"></td>
-        <td><p>BUTACA LIBRE</p></td>
-        <td><img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/amocupat.jpg" alt="BUTACA OCUPADA"></td>
-        <td><p>BUTACA OCUPADA</p></td>
-      </tr>
-      <tr>
-        <td><img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minus.jpg" alt="ESPACIO SILLA RUEDAS LIBRE"></td>
-        <td><p>ESPACIO SILLA RUEDAS LIBRE</p></td>
-        <td><img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minusocupat.jpg" alt="ESPACIO SILLA RUEDAS OCUPADO"></td>
-        <td><p>ESPACIO SILLA RUEDAS OCUPADO</p></td>
-      </tr>
-      </tbody>
-    </table>
+  <h1 class="titulo-sala">Selecciona tus butacas</h1>
+
+  <div class="mapa-butacas">
+    <img src="img/butacas.png" alt="Plano interactivo de la sala" class="img-sala">
   </div>
 
-
-
-  <div class="perfil-acciones">
-    <a href="InfoFilm.html" class="btn-perfil btn-primario">Volver</a>
-    <a href="entradas.html" class="btn-perfil btn-secundario">Siguiente</a>
+  <div class="leyenda-butacas">
+    <div class="leyenda-item">
+      <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/am.jpg" alt="Libre">
+      <span>Butaca Libre</span>
+    </div>
+    <div class="leyenda-item">
+      <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/amocupat.jpg" alt="Ocupada">
+      <span>Butaca Ocupada</span>
+    </div>
+    <div class="leyenda-item">
+      <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minus.jpg" alt="Silla Ruedas Libre">
+      <span>Espacio Silla Ruedas Libre</span>
+    </div>
+    <div class="leyenda-item">
+      <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minusocupat.jpg" alt="Silla Ruedas Ocupada">
+      <span>Espacio Silla Ruedas Ocupada</span>
+    </div>
   </div>
 
-</div>
+  <div class="perfil-acciones acciones-sala">
+    <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+    <a href="entradas.html" class="btn-perfil btn-primario">Siguiente</a>
+  </div>
+
+</main>
+
+<footer xlu-include-file="/footer.html"></footer>
 
 <script>
-
   xLuIncludeFile();
-
 </script>
 </body>
 </html>
