@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Entradas</title>
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="xLuIncludeFile.js"></script>
 </head>
 <style>
@@ -69,11 +69,9 @@
 <body class="paso-2">
 <header xlu-include-file="header.html"></header>
 <div xlu-include-file="Pasos.html"></div>
+<div xlu-include-file="contador.html"></div>
+
 <div class="container">
-    <div class="contador-header">
-        <span>Tiempo de reserva</span>
-        <strong>19:08</strong>
-    </div>
 
     <main class="contenedor-entradas">
 
@@ -113,9 +111,9 @@
                 </table>
             </fieldset>
 
-            <nav class="paginacion-inferior">
-                <a href="Sala.html" class="btn-enlace btn-secundario">VOLVER</a>
-                <button type="submit" class="btn-enlace btn-primario">SIGUIENTE</button>
+            <nav class="perfil-acciones acciones-sala">
+                <a href="Sala.html" class="btn-perfil btn-secundario">Volver</a>
+                <button type="submit" class="btn-perfil btn-primario" >Siguiente</button>
             </nav>
         </form>
 
