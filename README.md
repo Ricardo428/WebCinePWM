@@ -15,7 +15,7 @@ En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Sc
 
 ## Requisitos funcionales
 
-* El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales 
+*  El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales 
 
 * El sistema al realizar el registro preguntará al usuario sus preferencias cinematográficas 
 
@@ -35,12 +35,14 @@ En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Sc
 
 * El sistema debe mostrar un resumen de compra (película, hora, butacas, precio total) antes de confirmar.
 
+Puedes ver la documentación completa en este [enlace](https://drive.google.com/file/d/15NyIk01zzonv1j1IL81EHqUIeuaejotJ/view?usp=sharing).
+
 
 ## Mockups y Storyboard
 
 
 El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrga (.zip)
-El storyboard lo hemos presentado en forma de video el enlace esta en el pdf junto a los mockups
+El storyboard lo hemos presentado en forma de video 
 
 
 ## Paginas HTML 
