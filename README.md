@@ -40,7 +40,7 @@ En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Sc
 
 
 El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrga (.zip)
-El storyboard lo hemos presentado en forma de video 
+El storyboard lo hemos presentado en forma de video el enlace esta en el pdf junto a los mockups
 
 
 ## Paginas HTML 
