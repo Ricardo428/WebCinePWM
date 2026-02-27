@@ -15,7 +15,7 @@ En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Sc
 
 ## Requisitos funcionales
 
-*  El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales 
+* El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales 
 
 * El sistema al realizar el registro preguntará al usuario sus preferencias cinematográficas 
 

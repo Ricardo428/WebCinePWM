@@ -5,7 +5,7 @@
     --color-fondo: #f4f4f9;
     --color-tarjeta: #ffffff;
     --color-texto: #333333;
-    --color-primario: #1e1e1e; /* El gris oscuro de tus wireframes */
+    --color-primario: #1e1e1e;
     --color-primario-hover: #444444;
     --color-borde: #cccccc;
     --radio-borde: 8px;
@@ -150,9 +150,9 @@ legend {
     padding-bottom: 5px;
 }
 
-/* El truco de la cuadrícula para los checkboxes */
+
 .grid-checkboxes,
-fieldset > div:not(.buscador-actor) { /* Aplica grid si envuelves los checkboxes en un div */
+fieldset > div:not(.buscador-actor) { /* Aplica grid si se envuelve los checkboxes en un div */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 10px;
@@ -272,7 +272,7 @@ fieldset input[type="checkbox"] + label {
 
 /* --- EL CUADRO PEQUEÑO (La solapa superior) --- */
 .perfil-etiqueta {
-    background-color: var(--color-primario); /* Usa el gris oscuro que definimos antes */
+    background-color: var(--color-primario);
     color: white;
     display: inline-block; /* Para que no ocupe todo el ancho, solo lo que ocupa el texto */
     padding: 10px 30px;
@@ -284,7 +284,7 @@ fieldset input[type="checkbox"] + label {
 .perfil-etiqueta h2 {
     margin: 0;
     font-size: 1.2rem;
-    color: white; /* Forzamos color blanco por si tu h2 general es oscuro */
+    color: white;
     letter-spacing: 1px;
 }
 
@@ -352,7 +352,7 @@ fieldset input[type="checkbox"] + label {
     padding: 12px;
     border-radius: 6px;
     font-weight: bold;
-    text-decoration: none; /* Quitamos el subrayado típico de los enlaces */
+    text-decoration: none;
     transition: all 0.3s ease;
     font-size: 0.95rem;
 }
@@ -544,7 +544,6 @@ main.contenedor-ancho {
 /* --- LA REJILLA PRINCIPAL (3 Columnas) --- */
 .snacks-layout {
     display: grid;
-    /* Col1: 220px | Col2: Toma el espacio restante (1fr) | Col3: 300px */
     grid-template-columns: 220px 1fr 300px;
     gap: 25px; /* Espacio entre columnas */
     margin-bottom: 40px;
@@ -573,7 +572,7 @@ main.contenedor-ancho {
     display: flex;
     align-items: center;
     gap: 15px;
-    border-left: 4px solid transparent; /* Preparar el borde lateral invisible */
+    border-left: 4px solid transparent;
     transition: background-color 0.2s;
 }
 
@@ -814,7 +813,7 @@ main.contenedor-ancho {
 }
 
 .direccion-datos {
-    /* Desplazamos los datos un poco a la derecha como en tu mockup */
+    /* Desplazamos los datos un poco a la derecha */
     margin-left: 40px;
     margin-top: 10px;
 }
@@ -835,44 +834,6 @@ main.contenedor-ancho {
     text-decoration: underline;
 }
 
-/* --- Botones --- */
-
-
-/* ESTO
-.pago-botones {
-    display: flex;
-    gap: 15px;
-    margin-top: 40px;
-}
-
-.btn-pago {
-    padding: 10px 30px;
-    font-size: 1.05rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: filter 0.2s;
-}
-
-
-.btn-continuar {
-    background-color: #8c8c8c;
-    color: black;
-}
-
-.btn-volver {
-    background-color: #a6a6a6;
-    color: black;
-}
-
-.btn-continuar:hover, .btn-volver:hover {
-    filter: brightness(0.85);
-    text-decoration: none;
-}
-*/
 /* ==========================================================================
    11. CABECERA GLOBAL, PROGRESO Y BIZUM
    ========================================================================== */
