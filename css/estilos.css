@@ -1,15 +1,4 @@
 
-
-* {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-body{
-    font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
-    background-color: lightgray;
-}
-
 /* PayTarjet*/
 
 #ContenidoPrincipal{
@@ -83,18 +72,14 @@ body{
 }
 
 /* Sala */
-/* ==========================================================================
-   DISEÑO DE LA SALA DE BUTACAS
-   ========================================================================== */
 
-/* La "Tarjeta" blanca que envuelve todo */
 .contenedor-sala {
-    max-width: 1000px; /* Un poco más ancho que el perfil para que quepa la sala */
-    margin: 40px auto; /* Centrado en la pantalla */
-    padding: 30px;
+    max-width: 62rem;
+    margin: 40px auto;
+    padding: 2rem;
     background-color: var(--color-tarjeta, #ffffff);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra elegante */
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,32 +89,32 @@ body{
 .titulo-sala {
     color: var(--color-primario, #1e1e1e);
     margin-bottom: 30px;
-    margin-top: -30px; /* Sube un poco para compensar el hueco del temporizador */
+    margin-top: -30px;
 }
 
-/* Contenedor de la imagen de las butacas */
+
 .mapa-butacas {
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    background-color: #f9f9f9; /* Un gris muy clarito de fondo */
+    background-color: #f9f9f9;
     border: 2px solid #eeeeee;
     border-radius: 8px;
     margin-bottom: 30px;
     text-align: center;
 }
 
-/* Hace que la imagen de butacas nunca se salga del móvil */
+
 .img-sala {
     max-width: 100%;
     height: auto;
 }
 
-/* La Leyenda moderna (Flexbox en lugar de Tabla) */
+
 
 .leyenda-butacas {
     display: flex;
-    flex-wrap: wrap; /* Si la pantalla es pequeña, bajan a la siguiente línea */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     width: 100%;
@@ -149,22 +134,18 @@ body{
 }
 
 .leyenda-item img {
-    width: 25px; /* Controlamos el tamaño de los iconos de Ocine */
+    width: 25px;
     height: 25px;
     border-radius: 4px;
 }
 
-/* Ajuste de los botones para esta pantalla */
+
 .acciones-sala {
     width: 100%;
-    max-width: 400px; /* Evita que los botones sean infinitamente largos */
+    max-width: 400px;
 }
 
-
 /*Pelicula*/
-/* ==========================================================================
-   PÁGINA DE INFO PELÍCULA (Estilo Tarjeta Moderna)
-   ========================================================================== */
 
 .contenedor-pelicula {
     max-width: 1000px;
@@ -172,7 +153,7 @@ body{
     background-color: var(--color-tarjeta, #ffffff);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra igual que en la Sala */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .titulo-pelicula {
@@ -189,7 +170,6 @@ body{
     align-items: flex-start;
 }
 
-/* --- Columna Izquierda (Póster y Trailer) --- */
 .pelicula-poster {
     width: 30%;
     display: flex;
@@ -200,7 +180,7 @@ body{
 .pelicula-poster img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Da volumen al póster */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .btn-trailer {
@@ -218,9 +198,10 @@ body{
 .btn-trailer:hover {
     background-color: var(--color-primario, #1e1e1e);
     color: white;
+    text-decoration: none;
 }
 
-/* --- Columna Derecha (Datos) --- */
+
 .pelicula-datos {
     width: 70%;
 }
@@ -232,7 +213,7 @@ body{
     background-color: var(--color-fondo, #f4f4f9);
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid var(--color-primario, #1e1e1e); /* Detalle de diseño elegante */
+    border-left: 4px solid var(--color-primario, #1e1e1e);
     margin-bottom: 30px;
     margin-top: 0;
 }
@@ -253,10 +234,10 @@ body{
 .lista-info strong {
     color: var(--color-primario, #1e1e1e);
     display: inline-block;
-    width: 120px; /* Alinea los dos puntos (:) en una columna perfecta */
+    width: 120px;
 }
 
-/* --- Botones de Sesiones / Horarios --- */
+/* Botones de Sesiones  */
 .horarios-contenedor h3 {
     margin-bottom: 15px;
     color: var(--color-primario, #1e1e1e);
@@ -267,7 +248,7 @@ body{
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Si hay muchas horas, bajan a la siguiente línea */
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -276,7 +257,7 @@ body{
     color: var(--color-primario, #1e1e1e);
     border: 2px solid #ccc;
     padding: 10px 20px;
-    border-radius: 25px; /* Botones con forma de "Pastilla" */
+    border-radius: 25px;
     font-weight: bold;
     font-size: 1.05rem;
     text-decoration: none;
@@ -288,67 +269,85 @@ body{
     border-color: var(--color-primario, #1e1e1e);
     background-color: var(--color-primario, #1e1e1e);
     color: white;
-    transform: translateY(-3px); /* Efecto de que el botón se levanta */
+    transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
 }
 
 
-/* Home */
 
-/* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
-.contenedor-peliculas {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 COLUMNAS SIEMPRE */
-    column-gap: 40px;
-    row-gap: 100px;
-    width: 95%;
-    max-width: 1200px;
-    margin-bottom: 60px;
-    margin-right: 60px;
-}
-
-/*  */
-
-.card-pelicula {
-    background-color: gray;
-    width: 100%;
-    aspect-ratio: 2 / 3.5; /* Mantiene la forma de póster */
-    border: 6px solid black;
-    border-radius: 12px;
-    cursor: pointer;
+#ContenidoPrincipal{
     display: flex;
+    max-width: 65rem;
     justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
+    align-items: flex-start;
+    margin: 5rem auto;
+    padding: 1rem;
 }
-.card-pelicula:hover { transform: scale(1.05); background-color: #555; }
 
-/* 6. PIE DE PÁGINA (Footer Azul) */
-.footer-azul {
-    background-color: darkblue;
-    width: 100%;
-    padding: 40px 0;
+.resumen-pago{
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+
+.resumen-pago h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+    color: #444;
+}
+
+.resumen-pago ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resumen-pago ul li{
+    list-style: none;
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuadro-pago{
+    flex: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-top: 150px; /* Se empuja al final si hay poco contenido */
+    background-color: gray;
+    width: 45rem;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
 }
 
-/*  */
-
-.fila-redes { display: flex; gap: 20px; }
-.btn-red-social {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: black;
+.cuadro-pago input {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    border-radius: 0.25rem;
 }
-.btn-red-social img { width: 60%; }
 
-.fila-legal { display: flex; gap: 30px; margin-top: 10px; }
+
+.Numero{
+    width: 100%;
+    margin-top: 2rem;
+
+}
+
+.CA-CV{
+    display: flex;
+    width: 100%;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+}
+

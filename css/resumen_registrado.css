@@ -8,7 +8,7 @@
     height: 1000px;
 }
 
-/* 3. BARRA DE PROGRESO MODERNA (Stepper) */
+
 .stepper-container {
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 2;
-    background-color: #f8f9fa; /* Para tapar la línea debajo */
+    background-color: #f8f9fa;
     padding: 0 10px;
     gap: 5px;
 }
@@ -42,15 +42,15 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #aaa; /* Gris para los completados */
+    background-color: #aaa;
     cursor: pointer;
 }
 
 .step-circle.active {
-    background-color: #fbd300; /* Amarillo para el actual */
+    background-color: #fbd300;
     width: 26px;
     height: 26px;
-    margin-top: -3px; /* Para centrarlo con la línea */
+    margin-top: -3px;
 }
 
 .step-text {
@@ -65,17 +65,17 @@
     color: #777;
 }
 
-/* 4. CONTENEDOR PRINCIPAL (Flexbox en lugar de absolute) */
+
 .main-content {
     display: flex;
     width: 90%;
     max-width: 1100px;
     gap: 50px;
     margin-bottom: 50px;
-    align-items: flex-start; /* Para que la barra lateral no se estire */
+    align-items: flex-start;
 }
 
-/* 5. BARRA LATERAL (Póster e Info) */
+
 .sidebar {
     width: 250px;
     display: flex;
@@ -85,7 +85,7 @@
 
 .cuadrado-peli img {
     width: 100%;
-    border-radius: 8px; /* Bordes suaves */
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -113,16 +113,16 @@
     object-fit: contain;
 }
 
-/* 6. CONTENIDO DERECHO (Resumen) */
+
 .right-content {
-    flex: 1; /* Ocupa el resto del espacio */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
 
-/* Tabla real para el resumen */
+
 .titulo-resumen {
     font-size: 35px;
     color: #444;
@@ -148,20 +148,19 @@
     font-size: 22px;
     color: #000;
     padding: 20px 0;
-    border-bottom: 2px solid #ccc; /* Línea separadora sutil */
+    border-bottom: 2px solid #ccc;
 }
 
-/* Botones de necesidades (Comida/Accesibilidad) */
 .tarjeta-opcion {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
-    border: 1px solid #ccc; /* Borde finito */
+    border: 1px solid #ccc;
     border-radius: 12px;
     padding: 15px 35px;
     gap: 50px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra muy suave */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .tarjeta-opcion img {
