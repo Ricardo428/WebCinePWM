@@ -10,24 +10,24 @@
 
 ## Descripción del proyecto 
 
-En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Screen & Eat .La web muestra la cartelera del cine como también los horarios de las distintas sesiones, además realiza el proceso para la reserva de los asientos y el pago de estos.
+En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Screen & Eat. La web muestra la cartelera del cine como también los horarios de las distintas sesiones, además realiza el proceso para la reserva de los asientos y el pago de los mismos.
 
 
 ## Requisitos funcionales
 
-*  El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales 
+* El sistema debe permitir el registro de nuevos usuarios solicitando: nombre, fecha de nacimiento y credenciales.
 
-* El sistema al realizar el registro preguntará al usuario sus preferencias cinematográficas 
+* El sistema al realizar el registro preguntará al usuario sus preferencias cinematográficas. 
 
-* El sistema debe almacenar y mostrar un listado de las películas para las que el usuario ha comprado entradas 
+* El sistema debe almacenar y mostrar un listado de las películas para las que el usuario ha comprado entradas.
 
-* El sistema debe mostrar todas las películas disponibles 
+* El sistema debe mostrar todas las películas disponibles. 
 
-* Al seleccionar una película, el sistema debe mostrará una ficha técnica que incluya :Sinopsis, Duración, Actores, Clasificación, Género y Horas disponibles
+* Al seleccionar una película, el sistema debe mostrar una ficha técnica que incluya: Sinopsis, Duración, Actores, Clasificación, Género y Horas disponibles.
 
-* La pagina de inicio debe incluir una barra de búsqueda 
+* La página de inicio debe incluir una barra de búsqueda.
 
-* El sistema debe permitir filtrar la cartelera por: Ubicación del cine, Horario, Idioma, Día, Tipo de proyección
+* El sistema debe permitir filtrar la cartelera por: Ubicación del cine, Horario, Idioma, Día, Tipo de proyección.
 
 * El sistema debe bloquear las butacas seleccionadas durante 10 minutos. Si el tiempo expira sin pago, las butacas deben liberarse automáticamente.
 
@@ -40,9 +40,10 @@ Puedes ver la documentación completa en este [enlace](https://drive.google.com/
 
 ## Mockups y Storyboard
 
-
-El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrga (.zip)
+El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrega (.zip)
 El storyboard lo hemos presentado en forma de video.
+Igualmente puede acceder al archivo pdf con los mockups y el enlace al video del storyboard mediante
+el siguiente enlace [enlace](https://drive.google.com/file/d/1se5YMII0Yf-qZgSR9aOf1EN-gk-hvfb7/view?usp=sharing)
 
 
 ## Paginas HTML 
@@ -56,7 +57,7 @@ El storyboard lo hemos presentado en forma de video.
 * pago_bizum.html (Compra5 Bizum)
 * pago_paypal.html (Compra5 Paypal)
 * pago_realizado_con_exito.html (Pago Realizado)
-* PagoTarjeta.html (Compra5 Tarjeta)
+* pago_tarjeta.html (Compra5 Tarjeta)
 * perfil.html (Perfil)
 * registro.html (Register)
 * resumen_preferencias.html (Preferencias)
@@ -70,7 +71,7 @@ El storyboard lo hemos presentado en forma de video.
 Estos son los Templates identificados
 
 
-* El template footer.html es cargado en las paginas:
+* El template footer.html es cargado en las páginas:
 
     * Sala.html
     * resumen_preferencias.html
@@ -82,7 +83,7 @@ Estos son los Templates identificados
     * InfoFilm.html
     * eleccion_preferencias.html
 
-* El template carrusel.html es cargado en las paginas:
+* El template carrusel.html es cargado en las páginas:
 
     * index.html
     * eleccion_preferencias.html
@@ -92,18 +93,18 @@ Estos son los Templates identificados
     * perfil.html
     * resumen_preferencias.html
 
-* El template Pasos.html es cargado en las paginas:
+* El template Pasos.html es cargado en las páginas:
 
     * entradas.html
     * pago_bizum.html
     * pago_paypal.html
-    * PagoTarjeta.html
+    * pago_tarjeta.html
     * resumen_registrado.html
     * Sala.html
     * seleccion-pago.html
     * snacks.html
 
-* El template header.html es cargado en todas las paginas de la web
+* El template header.html es cargado en todas las páginas de la web.
 
 * El template contador.html es cargado en las páginas:
 
