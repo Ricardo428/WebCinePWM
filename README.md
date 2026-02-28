@@ -43,7 +43,7 @@ Puedes ver la documentación completa en este [enlace](https://drive.google.com/
 El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrega (.zip)
 El storyboard lo hemos presentado en forma de video.
 Igualmente puede acceder al archivo pdf con los mockups y el enlace al video del storyboard mediante
-el siguiente [enlace](https://drive.google.com/file/d/1se5YMII0Yf-qZgSR9aOf1EN-gk-hvfb7/view?usp=sharing)
+el siguiente [enlace](https://drive.google.com/file/d/1se5YMII0Yf-qZgSR9aOf1EN-gk-hvfb7/view?usp=sharing).
 
 
 ## Paginas HTML 
