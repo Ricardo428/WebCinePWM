@@ -8,9 +8,9 @@
 * Mencey Montesdeoca Álamo
 
 
-## Descprición del proyecto 
+## Descripción del proyecto 
 
-En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Screen & Eat .La web muestra la cartelera del cine como también los horarios de las distintas sesiones, además realiza el proceso para la reserva de los asientos y el pago de estos
+En nuestro proyecto hemos creado una web sobre una franquicia de Cine llamada Screen & Eat .La web muestra la cartelera del cine como también los horarios de las distintas sesiones, además realiza el proceso para la reserva de los asientos y el pago de estos.
 
 
 ## Requisitos funcionales
@@ -42,7 +42,7 @@ Puedes ver la documentación completa en este [enlace](https://drive.google.com/
 
 
 El pdf que contiene los mockups se llama Mockups y se encuentra en el archivo de la entrga (.zip)
-El storyboard lo hemos presentado en forma de video 
+El storyboard lo hemos presentado en forma de video.
 
 
 ## Paginas HTML 
