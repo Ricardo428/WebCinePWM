@@ -28,31 +28,48 @@
 
     </div>
 
-    <div class="cuadro-pago">
-        <div class="Numero">
-            <label class="labels">
-                <input type="text" placeholder="Número de tarjeta">
-            </label>
-        </div>
+    <main class="cuadro-pago">
+        <form action="pago_realizado_con_exito.html" method="POST">
 
-        <div class="CA-CV">
-            <label class="labels">
-                <input type="text" placeholder="Caducidad">
-            </label>
+            <div class="Numero">
+                <label class="labels">
+                    <input type="text"
+                           placeholder="Número de tarjeta"
+                           required
+                           maxlength="16"
+                           minlength="16"
+                           pattern="[0-9]{16}"
+                           inputmode="numeric"
+                           title="Introduce exactamente 16 números sin espacios">
+                </label>
+            </div>
 
-            <label class="labels">
+            <div class="CA-CV">
+                <label class="labels">
+                    <input type="text" placeholder="Caducidad (MM/AA)" required>
+                </label>
 
-                <input type="text" placeholder="CVV">
-            </label>
-        </div>
+                <label class="labels">
+
+                    <input type="text"
+                           placeholder="CVV"
+                           required
+                           maxlength="3"
+                           minlength="3"
+                           pattern="[0-9]{3}"
+                           inputmode="numeric"
+                           title="El CVV debe contener exactamente 3 números">
+                </label>
+            </div>
 
 
-        <div class="perfil-acciones">
-            <a href="InfoFilm.html" class="btn-perfil btn-primario">Volver</a>
-            <a href="pago_realizado_con_exito.html" class="btn-perfil btn-secundario">Siguiente</a>
-        </div>
+            <nav class="perfil-acciones acciones-sala">
+                <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+                <button type="submit" class="btn-perfil btn-primario">Siguiente</button>
+            </nav>
+        </form>
 
-    </div>
+    </main>
 
 
 

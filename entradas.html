@@ -88,7 +88,7 @@
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody aria-required="true">
                     <tr>
                         <td>Normal</td>
                         <td><input type="number" min="0" value="0" class="input-cantidad"></td>
@@ -114,7 +114,7 @@
 
             <div class="perfil-acciones acciones-sala">
                 <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
-                <button class="btn-perfil btn-primario" >Siguiente</button>
+                <button type="submit" class="btn-perfil btn-primario" >Siguiente</button>
             </div>
         </form>
     </main>
@@ -122,6 +122,28 @@
 <script>
 
     xLuIncludeFile();
+
+
+    // Tu script actual para cargar el header
+    xLuIncludeFile();
+
+    // NUEVO: Validación para obligar a seleccionar al menos 1 entrada
+    document.querySelector('form').addEventListener('submit', function(event) {
+    // Seleccionamos todos los inputs de cantidad
+    const inputs = document.querySelectorAll('.input-cantidad');
+    let totalEntradas = 0;
+
+    // Sumamos los valores de todos los inputs
+    inputs.forEach(function(input) {
+    totalEntradas += parseInt(input.value) || 0;
+});
+
+    // Si el total es 0, detenemos el envío y avisamos al usuario
+    if (totalEntradas === 0) {
+    event.preventDefault(); // Esta línea es la que bloquea el salto de página
+    alert('Por favor, selecciona al menos una entrada para poder continuar.');
+}
+});
 
 </script>
 </body>

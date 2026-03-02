@@ -15,69 +15,72 @@
 
     <main class="contenedor-ancho">
 
-        <h1 class="titulo-snacks">Selecciona tus Snacks</h1>
+        <form method="POST" action="resumen_registrado.html">
 
-        <div class="snacks-layout">
+            <h1 class="titulo-snacks">Selecciona tus Snacks</h1>
 
-            <aside class="snacks-categorias">
-                <ul class="lista-categorias">
-                    <li class="cat-item activa">Bebida</li>
-                    <li class="cat-item">Palomitas</li>
-                    <li class="cat-item"> Menús</li>
-                    <li class="cat-item">Otros</li>
-                </ul>
-            </aside>
+            <div class="snacks-layout">
 
-            <section class="snacks-productos">
-                <article class="producto-card">
-                    <img src="/img/snacks_cocacola.png" alt="Coca-Cola" class="prod-img">
-                    <h3 class="prod-titulo">Coca-Cola</h3>
-                    <p class="prod-precio">2,50 €</p>
-                    <button class="btn-add-snack">Añadir</button>
-                </article>
+                <aside class="snacks-categorias">
+                    <ul class="lista-categorias">
+                        <li class="cat-item activa">Bebida</li>
+                        <li class="cat-item">Palomitas</li>
+                        <li class="cat-item"> Menús</li>
+                        <li class="cat-item">Otros</li>
+                    </ul>
+                </aside>
 
-                <article class="producto-card">
-                    <img src="/img/snacks_agua.png" alt="Agua" class="prod-img">
-                    <h3 class="prod-titulo">Agua 70cl</h3>
-                    <p class="prod-precio">1,80 €</p>
-                    <button class="btn-add-snack">Añadir</button>
-                </article>
+                <section class="snacks-productos">
+                    <article class="producto-card">
+                        <img src="/img/snacks_cocacola.png" alt="Coca-Cola" class="prod-img">
+                        <h3 class="prod-titulo">Coca-Cola</h3>
+                        <p class="prod-precio">2,50 €</p>
+                        <button class="btn-add-snack">Añadir</button>
+                    </article>
 
-                <article class="producto-card">
-                    <img src="/img/snacks_fanta_naranja.png" alt="Fanta" class="prod-img">
-                    <h3 class="prod-titulo">Fanta Naranja</h3>
-                    <p class="prod-precio">2,50 €</p>
-                    <button class="btn-add-snack">Añadir</button>
-                </article>
+                    <article class="producto-card">
+                        <img src="/img/snacks_agua.png" alt="Agua" class="prod-img">
+                        <h3 class="prod-titulo">Agua 70cl</h3>
+                        <p class="prod-precio">1,80 €</p>
+                        <button class="btn-add-snack">Añadir</button>
+                    </article>
 
-            </section>
+                    <article class="producto-card">
+                        <img src="/img/snacks_fanta_naranja.png" alt="Fanta" class="prod-img">
+                        <h3 class="prod-titulo">Fanta Naranja</h3>
+                        <p class="prod-precio">2,50 €</p>
+                        <button class="btn-add-snack">Añadir</button>
+                    </article>
 
-            <aside class="snacks-resumen">
-                <h3>Resumen de tu pedido</h3>
+                </section>
 
-                <ul class="lista-ticket">
-                    <li class="ticket-item">
-                        <span>1x Coca-Cola</span>
-                        <span>2,50 €</span>
-                    </li>
-                </ul>
+                <aside class="snacks-resumen">
+                    <h3>Resumen de tu pedido</h3>
 
-                <div class="resumen-footer">
-                    <div class="ticket-total">
-                        <span>Total:</span>
-                        <strong>2,50 €</strong>
+                    <ul class="lista-ticket">
+                        <li class="ticket-item">
+                            <span>1x Coca-Cola</span>
+                            <span>2,50 €</span>
+                        </li>
+                    </ul>
+
+                    <div class="resumen-footer">
+                        <div class="ticket-total">
+                            <span>Total:</span>
+                            <strong>2,50 €</strong>
+                        </div>
+
+                        <button class="btn-snack-secundario">Canjear puntos</button>
+                        <button class="btn-snack-primario">Confirmar</button>
                     </div>
+                </aside>
 
-                    <button class="btn-snack-secundario">Canjear puntos</button>
-                    <button class="btn-snack-primario">Confirmar</button>
-                </div>
-            </aside>
-
-        </div>
-        <nav class="paginacion-inferior">
-        <a href="entradas.html" class="btn-pag btn-secundario">Volver</a>
-        <a href="resumen_registrado.html" class="btn-pag btn-primario">Siguiente</a>
-    </nav>
+            </div>
+            <nav class="paginacion-inferior">
+                <a href="entradas.html" class="btn-pag btn-secundario">Volver</a>
+                <button type="submit" class="btn-pag btn-primario">Siguiente</button>
+            </nav>
+        </form>
 
     </main>
 
