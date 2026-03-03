@@ -41,7 +41,7 @@
   "usuarios": [
     {
       "email": "pepe@gmail.com",
-      "password": "123",
+      "password": "12345678",
       "nombre": "Pepe"
     }
   ]
