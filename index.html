@@ -21,25 +21,7 @@
         <button class="btn-negro-amarillo margin-auto">Filtros</button>
     </div>
 
-    <div class="contenedor-peliculas">
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Película</a>
-        <a href="InfoFilm.html" class="card-pelicula">Pelicula</a>
-        <a href="InfoFilm.html" class="card-pelicula">Pelicula</a>
-        <a href="InfoFilm.html" class="card-pelicula">Pelicula</a>
-
-
+    <div class="contenedor-peliculas"  id="cartelera">
     </div>
 
 </main>
@@ -49,6 +31,27 @@
 <script>
 
     xLuIncludeFile();
+
+    async function cartelera() {
+        try{
+            const datos = await fetch("/datos.json").then(res => res.json())
+            const contenedor = document.querySelector("#cartelera")
+
+            datos.peliculas.forEach(pelicula => {
+                const tarjet = `
+                    <a href="${pelicula.url}" class="card-pelicula">
+                        <img src="${pelicula.imagen}" class="card-pelicula-image">
+                    </a>
+
+                `;
+                contenedor.innerHTML += tarjet;
+            })
+        }catch(error){
+            console.error("Hubo un error cargando las películas:", error);
+        }
+
+    }
+    document.addEventListener("DOMContentLoaded", cartelera);
 
 </script>
 </body>
