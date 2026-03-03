@@ -21,7 +21,12 @@
         <button class="btn-negro-amarillo margin-auto">Filtros</button>
     </div>
 
-    <div class="contenedor-peliculas"  id="cartelera">
+    <div class="contenedor-peliculas" id="cartelera">
+        <template id="template-cartelera">
+            <a class="card-pelicula">
+                <img class="card-pelicula">
+            </a>
+        </template>
     </div>
 
 </main>
@@ -33,24 +38,31 @@
     xLuIncludeFile();
 
     async function cartelera() {
-        try{
-            const datos = await fetch("/datos.json").then(res => res.json())
-            const contenedor = document.querySelector("#cartelera")
-
-            datos.peliculas.forEach(pelicula => {
-                const tarjet = `
-                    <a href="${pelicula.url}" class="card-pelicula">
-                        <img src="${pelicula.imagen}" class="card-pelicula">
-                    </a>
-
-                `;
-                contenedor.innerHTML += tarjet;
+        fetch("/datos.json")
+            .then((res) => {
+                return res.json()
             })
-        }catch(error){
-            console.error("Hubo un error cargando las películas:", error);
-        }
+            .then((datos) => {
+                if ('content' in document.createElement('template')) {
+                    const contenedor = document.querySelector("#cartelera")
 
+                    datos.peliculas.forEach(pelicula => {
+                        const tarjet = document
+                            .getElementById("template-cartelera")
+                            .content.cloneNode(true);
+
+                        tarjet.querySelector("a").href = pelicula.url;
+                        tarjet.querySelector("img").src = pelicula.imagen;
+
+                        contenedor.appendChild(tarjet);
+                    })
+                } else {
+                    console.error("No se encontro la cartelera")
+                }
+            })
+            .catch((error) => console.log(error))
     }
+
     document.addEventListener("DOMContentLoaded", cartelera);
 
 </script>
