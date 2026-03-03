@@ -51,7 +51,7 @@
                             .getElementById("template-cartelera")
                             .content.cloneNode(true);
 
-                        tarjet.querySelector("a").href = pelicula.url;
+                        tarjet.querySelector("a").href = `InfoFilm.html?id=${pelicula.id}`;
                         tarjet.querySelector("img").src = pelicula.imagen;
 
                         contenedor.appendChild(tarjet);

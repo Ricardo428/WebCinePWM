@@ -41,14 +41,11 @@
 
             <div class="horarios-contenedor">
                 <h3>Selecciona una sesión:</h3>
-                <ul class="lista-horarios">
-                    <li><a href="Sala.html" class="btn-hora">10:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">11:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">13:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">16:00</a></li>
-                    <li><a href="Sala.html" class="btn-hora">18:15</a></li>
-                    <li><a href="Sala.html" class="btn-hora">20:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">22:45</a></li>
+                <ul class="lista-info">
+                    <li><strong>Duración:</strong> <span id="info-duracion"></span></li>
+                    <li><strong>Reparto:</strong> <span id="info-reparto"></span></li>
+                    <li><strong>Género:</strong> <span id="info-genero"></span></li>
+                    <li><strong>Calificación:</strong> <span id="info-clasificacion"></span></li>
                 </ul>
             </div>
 
@@ -61,7 +58,44 @@
 <footer xlu-include-file="footer.html"></footer>
 
 <script>
+    // Tu motor de plantillas
     xLuIncludeFile();
+
+    async function cargarInfoPelicula() {
+        const parametrosURL = new URLSearchParams(window.location.search);
+        const idBuscado = parametrosURL.get("id");
+
+
+        if (!idBuscado) {
+            window.location.href = "index.html";
+            return;
+        }
+
+        // 2. Pedimos los datos al JSON
+        fetch("/datos.json")
+            .then((res) => {
+                return res.json()
+            })
+            .then(data => {
+                const pelicula = data.peliculas.find(p => p.id == idBuscado);
+
+                if (pelicula) {
+
+                    document.querySelector(".titulo-pelicula").textContent = pelicula.titulo;
+                    document.querySelector(".pelicula-poster img").src = pelicula.imagen;
+                    document.querySelector(".pelicula-sinopsis").textContent = pelicula.sinopsis;
+
+
+                } else {
+                    console.error("No se encontró la película con ese ID");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    document.addEventListener("DOMContentLoaded", cargarInfoPelicula);
+
 </script>
 </body>
 </html>
