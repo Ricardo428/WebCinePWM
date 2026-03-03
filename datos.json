@@ -37,12 +37,5 @@
       "url": "InfoFilm.html"
     }
 
-  ],
-  "usuarios": [
-    {
-      "email": "pepe@gmail.com",
-      "password": "123",
-      "nombre": "Pepe"
-    }
   ]
 }
