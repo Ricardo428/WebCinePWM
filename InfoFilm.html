@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilos.css">
 
-    <script src="xLuIncludeFile.js"></script>
+    <script src="Js/xLuIncludeFile.js"></script>
 </head>
 <body>
 
@@ -76,7 +76,7 @@
             return;
         }
 
-        await fetch("/datos.json")
+        await fetch("Json/datos.json")
             .then((res) => {
                 return res.json()
             })
