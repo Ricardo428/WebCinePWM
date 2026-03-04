@@ -8,7 +8,9 @@
       "duracion": "123 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "horarios": ["11:30", "16:00", "20:30"],
+      "trailer": "https://www.youtube.com/watch?v=ZIqX4Xzd-Xo"
     },
     {
       "id": 2,
@@ -18,7 +20,9 @@
       "duracion": "125 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "horarios": ["11:30", "16:00", "20:30", "22:30"],
+      "trailer": "https://www.youtube.com/watch?v=89OfdZ3u3u0"
     },
     {
       "id": 3,
@@ -28,7 +32,9 @@
       "duracion": "150 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "horarios": ["11:30", "13:00", "20:30"],
+      "trailer": "https://www.youtube.com/watch?v=nn7fhaEtAqg"
     },
     {
       "id": 4,
@@ -38,7 +44,9 @@
       "duracion": "100 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "16+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "horarios": ["10:30", "16:00", "22:30"],
+      "Trailer": "https://www.youtube.com/watch?v=hustuUMeyDI"
     },
     {
       "id": 5,
@@ -48,7 +56,9 @@
       "duracion": "123 min",
       "reparto" : "Mencey Montesdeoca Álamo",
       "clasificacion": "18+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "horarios": ["9:35", "16:00", "20:30"],
+      "Trailer": "https://www.youtube.com/watch?v=JCHWs0f-OKg"
     },
     {
       "id": 6,

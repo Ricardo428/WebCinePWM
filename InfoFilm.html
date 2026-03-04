@@ -21,7 +21,7 @@
 
         <div class="pelicula-poster">
             <img src="" alt="Póster de la película">
-            <a href="#" class="btn-trailer">Ver Tráiler</a>
+            <a href="#" id="trailer" class="btn-trailer">Ver Tráiler</a>
         </div>
 
         <div class="pelicula-datos">
@@ -41,13 +41,6 @@
             <div class="horarios-contenedor">
                 <h3>Selecciona una sesión:</h3>
                 <ul class="lista-horarios">
-                    <li><a href="Sala.html" class="btn-hora">10:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">11:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">13:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">16:00</a></li>
-                    <li><a href="Sala.html" class="btn-hora">18:15</a></li>
-                    <li><a href="Sala.html" class="btn-hora">20:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">22:45</a></li>
                 </ul>
             </div>
 
@@ -64,7 +57,14 @@
 <footer xlu-include-file="footer.html"></footer>
 
 <script>
-    xLuIncludeFile();
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init(){
+        await cargarInfoPelicula();
+        xLuIncludeFile();
+
+    }
 
     async function cargarInfoPelicula() {
         const parametrosURL = new URLSearchParams(window.location.search);
@@ -76,8 +76,7 @@
             return;
         }
 
-        // 2. Pedimos los datos al JSON
-        fetch("/datos.json")
+        await fetch("/datos.json")
             .then((res) => {
                 return res.json()
             })
@@ -92,6 +91,18 @@
                     document.querySelector("#info-reparto").textContent = pelicula.reparto;
                     document.querySelector("#info-genero").textContent = pelicula.clasificacion;
                     document.querySelector("#info-clasificacion").textContent = pelicula.genero;
+                    document.querySelector("#trailer").href = pelicula.trailer;
+                    const horarios = document.querySelector(".lista-horarios")
+
+                    if (pelicula.horarios && pelicula.horarios.length > 0) {
+                        pelicula.horarios.forEach((hora) => {
+                            horarios.innerHTML += `<li><a href="Sala.html" class="btn-hora">${hora}</a></li>`;
+                        })
+                    }else{
+                        horarios.innerHTML += `<li><strong>No hay sesiones disponibles</strong></li>`;
+                    }
+
+
                 } else {
                     console.error("No se encontró la película con ese ID");
                 }
@@ -100,8 +111,6 @@
                 console.log(error);
             })
     }
-    document.addEventListener("DOMContentLoaded", cargarInfoPelicula);
-
 </script>
 </body>
 </html>
