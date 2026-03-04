@@ -3,7 +3,7 @@
     {
       "id": 1,
       "titulo": "TORRENTE EL BRAZO TONTO DE LA LEY",
-      "imagen": "https://www.ecartelera.com/carteles/800/819/001_p.webp",
+      "imagen": "img/Torrente 1.webp",
       "sinopsis": "Torrente es un policía español, machista, racista y alcohólico. Este magnífico representante de las fuerzas del orden vive, con su padre hemipléjico, en Madrid. Gracias a su olfato, descubre en su propio barrio una importante red de narcotraficantes",
       "duracion": "123 min",
       "reparto" : "Santiago Segura",
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "titulo": "TORRENTE 2 MISIÓN EN MARBELLA",
-      "imagen": "https://www.premiosgoya.com/wp-content/uploads/2016/01/Torrente-2-320x457.jpg",
+      "imagen": "img/Torrente-2.jpg",
       "sinopsis": "Torrente decide instalarse en plena Costa del Sol y trabajar como investigador privado. Con la ayuda de Cuco, su ayudante a tiempo parcial, intentará desenmascarar a un peligroso traficante de armas, Spinelli, que amenaza con destruir la ciudad si no le pagan 2000 millones de pesetas.",
       "duracion": "125 min",
       "reparto" : "Santiago Segura",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "titulo": "TORRENTE 3 EL PROTECTOR",
-      "imagen": "https://www.ecartelera.com/carteles/400/418/001_p.webp",
+      "imagen": "img/Torrente 3.webp",
       "sinopsis": "Giannina Ricci es una popular eurodiputada que viene de visita a España para cerrar las fábricas de la multinacional Petronosa porque ponen en peligro el medio ambiente. El jefe de la compañía soborna a dos de los encargados de seguridad de la eurodiputada para que puedan ayudarle a planear un ataque contra ella. José Luis Torrente, probablemente uno de los peores policías del mundo, es el encargado de proteger a Ricci.",
       "duracion": "150 min",
       "reparto" : "Santiago Segura",
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "titulo": "TORRENTE 4 CRISIS LETAL",
-      "imagen": "https://pics.filmaffinity.com/torrente_4_lethal_crisis_crisis_letal-850313152-large.jpg",
+      "imagen": "img/Torrente 4.jpg",
       "sinopsis": "Cuarta entrega de las aventuras del casposo policía José Luis Torrente. En esta ocasión encontramos a Torrente en una situación delicada. Tras varios intentos fallidos de llevar una vida digna (como si eso fuese posible), decide aceptar un peligroso encargo que le hace un viejo conocido",
       "duracion": "100 min",
       "reparto" : "Santiago Segura",
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "titulo": "TORRENTE 5 OPERACIÓN EUROVEGAS",
-      "imagen": "https://www.mubis.es/media/articles/10033/95434/poster-oficial-y-nuevas-imagenes-de-torrente-5-operacion-eurovegas-original.jpg",
+      "imagen": "img/Torrente 5.jpg",
       "sinopsis": "Torrente sale de la cárcel en el año 2018 para encontrarse una España totalmente diferente de la que él conocía. Ante este 'shock' decide pasar a ser un 'fuera de la ley' y atracar un casino. Gracias a su red de contactos de la cárcel logra localizar a John Marshall, el responsable de la planificación de la seguridad del mayor casino de Eurovegas. Marshall le dice que lo más importante es contar con un equipo de especialistas y Torrente se dispone a encontrarlos entre sus conocidos.",
       "duracion": "123 min",
       "reparto" : "Mencey Montesdeoca Álamo",
@@ -53,7 +53,7 @@
     {
       "id": 6,
       "titulo": "TORRENTE PRESIDENTE",
-      "imagen": "https://eu-static.yelmocines.es/content/img/movies/posters/6842/1/1/6842.jpg",
+      "imagen": "img/Torrente Presidente.jpg",
       "sinopsis": "",
       "duracion": "123 min",
       "reparto" : "Juan Daniel Lopez Melainine",
