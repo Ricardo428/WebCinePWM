@@ -15,29 +15,18 @@
 
 <main class="contenedor-pelicula">
 
-    <h1 class="titulo-pelicula">Nombre de película que ahora puede ser súper largo y ocupar todo lo que quiera</h1>
+    <h1 class="titulo-pelicula"></h1>
 
     <div class="pelicula-grid">
 
         <div class="pelicula-poster">
-            <img src="/img/images.jpg" alt="Póster de la película">
+            <img src="" alt="Póster de la película">
             <a href="#" class="btn-trailer">Ver Tráiler</a>
         </div>
 
         <div class="pelicula-datos">
 
-            <p class="pelicula-sinopsis">
-                Descripción de la película. Un thriller apasionante donde el protagonista tendrá que descubrir la verdad antes de que sea demasiado tarde. Acción, suspense y giros inesperados.
-            </p>
-
-            <div class="pelicula-info-flex">
-                <ul class="lista-info">
-                    <li><strong>Duración:</strong> 120 minutos</li>
-                    <li><strong>Reparto:</strong> Santiago Segura, Javier Cámara</li>
-                    <li><strong>Género:</strong> Comedia / Acción</li>
-                    <li><strong>Calificación:</strong> +12 años</li>
-                </ul>
-            </div>
+            <p class="pelicula-sinopsis"></p>
 
             <div class="horarios-contenedor">
                 <h3>Selecciona una sesión:</h3>
@@ -58,7 +47,6 @@
 <footer xlu-include-file="footer.html"></footer>
 
 <script>
-    // Tu motor de plantillas
     xLuIncludeFile();
 
     async function cargarInfoPelicula() {
@@ -80,12 +68,13 @@
                 const pelicula = data.peliculas.find(p => p.id == idBuscado);
 
                 if (pelicula) {
-
                     document.querySelector(".titulo-pelicula").textContent = pelicula.titulo;
                     document.querySelector(".pelicula-poster img").src = pelicula.imagen;
                     document.querySelector(".pelicula-sinopsis").textContent = pelicula.sinopsis;
-
-
+                    document.querySelector("#info-duracion").textContent = pelicula.duracion;
+                    document.querySelector("#info-reparto").textContent = pelicula.reparto;
+                    document.querySelector("#info-genero").textContent = pelicula.clasificacion;
+                    document.querySelector("#info-clasificacion").textContent = pelicula.genero;
                 } else {
                     console.error("No se encontró la película con ese ID");
                 }
