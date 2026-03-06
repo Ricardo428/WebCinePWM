@@ -7,61 +7,56 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilos.css">
 
-    <script src="xLuIncludeFile.js"></script>
+    <script src="Js/xLuIncludeFile.js"defer></script>
+    <script src="Js/datosPelicula.js" defer></script>
+
 </head>
 <body>
 
-<header xlu-include-file="header.html"></header>
+<header xlu-include-file="templates/header.html"></header>
 
 <main class="contenedor-pelicula">
 
-    <h1 class="titulo-pelicula">Nombre de película que ahora puede ser súper largo y ocupar todo lo que quiera</h1>
+    <h1 class="titulo-pelicula"></h1>
 
     <div class="pelicula-grid">
 
         <div class="pelicula-poster">
-            <img src="/img/images.jpg" alt="Póster de la película">
-            <a href="#" class="btn-trailer">Ver Tráiler</a>
+            <img class="imagenes" alt="Póster de la película">
+            <a href="#" id="trailer" class="btn-trailer">Ver Tráiler</a>
         </div>
 
         <div class="pelicula-datos">
 
-            <p class="pelicula-sinopsis">
-                Descripción de la película. Un thriller apasionante donde el protagonista tendrá que descubrir la verdad antes de que sea demasiado tarde. Acción, suspense y giros inesperados.
-            </p>
+            <p class="pelicula-sinopsis"></p>
 
-            <div class="pelicula-info-flex">
+            <div class="horarios-contenedor">
+                <h3>Selecciona una sesión:</h3>
                 <ul class="lista-info">
-                    <li><strong>Duración:</strong> 120 minutos</li>
-                    <li><strong>Reparto:</strong> Santiago Segura, Javier Cámara</li>
-                    <li><strong>Género:</strong> Comedia / Acción</li>
-                    <li><strong>Calificación:</strong> +12 años</li>
+                    <li><strong>Duración:</strong> <span id="info-duracion"></span></li>
+                    <li><strong>Reparto:</strong> <span id="info-reparto"></span></li>
+                    <li><strong>Género:</strong> <span id="info-genero"></span></li>
+                    <li><strong>Calificación:</strong> <span id="info-clasificacion"></span></li>
                 </ul>
             </div>
 
             <div class="horarios-contenedor">
                 <h3>Selecciona una sesión:</h3>
                 <ul class="lista-horarios">
-                    <li><a href="Sala.html" class="btn-hora">10:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">11:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">13:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">16:00</a></li>
-                    <li><a href="Sala.html" class="btn-hora">18:15</a></li>
-                    <li><a href="Sala.html" class="btn-hora">20:30</a></li>
-                    <li><a href="Sala.html" class="btn-hora">22:45</a></li>
                 </ul>
             </div>
 
         </div>
 
+
+
     </div>
+
+
 
 </main>
 
-<footer xlu-include-file="footer.html"></footer>
+<footer xlu-include-file="templates/footer.html"></footer>
 
-<script>
-    xLuIncludeFile();
-</script>
 </body>
 </html>

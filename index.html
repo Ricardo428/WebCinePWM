@@ -4,15 +4,17 @@
     <title>SREEN & EAT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/layout.css">
 
-    <script src="xLuIncludeFile.js"></script>
+    <script src="Js/xLuIncludeFile.js"></script>
+    <script src="Js/cartelera.js"></script>
+    <script src="Js/carrusel.js"></script>
 </head>
 
 <body>
-<header xlu-include-file="header.html"></header>
-<div xlu-include-file="carrusel.html"></div>
+<header xlu-include-file="templates/header.html"></header>
+<div xlu-include-file="templates/carrusel.html"></div>
 <main class="contenido-principal">
 
     <div class="barra-filtros">
@@ -31,40 +33,10 @@
 
 </main>
 
-<footer xlu-include-file="/footer.html"></footer>
+<footer xlu-include-file="templates/footer.html"></footer>
 
 <script>
-
     xLuIncludeFile();
-
-    async function cartelera() {
-        fetch("/datos.json")
-            .then((res) => {
-                return res.json()
-            })
-            .then((datos) => {
-                if ('content' in document.createElement('template')) {
-                    const contenedor = document.querySelector("#cartelera")
-
-                    datos.peliculas.forEach(pelicula => {
-                        const tarjet = document
-                            .getElementById("template-cartelera")
-                            .content.cloneNode(true);
-
-                        tarjet.querySelector("a").href = pelicula.url;
-                        tarjet.querySelector("img").src = pelicula.imagen;
-
-                        contenedor.appendChild(tarjet);
-                    })
-                } else {
-                    console.error("No se encontro la cartelera")
-                }
-            })
-            .catch((error) => console.log(error))
-    }
-
-    document.addEventListener("DOMContentLoaded", cartelera);
-
 </script>
 </body>
 </html>

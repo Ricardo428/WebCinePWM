@@ -109,7 +109,7 @@ footer{
     padding: 2rem;
     justify-content: center;
     gap: 4rem;
-    margin-top: 5rem;
+    margin-top: auto;
 }
 
 .columna{
@@ -128,10 +128,13 @@ footer li{
 footer a{
     text-decoration: none;
     color: #f2f2f2;
+    font-weight: bold;
 }
 
 footer a:hover {
     color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 footer h3 {
