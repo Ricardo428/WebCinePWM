@@ -3,10 +3,13 @@
     <div class="circulo_logo">
       <img src="img/Logo.jpg" alt="Logo">
     </div>
-    <label>
-      <input type="text" class="buscador-principal" placeholder="Buscar película...">
-    </label>
-
+    <div class="buscador-container">
+      <input type="text" id="buscador" class="buscador-principal" placeholder="Buscar película...">
+      <ul id="lista-resultados"></ul>
+    </div>
+    <!--
+        Lista-resultados es para guardar las peliculas que coincidan con las letras que se ponga en el buscador
+    -->
     <div id="sesion-container" class="sesion-container">
       <a href="login.html" class="btn-sesion" id="btn-login">Iniciar Sesión</a>
       <button onclick="cerrarSesion()" class="btn-sesion btn-logout-header oculto" id="btn-logout">Salir</button>

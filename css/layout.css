@@ -26,6 +26,52 @@
     max-width: 80rem; /* Ancho de los objetos */
 }
 
+.buscador-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 25px;
+    width: 30%;
+    z-index: 1000;
+}
+
+#lista-resultados {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+
+    color: white;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 0 0 16px 16px;
+    background-color: #222;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+#lista-resultados li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: background 0.2s;
+}
+
+#lista-resultados li:last-child {
+    border-bottom: none;
+}
+
+#lista-resultados li:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+
 .circulo_logo {
     width: 90px;
     height: 90px;
@@ -49,6 +95,7 @@
 
 
 .header-top input.buscador-principal {
+    flex-direction: column;
     width: 25rem;
     height: 2rem;
     background-color: white;
