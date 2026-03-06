@@ -52,6 +52,43 @@
 
   xLuIncludeFile();
 
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. Proteger la página: si no ha iniciado sesión, lo mandamos al login
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = 'login.html';
+    return;
+  }
+
+    // 2. Pintar los datos del usuario
+    const nombre = localStorage.getItem('nombreUsuario') || 'Usuario Invitado';
+    const email = localStorage.getItem('emailUsuario') || 'Sin correo registrado';
+
+    document.getElementById('perfil-nombre-display').textContent = nombre;
+    document.getElementById('perfil-email-display').textContent = email;
+
+    // 3. Revisar si existen preferencias elegidas
+    const preferenciasContainer = document.getElementById('preferencias-container');
+    const preferenciasGuardadas = localStorage.getItem('preferenciasUsuario');
+    let arrayPreferencias = [];
+
+    if (preferenciasGuardadas) {
+    arrayPreferencias = JSON.parse(preferenciasGuardadas);
+  }
+
+    // 4. Mostrar preferencias o dejarlas vacías
+    if (arrayPreferencias.length === 0) {
+    preferenciasContainer.innerHTML = '<p style="grid-column: 1 / -1; color: #888; font-style: italic;">Aún no has seleccionado ninguna preferencia.</p>';
+  } else {
+    preferenciasContainer.innerHTML = ''; // Limpiamos
+    arrayPreferencias.forEach(function(pref) {
+    const span = document.createElement('span');
+    span.className = 'etiqueta-pref';
+    span.textContent = pref;
+    preferenciasContainer.appendChild(span);
+  });
+  }
+  });
+
 </script>
 </body>
 </html>

@@ -74,9 +74,51 @@
 <footer xlu-include-file="/footer.html"></footer>
 
 <script>
-
     xLuIncludeFile();
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const formLogin = document.querySelector('form');
+
+        if (formLogin) {
+            formLogin.addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                const emailIngresado = document.getElementById('email').value;
+                const passwordIngresado = document.getElementById('password').value;
+                localStorage.setItem('emailUsuario', emailIngresado); // (O la variable donde tengas el email)
+
+                try {
+                    // 1. Leemos los usuarios estáticos del JSON
+                    const respuesta = await fetch('users.json');
+                    const usuariosBase = await respuesta.json();
+
+                    // 2. Leemos los usuarios nuevos registrados desde el navegador
+                    const usuariosNuevos = JSON.parse(localStorage.getItem('usuariosNuevos')) || [];
+
+                    // 3. Juntamos ambas listas en una sola
+                    const todosLosUsuarios = usuariosBase.concat(usuariosNuevos);
+
+                    // 4. Buscamos si existe coincidencia
+                    const usuarioValido = todosLosUsuarios.find(
+                        user => user.email === emailIngresado && user.password === passwordIngresado
+                    );
+
+                    if (usuarioValido) {
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('nombreUsuario', usuarioValido.nombre);
+
+                        window.location.href = 'index.html';
+                    } else {
+                        alert('Email o contraseña incorrectos. Por favor, revisa tus datos.');
+                    }
+
+                } catch (error) {
+                    console.error('Error al iniciar sesión:', error);
+                    alert('Hubo un problema al conectar con la base de datos.');
+                }
+            });
+        }
+    });
 </script>
 </body>
 </html>

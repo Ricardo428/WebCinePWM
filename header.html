@@ -2,12 +2,17 @@
 <header class="header-gris">
   <div class="header-top">
     <div class="circulo_logo">
-      <img src="CinesO.png" alt="Logo">
+      <img src="img/images.jpg" alt="Logo">
     </div>
     <label>
       <input type="text" class="buscador-principal" placeholder="Buscar película...">
     </label>
-    <a href="login.html" class="btn-sesion">Iniciar Sesión</a>
+
+    <div id="sesion-container" style="display: flex; gap: 10px;">
+      <a href="login.html" class="btn-sesion" id="btn-login">Iniciar Sesión</a>
+      <a href="perfil.html" class="btn-sesion" id="btn-perfil" style="display: none; color: black;">Mi Perfil</a>
+      <button onclick="cerrarSesion()" class="btn-sesion" id="btn-logout" style="display: none; background-color: transparent; border: 1px solid white;">Salir</button>
+    </div>
   </div>
   <nav class="nav-superior">
     <a href="index.html" class="btn-negro-amarillo">Cartelera</a>
@@ -15,3 +20,29 @@
     <a href="perfil.html" class="btn-negro-amarillo">Perfil</a>
   </nav>
 </header>
+
+<script>
+  function verificarSesionHeader() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      document.getElementById('btn-login').style.display = 'none';
+      document.getElementById('btn-perfil').style.display = 'inline-block';
+      document.getElementById('btn-logout').style.display = 'inline-block';
+    } else {
+      document.getElementById('btn-login').style.display = 'inline-block';
+      document.getElementById('btn-perfil').style.display = 'none';
+      document.getElementById('btn-logout').style.display = 'none';
+    }
+  }
+
+  function cerrarSesion() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('nombreUsuario');
+    localStorage.removeItem('emailUsuario');
+    localStorage.removeItem('preferenciasUsuario'); // Limpiamos preferencias al salir
+    window.location.href = 'index.html';
+  }
+
+  // Pequeño retraso para que cargue bien al ser inyectado por tu script
+  setTimeout(verificarSesionHeader, 50);
+</script>
