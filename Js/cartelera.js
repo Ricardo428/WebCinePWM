@@ -1,27 +1,29 @@
 async function cartelera() {
-    fetch("Json/datos.json")
-        .then((res) => {
-            return res.json()
-        })
-        .then((datos) => {
-            if ('content' in document.createElement('template')) {
-                const contenedor = document.querySelector("#cartelera")
+    try {
+        const reponse = await fetch("Json/datos.json");
+        const datos = await reponse.json();
 
-                datos.peliculas.forEach(pelicula => {
-                    const tarjet = document
-                        .getElementById("template-cartelera")
-                        .content.cloneNode(true);
+        if ('content' in document.createElement('template')) {
+            const contenedor = document.querySelector("#cartelera")
 
-                    tarjet.querySelector("a").href = `InfoFilm.html?id=${pelicula.id}`;
-                    tarjet.querySelector("img").src = pelicula.imagen;
+            datos.peliculas.forEach(pelicula => {
+                const tarjet = document
+                    .getElementById("template-cartelera")
+                    .content.cloneNode(true);
 
-                    contenedor.appendChild(tarjet);
-                })
-            } else {
-                console.error("No se encontro la cartelera")
-            }
-        })
-        .catch((error) => console.log(error))
+                tarjet.querySelector("a").href = `InfoFilm.html?id=${pelicula.id}`;
+                tarjet.querySelector("img").src = pelicula.imagen;
+
+                contenedor.appendChild(tarjet);
+            });
+        } else {
+            console.error("No se encontro la cartelera")
+        }
+
+    } catch (Error) {
+        console.error("Error in cartelera");
+    }
 }
+
 
 document.addEventListener("DOMContentLoaded", cartelera);

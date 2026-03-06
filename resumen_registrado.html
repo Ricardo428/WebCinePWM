@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Reserva de Entradas</title>
     <script src="Js/xLuIncludeFile.js"></script>
+    <script src="Js/resumen.js"></script>
 </head>
 <body class="paso-4">
 
 <header xlu-include-file="templates/header.html"></header>
-<header xlu-include-file="pasos.html"></header>
-<div xlu-include-file="contador.html"></div>
+<div xlu-include-file="templates/Pasos.html"></div>
+<div xlu-include-file="templates/contador.html"></div>
 <div class="rectangulo-entero">
     <main class="main-content">
 
         <aside class="sidebar">
             <div class="cuadrado-peli">
-                <img src="/img/avatar_poster.jpg" alt="Póster Avatar">
+                <img class="imagenes" alt="Póster Avatar">
             </div>
             <div class="info-peli">Cine: Ocines</div>
-            <div class="info-peli">Día: 19/02/2026</div>
-            <div class="info-peli">Hora: 16:24</div>
+            <div class="info-peli" id="fecha"></div>
+            <div class="info-peli" id="hora"></div>
             <div class="info-peli">Butaca: 14B</div>
             <div class="info-peli">Fila: 14</div>
             <div class="iconos-peli">
@@ -80,10 +81,5 @@
     </main>
 </div>
 
-<script>
-
-    xLuIncludeFile();
-
-</script>
 </body>
 </html>

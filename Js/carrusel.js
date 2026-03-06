@@ -5,17 +5,17 @@ const imagenes = [
     "img/Torrente Presidente.jpg"
 ]
 let index = 0;
-async function avanzar() {
+function avanzar() {
     index = (index + 1 + imagenes.length) % imagenes.length;
-    await carrusel();
+    carrusel();
 }
 
-async function retroceder() {
+function retroceder() {
     index = (index - 1 + imagenes.length) % imagenes.length;
-    await carrusel();
+    carrusel();
 }
 
-async function carrusel() {
+function carrusel() {
     const imgElement = document.querySelector(".banner-img");
     if (imgElement) {
         imgElement.src = imagenes[index];
