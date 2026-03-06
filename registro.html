@@ -61,8 +61,7 @@
           <input type="date" id="birthday" name="birthday" required>
         </div>
 
-
-        <button type="submit" style="">Registrar</button>
+        <button type="submit">Registrar</button>
 
       </form>
     </fieldset>
@@ -73,54 +72,8 @@
 
 <script>
   xLuIncludeFile();
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const formRegistro = document.querySelector('form');
-
-    if (formRegistro) {
-      formRegistro.addEventListener('submit', function(event) {
-        // Evitamos que el formulario salte de página por defecto
-        event.preventDefault();
-
-        // Capturamos los datos que el usuario ha escrito
-        const nombre = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        // 1. Recuperamos la lista de usuarios nuevos (si no existe, creamos un array vacío)
-        let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosNuevos')) || [];
-
-        // 2. Comprobamos si el correo ya fue registrado antes
-        const existeUsuario = usuariosRegistrados.find(user => user.email === email);
-
-        if (existeUsuario) {
-          alert('Este correo electrónico ya está registrado. Por favor, usa otro o inicia sesión.');
-          return; // Detenemos la ejecución
-        }
-
-        // 3. Creamos el objeto del nuevo usuario
-        const nuevoUsuario = {
-          email: email,
-          password: password,
-          nombre: nombre
-        };
-
-        // 4. Lo añadimos a la lista y lo guardamos en el navegador
-        usuariosRegistrados.push(nuevoUsuario);
-        localStorage.setItem('usuariosNuevos', JSON.stringify(usuariosRegistrados));
-
-        // 5. Iniciamos sesión automáticamente para mejorar la experiencia
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('nombreUsuario', nombre);
-        localStorage.setItem('emailUsuario', email); // (O la variable donde tengas el email)
-
-        alert('¡Registro completado con éxito!');
-
-        // Redirigimos a la página principal
-        window.location.href = 'index.html';
-      });
-    }
-  });
 </script>
+<script src="Js/registro.js"></script>
+<script src="Js/header.js"></script>
 </body>
 </html>

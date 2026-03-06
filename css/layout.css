@@ -326,3 +326,8 @@ footer h3 {
 .flecha-der {
     right: 20px;
 }
+
+/* Clase maestra para que JS oculte elementos */
+.oculto {
+    display: none !important;
+}
