@@ -1,5 +1,4 @@
-
-async function cargarDatosResumen(imagen) {
+async function cargarDatosResumen() {
     const idBuscado = localStorage.getItem("peliSeleccionada");
     const horaBuscada = localStorage.getItem("horaSeleccionada");
 
@@ -14,12 +13,7 @@ async function cargarDatosResumen(imagen) {
         const pelicula = datos.peliculas.find(p => p.id == idBuscado);
 
         if (pelicula) {
-            document.querySelector(imagen).src = pelicula.imagen;
-            document.querySelector("#hora").textContent = `Hora: ${horaBuscada}`;
-            document.querySelector(".titulo-resumen").textContent = `Resumen entradas: ${pelicula.titulo}`;
-            document.querySelector("#fecha").textContent = `Dia: ${new Date().toLocaleDateString()}`;
-
-
+            document.querySelector(".ticket-poster").src = pelicula.imagen;
         } else {
             console.error("Película no encontrada en el JSON");
         }
@@ -28,3 +22,4 @@ async function cargarDatosResumen(imagen) {
         console.error("Error al cargar la información", err);
     }
 }
+document.addEventListener("TemplatesCargados", cargarDatosResumen);

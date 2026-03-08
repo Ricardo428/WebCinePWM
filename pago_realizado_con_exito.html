@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/layout.css">
   <script type="module" src="Js/main.js"></script>
+  <script src="Js/pago_realizado.js"></script>
 </head>
 <body>
 <header xlu-include-file="templates/header.html"></header>
@@ -59,7 +60,9 @@
   </main>
 
 </div>
-
+<script>
+  document.addEventListener("TemplatesCargados", cargarDatosResumen(".ticket-poster"));
+</script>
 </body>
 <script src="Js/header.js"></script>
 </html>

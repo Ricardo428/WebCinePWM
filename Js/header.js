@@ -21,7 +21,7 @@ function verificarSesionHeader() {
             // Cambiamos el destino del botón Perfil hacia el formulario
             navPerfil.href = 'login.html';
         }
-        return true; // Retornamos true porque ya hizo su trabajo
+        return true; // Retornamos true porque ya hizo su trabajogit
     }
     return false; // Aún no ha cargado el HTML
 }

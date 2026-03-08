@@ -26,4 +26,4 @@ async function cartelera() {
 }
 
 
-document.addEventListener("DOMContentLoaded", cartelera);
+document.addEventListener("TemplatesCargados", cartelera);
