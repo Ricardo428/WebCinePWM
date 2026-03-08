@@ -1,11 +1,3 @@
-document.addEventListener("DOMContentLoaded", init);
-
-async function init(){
-    await cargarInfoPelicula();
-    xLuIncludeFile();
-
-}
-
 async function cargarInfoPelicula() {
 
     const parametrosURL = new URLSearchParams(window.location.search);
@@ -58,3 +50,4 @@ function guardarEnMochila(id, hora) {
     localStorage.setItem("peliSeleccionada", id);
     localStorage.setItem("horaSeleccionada", hora);
 }
+document.addEventListener("TemplatesCargados", cargarInfoPelicula);

@@ -1,12 +1,3 @@
-document.addEventListener("DOMContentLoaded", initResumen);
-
-async function initResumen(){
-    // 1. Cargamos el header y footer
-    xLuIncludeFile();
-
-    // 2. Cargamos los datos del resumen
-    await cargarDatosResumen();
-}
 
 async function cargarDatosResumen() {
     const idBuscado = localStorage.getItem("peliSeleccionada");
@@ -37,3 +28,4 @@ async function cargarDatosResumen() {
         console.error("Error al cargar la información", err);
     }
 }
+document.addEventListener("TemplatesCargados", cargarDatosResumen);

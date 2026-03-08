@@ -6,7 +6,7 @@
     <title>Entradas</title>
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="Js/xLuIncludeFile.js"></script>
+    <script type="module" src="Js/main.js"></script>
 </head>
 <style>
     /* ==========================================================================
@@ -121,11 +121,6 @@
 </div>
 <script>
 
-    xLuIncludeFile();
-
-
-    // Tu script actual para cargar el header
-    xLuIncludeFile();
 
     // NUEVO: Validación para obligar a seleccionar al menos 1 entrada
     document.querySelector('form').addEventListener('submit', function(event) {

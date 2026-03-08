@@ -3,26 +3,32 @@
 const imagenes = [
     "img/avatar_poster.jpg",
     "img/Torrente Presidente.jpg"
-]
+];
 let index = 0;
-function avanzar() {
-    index = (index + 1 + imagenes.length) % imagenes.length;
-    carrusel();
-}
-
-function retroceder() {
-    index = (index - 1 + imagenes.length) % imagenes.length;
-    carrusel();
-}
-
-function carrusel() {
+let intervaloCarrusel;
+export function iniciarCarrusel() {
     const imgElement = document.querySelector(".banner-img");
-    if (imgElement) {
-        imgElement.src = imagenes[index];
+
+    if (!imgElement) return;
+
+    window.avanzar = function() {
+        index = (index + 1 + imagenes.length) % imagenes.length;
+        actualizarImagen();
+    };
+
+    window.retroceder = function() {
+        index = (index - 1 + imagenes.length) % imagenes.length;
+        actualizarImagen();
+    };
+
+    function actualizarImagen() {
+        if (imgElement) {
+            imgElement.src = imagenes[index];
+        }
     }
 
+    actualizarImagen();
+    clearInterval(intervaloCarrusel);
+    intervaloCarrusel = setInterval(window.avanzar, 5000);
 }
-setInterval(avanzar, 5000);
-
-carrusel();
-
+document.addEventListener("TemplatesCargados", iniciarCarrusel);
