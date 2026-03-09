@@ -7,23 +7,19 @@ function verificarSesionHeader() {
     // Verificamos si los botones ya están cargados en la pantalla
     if (btnLogin && btnLogout && navPerfil) {
         if (isLoggedIn === 'true') {
-            // Usuario logueado: Ocultamos login, mostramos salir
             btnLogin.classList.add('oculto');
             btnLogout.classList.remove('oculto');
 
-            // Cambiamos el destino del botón Perfil hacia la cuenta del usuario
             navPerfil.href = 'perfil.html';
         } else {
-            // Usuario NO logueado: Mostramos login, ocultamos salir
             btnLogin.classList.remove('oculto');
             btnLogout.classList.add('oculto');
 
-            // Cambiamos el destino del botón Perfil hacia el formulario
             navPerfil.href = 'login.html';
         }
-        return true; // Retornamos true porque ya hizo su trabajogit
+        return true;
     }
-    return false; // Aún no ha cargado el HTML
+    return false;
 }
 
 function cerrarSesion() {
@@ -38,7 +34,7 @@ function cerrarSesion() {
 let intentos = 0;
 const intervaloHeader = setInterval(() => {
     if (verificarSesionHeader() || intentos > 20) {
-        clearInterval(intervaloHeader); // Detenemos la búsqueda cuando lo logra
+        clearInterval(intervaloHeader);
     }
     intentos++;
 }, 50);
