@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Js/registro.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/registro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entradas.html" beforeDir="false" afterPath="$PROJECT_DIR$/entradas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snacks.html" beforeDir="false" afterPath="$PROJECT_DIR$/snacks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
