@@ -17,18 +17,20 @@
 <main class="contenido-principal">
 
     <div class="barra-filtros">
-        <button class="btn-negro-amarillo">Cartelera</button>
-        <button class="btn-negro-amarillo">Proximamente</button>
-        <button class="btn-negro-amarillo margin-auto">Filtros</button>
+        <button id="btn-cartelera" class="btn-negro-amarillo">Cartelera</button>
+        <button id="btn-proximamente" class="btn-negro-amarillo">Proximamente</button>
+        <div class="contenedor-generos">
+            <button class="btn-negro-amarillo-filtros">Filtros</button>
+        </div>
     </div>
 
-    <div class="contenedor-peliculas" id="cartelera">
         <template id="template-cartelera">
             <a class="card-pelicula">
                 <img class="card-pelicula">
             </a>
         </template>
-    </div>
+    <div class="contenedor-peliculas" id="cartelera">
+        </div>
 
 </main>
 
@@ -37,5 +39,6 @@
 
 <script src="Js/header.js"></script>
 <script src="Js/searching.js"></script>
+<script src="Js/cartelera.js"></script>
 </body>
 </html>

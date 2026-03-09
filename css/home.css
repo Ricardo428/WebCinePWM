@@ -35,9 +35,67 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
+    height: 30px;
 }
 
-.margin-auto { margin-left: auto; } /* Empuja el botón Filtros al final */
+/*Funcionamiento botón filtros*/
+.btn-negro-amarillo-filtros {
+    background-color: black;
+    color: white;
+    border: 2px solid yellow;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    height: 30px;
+}
+
+.contenedor-generos {
+    position: relative;
+    width: 20%;
+    margin-left: auto;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Utilizamos misma lista que la del buscador*/
+#lista-generos {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+
+    color: white;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 0 0 16px 16px;
+    background-color: #222;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+#lista-generos li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: background 0.2s;
+}
+
+#lista-generos li:last-child {
+    border-bottom: none;
+}
+
+#lista-generos li:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
 
 /* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
 .contenedor-peliculas {

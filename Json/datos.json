@@ -10,7 +10,8 @@
       "clasificacion": "12+",
       "genero" : "Comedia",
       "horarios": ["11:30", "16:00", "20:30"],
-      "trailer": "https://www.youtube.com/watch?v=ZIqX4Xzd-Xo"
+      "trailer": "https://www.youtube.com/watch?v=ZIqX4Xzd-Xo",
+      "fecha": "12-03-1998"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "clasificacion": "12+",
       "genero" : "Comedia",
       "horarios": ["11:30", "16:00", "20:30", "22:30"],
-      "trailer": "https://www.youtube.com/watch?v=89OfdZ3u3u0"
+      "trailer": "https://www.youtube.com/watch?v=89OfdZ3u3u0",
+      "fecha": "30-03-2001"
     },
     {
       "id": 3,
@@ -32,9 +34,10 @@
       "duracion": "150 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia",
+      "genero" : "Accion",
       "horarios": ["11:30", "13:00", "20:30"],
-      "trailer": "https://www.youtube.com/watch?v=nn7fhaEtAqg"
+      "trailer": "https://www.youtube.com/watch?v=nn7fhaEtAqg",
+      "fecha": "30-09-2005"
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
       "clasificacion": "16+",
       "genero" : "Comedia",
       "horarios": ["10:30", "16:00", "22:30"],
-      "Trailer": "https://www.youtube.com/watch?v=hustuUMeyDI"
+      "Trailer": "https://www.youtube.com/watch?v=hustuUMeyDI",
+      "fecha": "11-03-2011"
     },
     {
       "id": 5,
@@ -56,9 +60,10 @@
       "duracion": "123 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "18+",
-      "genero" : "Comedia",
+      "genero" : "Drama",
       "horarios": ["9:35", "16:00", "20:30"],
-      "Trailer": "https://www.youtube.com/watch?v=JCHWs0f-OKg"
+      "Trailer": "https://www.youtube.com/watch?v=JCHWs0f-OKg",
+      "fecha": "03-10-2014"
     },
     {
       "id": 6,
@@ -68,7 +73,8 @@
       "duracion": "123 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia"
+      "genero" : "Comedia",
+      "fecha": "13-03-2026"
     }
 
   ]

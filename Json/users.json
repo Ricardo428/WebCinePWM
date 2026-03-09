@@ -2,7 +2,7 @@
   {
     "email": "pepe@gmail.com",
     "password": "12345678",
-    "nombre": "Pepe"
+    "nombre": "Pepe",
+    "preferencias": ["Comedia", "Drama"]
   }
-
 ]
