@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn !== 'true') {
         window.location.href = 'login.html';
-        return; // Detenemos la ejecución
+        return;
     }
 
     // 2. Recuperamos los datos del usuario desde la memoria del navegador
