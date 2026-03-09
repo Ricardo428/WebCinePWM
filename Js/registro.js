@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('nombreUsuario', nombre);
-            localStorage.setItem('emailUsuario', email);
+            localStorage.setItem('emailUsuario', emailUsuario);
 
             alert('¡Registro completado con éxito!');
 
-            window.location.href = 'index.html';
+            window.location.href = "eleccion_preferencias.html";
         });
     }
 });

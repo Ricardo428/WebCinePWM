@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Js/addPreferencias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Js/showPreferences.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archivos-webs-PWM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfoFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfoFilm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Js/perfil.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/perfil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Js/registro.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/registro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/Json/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resumen_preferencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/resumen_preferencias.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="tsconfig.json" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev/Mencey-sprint2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Menchy50&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ricardo428/WebCinePWM&quot;,
+    &quot;accountId&quot;: &quot;3177e00a-7044-4ed2-83ba-6bf0701e8b96&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3AP9gLmcpYBVOGkgLoWSDe5vssI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.InfoFilm.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.cartelera.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.eleccion_preferencias.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.pago_bizum.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.perfil.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.proximamente.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.seleccion-pago.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.addPreferencias.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.cartelera.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint-2&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/mench/AppData/Roaming/JetBrains/WebStorm2025.3/node/versions/24.14.0/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="addPreferencias.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Js/addPreferencias.js" working-dir="$PROJECT_DIR$/Js">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.addPreferencias.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="" />
+      <created>1772483450336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772483450336</updated>
+      <workItem from="1772483451505" duration="443000" />
+      <workItem from="1772730807721" duration="2443000" />
+      <workItem from="1772749430941" duration="50000" />
+      <workItem from="1772749563780" duration="265000" />
+      <workItem from="1772811563874" duration="6631000" />
+      <workItem from="1772818333155" duration="109000" />
+      <workItem from="1772986030195" duration="534000" />
+      <workItem from="1773051924501" duration="9346000" />
+      <workItem from="1773061409575" duration="885000" />
+      <workItem from="1773076137848" duration="1106000" />
+      <workItem from="1773077345116" duration="4219000" />
+      <workItem from="1773081637314" duration="2340000" />
+    </task>
+    <task id="LOCAL-00001" summary="Cambios realizados para la mejora del código">
+      <option name="closed" value="true" />
+      <created>1772749692134</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772749692135</updated>
+    </task>
+    <task id="LOCAL-00002" summary="La utilidad del buscador añadida.">
+      <option name="closed" value="true" />
+      <created>1772818228337</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772818228338</updated>
+    </task>
+    <task id="LOCAL-00003" summary="La utilidad de los botónes cartelera, proximamente y filtros realizada correctamente.">
+      <option name="closed" value="true" />
+      <created>1773061139888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773061139888</updated>
+    </task>
+    <task id="LOCAL-00004" summary="La utilidad de los botónes cartelera, proximamente y filtros realizada correctamente.">
+      <option name="closed" value="true" />
+      <created>1773061520382</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773061520382</updated>
+    </task>
+    <task id="LOCAL-00005" summary="La utilidad de las preferencias dinámicas implementadas.">
+      <option name="closed" value="true" />
+      <created>1773081219405</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773081219407</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cambios realizados para la mejora del código" />
+    <MESSAGE value="La utilidad del buscador añadida." />
+    <MESSAGE value="La utilidad de los botónes cartelera, proximamente y filtros realizada correctamente." />
+    <MESSAGE value="La utilidad de las preferencias dinámicas implementadas." />
+    <option name="LAST_COMMIT_MESSAGE" value="La utilidad de las preferencias dinámicas implementadas." />
+  </component>
+</project>

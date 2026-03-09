@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Buscamos el formulario en la página
     const formLogin = document.querySelector('form');
 
     if (formLogin) {
@@ -10,13 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const passwordIngresado = document.getElementById('password').value;
 
             try {
-
                 const respuesta = await fetch('Json/users.json');
                 const usuariosBase = await respuesta.json();
-
-
                 const usuariosNuevos = JSON.parse(localStorage.getItem('usuariosNuevos')) || [];
-
                 const todosLosUsuarios = usuariosBase.concat(usuariosNuevos);
 
                 const usuarioValido = todosLosUsuarios.find(
@@ -26,16 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (usuarioValido) {
                     localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('nombreUsuario', usuarioValido.nombre);
-                    localStorage.setItem('emailUsuario', usuarioValido.email);
+                    localStorage.setItem('emailUsuario', usuarioValido.email); // Esta es la que usaremos
 
-                    window.location.href = 'index.html';
+                    alert('¡Bienvenido/a ' + usuarioValido.nombre + '!');
+                    window.location.href = 'index.html'; // O a tu página principal
                 } else {
-                    alert('Email o contraseña incorrectos. Por favor, revisa tus datos.');
+                    alert('Email o contraseña incorrectos.');
                 }
-
             } catch (error) {
-                console.error('Error al iniciar sesión:', error);
-                alert('Hubo un problema al conectar con la base de datos de usuarios.');
+                console.error('Error:', error);
             }
         });
     }

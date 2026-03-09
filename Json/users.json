@@ -3,6 +3,14 @@
     "email": "pepe@gmail.com",
     "password": "12345678",
     "nombre": "Pepe",
-    "preferencias": ["Comedia", "Drama"]
+    "generos": ["Comedia", "Sci-Fi"],
+    "actores": ["Scarlett Johansson", "Brad Pitt"]
+  },
+  {
+    "email": "ana@gmail.com",
+    "password": "abcdefghi",
+    "nombre": "Ana",
+    "generos": ["Terror", "Drama"],
+    "actores": ["Leonardo DiCaprio"]
   }
 ]
