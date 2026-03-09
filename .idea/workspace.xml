@@ -4,7 +4,6 @@
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Js/registro.js" beforeDir="false" afterPath="$PROJECT_DIR$/Js/registro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/registro.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +79,7 @@
       <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mench\WebStormProjects" />
       <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM" />
     </key>
   </component>
@@ -118,7 +118,7 @@
       <workItem from="1773061409575" duration="885000" />
       <workItem from="1773076137848" duration="1106000" />
       <workItem from="1773077345116" duration="4219000" />
-      <workItem from="1773081637314" duration="2340000" />
+      <workItem from="1773081637314" duration="3451000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios realizados para la mejora del código">
       <option name="closed" value="true" />
@@ -160,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773081219407</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="La utilidad de las preferencias dinámicas implementadas.">
+      <option name="closed" value="true" />
+      <created>1773084007608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773084007608</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
