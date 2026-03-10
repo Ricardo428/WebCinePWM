@@ -114,16 +114,24 @@ body {
 .card-pelicula {
     background-color: #333;
     width: 100%;
-    aspect-ratio: 2 / 3.5;
+    aspect-ratio: 2 / 3;
     border: 6px solid black;
-    border-radius: 12px;
+    border-radius: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     overflow: hidden;
     text-decoration: none;
+    object-fit: cover;
+}
+
+.card-pelicula img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-pelicula:hover {
@@ -147,3 +155,24 @@ body {
 .btn-red-social img { width: 60%; }
 
 .fila-legal { display: flex; gap: 30px; margin-top: 10px; }
+
+
+/* Diseño responsive peliculas */
+
+@media (max-width: 48rem) {
+     .contenedor-peliculas{
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: row;
+         justify-content: flex-start;
+         width: 100%;
+         margin: 1rem 0;
+         gap: 1rem;
+         padding: 0 1rem;
+     }
+
+    .card-pelicula {
+        width: 30%;
+        max-width: 10rem;
+    }
+}
