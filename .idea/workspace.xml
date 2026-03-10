@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +41,12 @@
     &quot;assignee&quot;: &quot;Menchy50&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ricardo428/WebCinePWM",
-    "accountId": "291f03a4-df14-4f91-8a67-cc477e396363"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ricardo428/WebCinePWM&quot;,
+    &quot;accountId&quot;: &quot;3177e00a-7044-4ed2-83ba-6bf0701e8b96&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -65,12 +72,12 @@
     "Node.js.cartelera.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "sprint-2",
     "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img",
-    "nodejs_interpreter_path": "node",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/mench/AppData/Roaming/JetBrains/WebStorm2025.3/node/versions/24.14.0/node",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -84,20 +91,10 @@
       <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="addPreferencias.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Js/addPreferencias.js" working-dir="$PROJECT_DIR$/Js">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.addPreferencias.js" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
       </set>
     </attachedChunks>
   </component>
@@ -120,7 +117,6 @@
       <workItem from="1773076137848" duration="1106000" />
       <workItem from="1773077345116" duration="4219000" />
       <workItem from="1773081637314" duration="3451000" />
-      <workItem from="1773162533319" duration="480000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios realizados para la mejora del código">
       <option name="closed" value="true" />
