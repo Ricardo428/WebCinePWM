@@ -351,3 +351,67 @@
     margin: 1.5rem;
 }
 
+@media (max-width: 40rem) {
+
+    .contenedor-pelicula {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .titulo-pelicula {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pelicula-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+
+    .pelicula-poster,
+    .pelicula-datos {
+        width: 100%;
+    }
+
+
+    .pelicula-poster {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .pelicula-sinopsis {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+
+    .lista-info li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .lista-info strong {
+        width: 100%;
+        color: #666;
+    }
+
+
+    .horarios-contenedor h3 {
+        text-align: center;
+    }
+
+    .lista-horarios {
+        justify-content: center;
+    }
+
+    .btn-hora {
+        width: 45%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+}

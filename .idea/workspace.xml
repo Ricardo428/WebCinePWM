@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
-      <change beforePath="$PROJECT_DIR$/eleccion_preferencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/eleccion_preferencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/historial_peliculas.html" beforeDir="false" afterPath="$PROJECT_DIR$/historial_peliculas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/registro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resumen_preferencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/resumen_preferencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resumen_registrado.html" beforeDir="false" afterPath="$PROJECT_DIR$/resumen_registrado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/estilos.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +37,12 @@
     &quot;assignee&quot;: &quot;Menchy50&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ricardo428/WebCinePWM&quot;,
-    &quot;accountId&quot;: &quot;3177e00a-7044-4ed2-83ba-6bf0701e8b96&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ricardo428/WebCinePWM",
+    "accountId": "291f03a4-df14-4f91-8a67-cc477e396363"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -56,33 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.InfoFilm.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.cartelera.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.eleccion_preferencias.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.pago_bizum.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.perfil.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.proximamente.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.seleccion-pago.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.addPreferencias.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.cartelera.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sprint-2&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/mench/AppData/Roaming/JetBrains/WebStorm2025.3/node/versions/24.14.0/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.InfoFilm.html.executor": "Run",
+    "JavaScript Debug.cartelera.html.executor": "Run",
+    "JavaScript Debug.eleccion_preferencias.html.executor": "Run",
+    "JavaScript Debug.header.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.pago_bizum.html.executor": "Run",
+    "JavaScript Debug.perfil.html.executor": "Run",
+    "JavaScript Debug.proximamente.html.executor": "Run",
+    "JavaScript Debug.seleccion-pago.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.addPreferencias.js.executor": "Run",
+    "Node.js.cartelera.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "sprint-2",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM\img" />
@@ -95,7 +91,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -118,6 +114,7 @@
       <workItem from="1773076137848" duration="1106000" />
       <workItem from="1773077345116" duration="4219000" />
       <workItem from="1773081637314" duration="3451000" />
+      <workItem from="1773167724594" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios realizados para la mejora del código">
       <option name="closed" value="true" />
