@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfoFilm.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfoFilm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sala.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sala.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/estilos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/layout.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +41,12 @@
     &quot;assignee&quot;: &quot;Menchy50&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ricardo428/WebCinePWM",
-    "accountId": "291f03a4-df14-4f91-8a67-cc477e396363"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ricardo428/WebCinePWM&quot;,
+    &quot;accountId&quot;: &quot;291f03a4-df14-4f91-8a67-cc477e396363&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -73,6 +77,8 @@
     "git-widget-placeholder": "sprint-2",
     "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
