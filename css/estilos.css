@@ -377,7 +377,7 @@
     }
 
     .titulo-pelicula {
-        font-size: 1.54rem;
+        font-size: 1rem;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -395,7 +395,7 @@
     }
 
     .pelicula-poster {
-        max-width: 14rem;
+        max-width: 11rem;
         margin: 0 auto;
     }
 

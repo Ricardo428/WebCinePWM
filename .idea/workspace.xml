@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7a4695eb-2b8a-4481-93ab-735605029bfd" name="Changes" comment="La utilidad de las preferencias dinámicas implementadas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/estilos.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/seleccion-pago.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/seleccion-pago.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entradas.html" beforeDir="false" afterPath="$PROJECT_DIR$/entradas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seleccion-pago.html" beforeDir="false" afterPath="$PROJECT_DIR$/seleccion-pago.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pago_realizado_con_exito.html" beforeDir="false" afterPath="$PROJECT_DIR$/pago_realizado_con_exito.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +40,12 @@
     &quot;assignee&quot;: &quot;Menchy50&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ricardo428/WebCinePWM",
-    "accountId": "622ffb5d-b461-4731-9b91-1a189688e554"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ricardo428/WebCinePWM&quot;,
+    &quot;accountId&quot;: &quot;622ffb5d-b461-4731-9b91-1a189688e554&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -54,39 +54,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.InfoFilm.html.executor": "Run",
-    "JavaScript Debug.cartelera.html.executor": "Run",
-    "JavaScript Debug.eleccion_preferencias.html.executor": "Run",
-    "JavaScript Debug.header.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "JavaScript Debug.pago_bizum.html.executor": "Run",
-    "JavaScript Debug.perfil.html.executor": "Run",
-    "JavaScript Debug.proximamente.html.executor": "Run",
-    "JavaScript Debug.seleccion-pago.html.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.addPreferencias.js.executor": "Run",
-    "Node.js.cartelera.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "sprint-2",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.InfoFilm.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.cartelera.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.eleccion_preferencias.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.pago_bizum.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.perfil.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.proximamente.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.seleccion-pago.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.addPreferencias.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.cartelera.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint-2&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mench/WebStormProjects/Archivos-webs-PWM/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mench\WebStormProjects\Archivos-webs-PWM\img" />
@@ -123,7 +123,9 @@
       <workItem from="1773077345116" duration="4219000" />
       <workItem from="1773081637314" duration="3451000" />
       <workItem from="1773167724594" duration="28000" />
-      <workItem from="1773311834085" duration="9351000" />
+      <workItem from="1773311834085" duration="9398000" />
+      <workItem from="1773393506478" duration="638000" />
+      <workItem from="1773481288665" duration="4710000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios realizados para la mejora del código">
       <option name="closed" value="true" />
