@@ -1071,10 +1071,10 @@ main.contenedor-ancho {
 /* --- Sección Total y QR --- */
 .ticket-inferior {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
-    padding-right: 20px; /* Para alinear el QR con el borde derecho de las cajas */
+    padding-right: 20px;
 }
 
 .caja-total {
@@ -1082,11 +1082,64 @@ main.contenedor-ancho {
     font-size: 1.1rem;
 }
 
+
 .ticket-qr {
-    width: 120px;
-    height: 120px;
+    width: auto;
+    height: auto;
 }
 
+
+@media (max-width: 40rem) {
+    .container {
+        margin: 1rem auto;
+        width: 95%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    .icono-check {
+        font-size: 3.5rem;
+        margin: 0 auto;
+    }
+
+    .caja-saludo {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+
+    .caja-info-correo {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+
+    .caja-titulo h2 {
+        font-size: 0.8rem;
+
+    }
+
+    .texto-pelicula {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+
+    }
+
+    .ticket-poster {
+        width: 35%;
+        max-width: 6rem;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 0.6rem;
+    }
+
+    .ticket-info-der {
+        width: 65%;
+    }
+
+    .ticket-qr {
+        width: 11rem;
+        height: 11rem;
+    }
+}
 /* 14. PANTALLA DE ENTRADAS (Tabla) */
 
 .contenedor-entradas {
