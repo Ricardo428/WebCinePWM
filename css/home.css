@@ -100,7 +100,7 @@ body {
 /* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
 .contenedor-peliculas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 COLUMNAS SIEMPRE */
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     row-gap: 100px;
     width: 95%;
@@ -158,9 +158,9 @@ body {
 .fila-legal { display: flex; gap: 30px; margin-top: 10px; }
 
 
-/* Diseño responsive peliculas */
+/* Diseño responsive peliculas tablet y se  */
 
-@media (max-width: 48rem) {
+@media (max-width: 64rem) {
      .contenedor-peliculas{
          display: flex;
          flex-wrap: wrap;
