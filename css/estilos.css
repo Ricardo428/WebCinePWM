@@ -49,13 +49,14 @@
 }
 
 
-/* Movil pago con tarjeta */
-@media (max-width: 50rem) {
+/* Pago tarjeta responsive */
+@media (max-width: 770px) {
     #ContenidoPrincipal {
         display: flex;
         flex-direction: column-reverse;
         margin: 1rem auto;
         width: 95%;
+        align-items: center;
         box-sizing: border-box;
     }
 
