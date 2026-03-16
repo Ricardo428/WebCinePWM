@@ -3,20 +3,19 @@
 
 #ContenidoPrincipal{
     display: flex;
-    max-width: 65rem;
+    max-width: 50rem;
     justify-content: center;
-    align-items: flex-start;
     margin: 5rem auto;
     padding: 1rem;
+    gap: 2rem;
 }
 
 .resumen-pago{
-    flex: 1;
+    max-width: 25rem;
     background-color: #e0e0e0;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 0.5rem;
 }
-
 
 .resumen-pago h3 {
     margin-top: 0;
@@ -33,31 +32,9 @@
     display: flex;
     justify-content: space-between;
 }
-
-.cuadro-pago{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: gray;
-    width: 45rem;
-    margin-left: 2rem;
-    border-radius: 0.5rem;
-}
-
-.cuadro-pago input {
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.25rem;
-}
-
-
 .Numero{
     width: 100%;
     margin-top: 2rem;
-
 }
 
 .CA-CV{
@@ -68,7 +45,32 @@
 .labels {
     display: flex;
     flex-direction: column;
-    margin: 1.5rem;
+    margin: 1rem;
+}
+
+
+/* Movil pago con tarjeta */
+@media (max-width: 50rem) {
+    #ContenidoPrincipal {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 1rem auto;
+        width: 95%;
+        box-sizing: border-box;
+    }
+
+    .resumen-pago {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .CA-CV{
+        flex-direction: column;
+    }
+
 }
 
 /* Sala */
@@ -134,8 +136,8 @@
 }
 
 .leyenda-item img {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 4px;
 }
 
@@ -145,7 +147,24 @@
     max-width: 400px;
 }
 
-/*Pelicula*/
+@media (max-width: 40rem) {
+
+    .titulo-sala{
+        font-size: 1rem;
+    }
+
+    .leyenda-item{
+        font-size: 0.6rem;
+    }
+
+    .leyenda-item img {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 4px;
+    }
+}
+
+/* Pelicula */
 
 .contenedor-pelicula {
     max-width: 1000px;
@@ -276,78 +295,70 @@
 
 
 
-#ContenidoPrincipal{
-    display: flex;
-    max-width: 65rem;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 5rem auto;
-    padding: 1rem;
+@media (max-width: 40rem) {
+    .contenedor-pelicula {
+        margin: 1rem auto;
+        width: 95%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .titulo-pelicula {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pelicula-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .pelicula-poster,
+    .pelicula-datos {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pelicula-poster {
+        max-width: 11rem;
+        margin: 0 auto;
+    }
+
+    .pelicula-sinopsis {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .lista-info li {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        gap: 5px;
+    }
+
+    .lista-info strong {
+        width: 100%;
+        color: #666;
+    }
+
+    .horarios-contenedor h3 {
+        text-align: center;
+    }
+
+
+    .lista-horarios {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .btn-hora {
+        font-size: 0.8rem;
+        min-width: 5rem;
+        text-align: center;
+        box-sizing: border-box;
+    }
 }
-
-.resumen-pago{
-    flex: 1;
-    background-color: #e0e0e0;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
-
-.resumen-pago h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 1rem;
-    color: #444;
-}
-
-.resumen-pago ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.resumen-pago ul li{
-    list-style: none;
-    padding: 0.8rem 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.cuadro-pago{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: gray;
-    width: 45rem;
-    margin-left: 2rem;
-    border-radius: 0.5rem;
-}
-
-.cuadro-pago input {
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.25rem;
-}
-
-
-.Numero{
-    width: 100%;
-    margin-top: 2rem;
-
-}
-
-.CA-CV{
-    display: flex;
-    width: 100%;
-}
-
-.labels {
-    display: flex;
-    flex-direction: column;
-    margin: 1.5rem;
-}
-

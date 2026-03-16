@@ -38,7 +38,7 @@ body {
     height: 30px;
 }
 
-/*Funcionamiento botón filtros*/
+/* Funcionamiento botón filtros */
 .btn-negro-amarillo-filtros {
     background-color: black;
     color: white;
@@ -60,7 +60,7 @@ body {
     flex-direction: column;
 }
 
-/*Utilizamos misma lista que la del buscador*/
+/* Utilizamos misma lista que la del buscador */
 #lista-generos {
     position: absolute;
     top: 100%;
@@ -100,13 +100,14 @@ body {
 /* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
 .contenedor-peliculas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 COLUMNAS SIEMPRE */
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     row-gap: 100px;
     width: 95%;
     max-width: 1200px;
     margin-bottom: 60px;
     margin-right: 60px;
+    margin-left: 60px;
 }
 
 /*  */
@@ -157,9 +158,9 @@ body {
 .fila-legal { display: flex; gap: 30px; margin-top: 10px; }
 
 
-/* Diseño responsive peliculas */
+/* Diseño responsive peliculas tablet y se  */
 
-@media (max-width: 48rem) {
+@media (max-width: 64rem) {
      .contenedor-peliculas{
          display: flex;
          flex-wrap: wrap;
@@ -167,6 +168,7 @@ body {
          justify-content: flex-start;
          width: 100%;
          margin: 1rem 0;
+         max-width: 50rem;
          gap: 1rem;
          padding: 0 1rem;
      }
