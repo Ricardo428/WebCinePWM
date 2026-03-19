@@ -100,14 +100,14 @@ body {
 /* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
 .contenedor-peliculas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 40px;
-    row-gap: 100px;
+
+    /* ¡ESTA ES LA LÍNEA MÁGICA! */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    gap: 40px; /* gap aplica el espacio tanto en filas como en columnas */
     width: 95%;
     max-width: 1200px;
-    margin-bottom: 60px;
-    margin-right: 60px;
-    margin-left: 60px;
+    margin: 0 auto 60px auto; /* Centra la cuadrícula automáticamente */
 }
 
 /*  */
@@ -160,7 +160,7 @@ body {
 
 /* Diseño responsive peliculas tablet y se  */
 
-@media (max-width: 64rem) {
+@media (max-width: 50rem) {
      .contenedor-peliculas{
          display: flex;
          flex-wrap: wrap;
