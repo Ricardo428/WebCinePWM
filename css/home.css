@@ -1,4 +1,5 @@
-/* 1. CONFIGURACIÓN DEL LIENZO (BODY) */
+/* Home */
+
 body {
     margin: 0;
     padding: 0;
@@ -18,7 +19,8 @@ body {
     padding-top: 20px;
 }
 
-/* 4. SECCIÓN CARTELERA Y FILTROS */
+/* Cartelera y filtros */
+
 .barra-filtros {
     display: flex;
     width: 95%;
@@ -39,6 +41,7 @@ body {
 }
 
 /* Funcionamiento botón filtros */
+
 .btn-negro-amarillo-filtros {
     background-color: black;
     color: white;
@@ -97,20 +100,15 @@ body {
     color: #000;
 }
 
-/* 5. CUADRÍCULA DE PELÍCULAS (GRILLA) */
 .contenedor-peliculas {
     display: grid;
-
-    /* ¡ESTA ES LA LÍNEA MÁGICA! */
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-
-    gap: 40px; /* gap aplica el espacio tanto en filas como en columnas */
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 40px;
     width: 95%;
     max-width: 1200px;
-    margin: 0 auto 60px auto; /* Centra la cuadrícula automáticamente */
+    margin: 0 auto 60px auto;
 }
 
-/*  */
 
 .card-pelicula {
     background-color: #333;
@@ -158,7 +156,7 @@ body {
 .fila-legal { display: flex; gap: 30px; margin-top: 10px; }
 
 
-/* Diseño responsive peliculas tablet y se  */
+/* Diseño responsive peliculas   */
 
 @media (max-width: 50rem) {
      .contenedor-peliculas{

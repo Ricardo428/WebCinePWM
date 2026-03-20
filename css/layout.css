@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 80rem; /* Ancho de los objetos */
+    max-width: 80rem;
 }
 
 .buscador-container {
@@ -264,6 +264,8 @@ footer h3 {
         margin-top: 2rem;
     }
 }
+
+
 /* Barra de pasos */
 .barra-pasos {
     background-color: #d3d3d3;
@@ -282,7 +284,7 @@ footer h3 {
     text-align: center;
     margin: 0.5rem 0;
     white-space: nowrap;
-    color: #666; /* Gris por defecto para los pasos apagados */
+    color: #666;
     transition: color 0.3s ease;
 }
 
@@ -295,7 +297,7 @@ footer h3 {
 #linea {
     height: 100%;
     background-color: #cc0000;
-    width: var(--progreso, 0%); /* Usa la variable, si no existe pone 0% */
+    width: var(--progreso, 0%);
     transition: width 0.5s ease;
 }
 
@@ -332,23 +334,23 @@ footer h3 {
 
 .perfil-acciones {
     display: flex;
-    gap: 15px; /* Espacio entre los dos botones */
-    margin-top: 30px; /* Separación con los datos de arriba */
+    gap: 15px;
+    margin-top: 30px;
 }
 
 /* Base común para ambos botones */
 .btn-perfil {
-    flex: 1; /* Esto hace que ambos botones midan exactamente lo mismo (50% y 50%) */
+    flex: 1;
     text-align: center;
     padding: 12px;
     border-radius: 6px;
     font-weight: bold;
-    text-decoration: none; /* Quitamos el subrayado típico de los enlaces */
+    text-decoration: none;
     transition: all 0.3s ease;
     font-size: 0.95rem;
 }
 
-/* Estilo del botón principal (Relleno) */
+/* Botón principal */
 .btn-primario {
     background-color: var(--color-primario);
     color: white;
@@ -361,7 +363,7 @@ footer h3 {
     color: white;
 }
 
-/* Estilo del botón secundario (Borde o "Fantasma") */
+/*  Botón secundario  */
 .btn-secundario {
     background-color: transparent;
     color: var(--color-primario);
@@ -383,7 +385,7 @@ footer h3 {
 
 
 
-/*Temporizador */
+/* Temporizador */
 .contador-header {
     display: flex;
     flex-direction: column;
@@ -424,7 +426,7 @@ footer h3 {
 
 
 
-/* imagenes-peliculas */
+/* Imagenes-peliculas */
 
 .banner-container {
     position: relative;
@@ -470,7 +472,7 @@ footer h3 {
     right: 20px;
 }
 
-/* Clase maestra para que JS oculte elementos */
+
 .oculto {
     display: none !important;
 }

@@ -1,5 +1,5 @@
 
-/* PayTarjet*/
+/* PayTarjeT*/
 
 #ContenidoPrincipal{
     display: flex;
@@ -49,7 +49,7 @@
 }
 
 
-/* Pago tarjeta responsive */
+/* Pay tarjet responsive */
 @media (max-width: 770px) {
     #ContenidoPrincipal {
         display: flex;
