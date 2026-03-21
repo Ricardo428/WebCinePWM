@@ -1,36 +1,43 @@
-document.querySelector('form').addEventListener('submit', function(event) {
-    // Seleccionamos todos los inputs de cantidad
-    const inputs = document.querySelectorAll('.input-cantidad');
-    let totalEntradas = 0;
-
-    // Sumamos los valores de todos los inputs
-    inputs.forEach(function(input) {
-        totalEntradas += parseInt(input.value) || 0;
-    });
-
-    // Si el total es 0, detenemos el envío y avisamos al usuario
-    if (totalEntradas === 0) {
-        event.preventDefault(); // Esta línea es la que bloquea el salto de página
-        alert('Por favor, selecciona al menos una entrada para poder continuar.');
-    }
-});
 
 const inputs = document.querySelectorAll('.input-cantidad');
-const celdaTotalAdulto = document.querySelector('#totalAdulto');
+let totalAdulto = 0;
+let totalNiños = 0;
+let totalNormal = 0;
+let totalEntradas = 0;
 
+const celdaTotalAdulto = document.querySelector('#totalAdulto');
 inputs[1].addEventListener('input', function(event) {
-    const total = parseFloat(event.target.value) || 0;
-    celdaTotalAdulto.textContent = (total*6.5).toFixed(2) + " €";
+    totalAdulto = parseFloat(event.target.value) || 0;
+    celdaTotalAdulto.textContent = (totalAdulto*6.5).toFixed(2) + " €";
 })
 
 const celdaTotalNiño = document.querySelector('#totalNiño');
 inputs[2].addEventListener('input', function(event) {
-    const totalNiño = parseFloat(event.target.value) || 0;
-    celdaTotalNiño.textContent = (totalNiño*5.0).toFixed(2) + " €";
+    totalNiños = parseFloat(event.target.value) || 0;
+    celdaTotalNiño.textContent = (totalNiños*5.0).toFixed(2) + " €";
 })
 
 const celdaTotalNormal = document.querySelector('#totalNormal');
 inputs[0].addEventListener('input', function(event) {
-    const totalNormal = parseFloat(event.target.value) || 0;
+    totalNormal = parseFloat(event.target.value) || 0;
     celdaTotalNormal.textContent = (totalNormal*8.0).toFixed(2) + " €";
 })
+
+
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    let dinero = (totalAdulto*6.5) +
+        (totalNiños*5.0) +
+        (totalNormal*8.0)
+
+    sessionStorage.setItem("dinero",dinero.toFixed(2))
+    sessionStorage.setItem("Adulto",totalAdulto)
+    sessionStorage.setItem("Niños",totalNiños)
+    sessionStorage.setItem("Normal",totalNormal)
+    let totalEntradas = totalAdulto + totalNiños + totalNormal;
+
+    if (totalEntradas === 0) {
+        event.preventDefault();
+        alert('Por favor, selecciona al menos una entrada para poder continuar.');
+    }
+});

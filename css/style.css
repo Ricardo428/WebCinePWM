@@ -136,6 +136,34 @@ a:hover {
     margin-top: 20px;
 }
 
+@media (max-width: 90rem) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+        min-height: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        background-color: var(--color-tarjeta);
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px 40px 20px 40px;
+        border-radius: var(--radio-borde);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    legend, label[for="actor-input"] {
+        font-size: 20px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
 /* 5. Géneros y Actores */
 fieldset {
     border: none;
@@ -515,6 +543,47 @@ main:has(.historial-contenedor) {
     border-radius: 4px;
     font-weight: bold;
     transition: all 0.3s ease;
+}
+
+
+@media (max-width: 90rem) {
+    main:has(.historial-contenedor) {
+        max-width: 850px;
+        padding: 50px;
+        width: 95%;
+    }
+
+    .compra-info {
+        padding-left: 10px;
+    }
+
+    .compra-titulo {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px 20px 10px 20px;
+        min-height: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .compra-poster {
+        width: 120px;
+        height: 180px;
+    }
+
+    .detalle-linea {
+        font-size: 1.05rem;
+    }
+
+    .btn-pag {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
 }
 
 /* 9. Seleccion de snacks   */

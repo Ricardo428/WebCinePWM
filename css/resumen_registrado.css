@@ -74,7 +74,7 @@
     align-items: flex-start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 56rem) {
 
     .main-content {
         flex-direction: column;
