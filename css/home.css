@@ -102,7 +102,7 @@ body {
 
 .contenedor-peliculas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
     gap: 40px;
     width: 95%;
     max-width: 1200px;
@@ -113,6 +113,7 @@ body {
 .card-pelicula {
     background-color: #333;
     width: 100%;
+    max-width: 280px;
     aspect-ratio: 2 / 3;
     border: 6px solid black;
     border-radius: 1rem;

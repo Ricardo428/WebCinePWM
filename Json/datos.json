@@ -21,7 +21,7 @@
       "duracion": "125 min",
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
-      "genero" : "Comedia",
+      "genero" : "Drama",
       "horarios": ["11:30", "16:00", "20:30", "22:30"],
       "trailer": "https://www.youtube.com/watch?v=89OfdZ3u3u0",
       "fecha": "30-03-2001"
@@ -49,7 +49,7 @@
       "clasificacion": "16+",
       "genero" : "Comedia",
       "horarios": ["10:30", "16:00", "22:30"],
-      "Trailer": "https://www.youtube.com/watch?v=hustuUMeyDI",
+      "trailer": "https://youtu.be/hustuUMeyDI?si=91bg3YTneWS2GPji",
       "fecha": "11-03-2011"
     },
     {
@@ -62,7 +62,7 @@
       "clasificacion": "18+",
       "genero" : "Drama",
       "horarios": ["9:35", "16:00", "20:30"],
-      "Trailer": "https://www.youtube.com/watch?v=JCHWs0f-OKg",
+      "trailer": "https://youtu.be/ppiadC1sSik?si=SRykP-Ngyu2vEyn_",
       "fecha": "03-10-2014"
     },
     {
@@ -74,6 +74,8 @@
       "reparto" : "Santiago Segura",
       "clasificacion": "12+",
       "genero" : "Comedia",
+      "horarios": "",
+      "trailer": "https://youtu.be/tnH_xUjTObI?si=ENXLfX7r0fBETtaY",
       "fecha": "13-03-2026"
     }
 
