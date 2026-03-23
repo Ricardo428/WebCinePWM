@@ -183,10 +183,10 @@
 
 
 .titulo-resumen {
-    font-size: 35px;
+    font-size: 30px;
     color: #444;
     margin: 0 0 10px 0;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .tabla-resumen {
