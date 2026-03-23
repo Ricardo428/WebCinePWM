@@ -74,6 +74,10 @@
     align-items: flex-start;
 }
 
+.titulo-movil{
+    display: none;
+}
+
 @media (max-width: 56rem) {
 
     .main-content {
@@ -120,6 +124,15 @@
         font-size: 1.2rem;
         padding: 12px 0;
     }
+
+    .titulo-desktop{
+        display: none;
+    }
+
+    .titulo-movil {
+        display: block;
+    }
+
 }
 
 .sidebar {

@@ -16,7 +16,9 @@ async function cargarDatosResumen(imagen,nombre,fecha,hora) {
         if (pelicula) {
             document.querySelector(imagen).src = pelicula.imagen;
             document.querySelector(hora).textContent = `Hora: ${horaBuscada}`;
-            document.querySelector(nombre).textContent = `${pelicula.titulo}`;
+            document.querySelectorAll(nombre).forEach(titulo => {
+                titulo.textContent = `${pelicula.titulo}`;
+            });
             document.querySelector(fecha).textContent = `Dia: ${new Date().toLocaleDateString()}`;
 
         } else {
