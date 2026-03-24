@@ -322,69 +322,6 @@ footer h3 {
     }
 }
 
-:root {
-    --color-fondo: #f4f4f9;
-    --color-tarjeta: #ffffff;
-    --color-texto: #333333;
-    --color-primario: #1e1e1e;
-    --color-primario-hover: #444444;
-    --color-borde: #cccccc;
-    --radio-borde: 8px;
-}
-
-.perfil-acciones {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-/* Base común para ambos botones */
-.btn-perfil {
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-/* Botón principal */
-.btn-primario {
-    background-color: var(--color-primario);
-    color: white;
-    border: 2px solid var(--color-primario);
-}
-
-.btn-primario:hover {
-    background-color: var(--color-primario-hover);
-    border-color: var(--color-primario-hover);
-    color: white;
-}
-
-/*  Botón secundario  */
-.btn-secundario {
-    background-color: transparent;
-    color: var(--color-primario);
-    border: 2px solid var(--color-primario);
-}
-
-.btn-secundario:hover {
-    background-color: var(--color-primario);
-    color: white;
-}
-
-@media (max-width: 40rem)  {
-
-    .btn-perfil {
-        padding: 0.6rem;
-        font-size: 0.7rem;
-    }
-}
-
-
-
 /* Temporizador */
 .contador-header {
     display: flex;
