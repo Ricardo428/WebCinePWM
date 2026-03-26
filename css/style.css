@@ -400,12 +400,19 @@ fieldset input[type="checkbox"] + label {
     border-color: var(--color-primario-hover);
 }
 
-@media (max-width: 25rem) {
-    .perfil-acciones{
+@media (max-width: 35rem) {
+    .perfil-acciones {
         margin: auto;
-        padding: 1rem;
-        flex-direction: column;
-        width: 70%;
+        padding: 1rem 0;
+        width: 100%;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .perfil-acciones .btn-perfil {
+        height: 38px;
+        font-size: 0.9rem;
+        padding: 0 10px;
     }
 }
 
@@ -1207,6 +1214,7 @@ main.contenedor-ancho {
     .tabla-entradas td {
         font-size: 0.75rem !important;
         padding: 8px 4px !important;
+        white-space: nowrap !important;
     }
 
     .input-cantidad {
@@ -1222,6 +1230,29 @@ main.contenedor-ancho {
         width: 98% !important;
     }
 }
+
+
+@media (max-width: 48rem) {
+    .contenedor-entradas {
+        width: 95%;
+        max-width: none;
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    .tabla-entradas th,
+    .tabla-entradas td {
+        font-size: 0.95rem;
+        padding: 10px 5px;
+    }
+
+    .input-cantidad {
+        width: 45px;
+        padding: 5px;
+    }
+
+}
+
 
 @media (min-width: 46.5rem) and (max-width: 63rem) {
     .contenedor-entradas,
@@ -1245,24 +1276,5 @@ main.contenedor-ancho {
     }
 }
 
-@media (max-width: 48rem) {
-    .contenedor-entradas {
-        width: 95%;
-        max-width: none;
-        padding: 20px 10px;
-        margin: 10px auto;
-    }
 
-    .tabla-entradas th,
-    .tabla-entradas td {
-        font-size: 1.2rem;
-        padding: 10px 5px;
-    }
-
-    .input-cantidad {
-        width: 45px;
-        padding: 5px;
-    }
-
-}
 
