@@ -1,8 +1,8 @@
 
 
 const imagenes = [
-    "img/avatar_poster.jpg",
-    "img/Torrente Presidente.jpg"
+    "img/Mario_galaxy.jpg",
+    "img/Kill_bill.jpg"
 ];
 let index = 0;
 let intervaloCarrusel;

@@ -61,7 +61,7 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
 
 * login.html
     * Funciones
-        * Hemos añadido gracias a la ayuda del fichero Json/users.json que puedas iniciar sesión correctamente si está la información de la cuenta en el fichero. Los usuarios con los que hicimos las pruebas son pepe@gmail.com y ana@gmail.com.
+        * Hemos añadido gracias a la ayuda del fichero Json/users.json que puedas iniciar sesión correctamente si está la información de la cuenta en el fichero. Los usuarios con los que hicimos las pruebas son pepe@gmail.com y ana@gmail.com con las contraseñas "12345678" y "abcdefghi" respectivamente.
     * Carga JSON
         * Esta página coge información JSON para el correcto inicio de sesión.
     * Validaciones

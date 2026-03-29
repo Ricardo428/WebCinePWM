@@ -86,9 +86,7 @@ async function filtrarPorGenero(generoElegido) {
     }
 }
 
-/**
- * 3. CONFIGURACIÓN DE EVENTOS (DOM CONTENT LOADED)
- */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const btnCartelera = document.getElementById("btn-cartelera");
@@ -102,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const generos = ["Comedia", "Drama", "Accion"];
     const listaUL = document.createElement("ul");
     listaUL.id = "lista-generos";
-    listaUL.style.display = "none"; // Oculto inicialmente
+    listaUL.style.display = "none";
 
     generos.forEach(genero => {
         const li = document.createElement("li");

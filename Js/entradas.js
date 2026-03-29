@@ -3,7 +3,6 @@ const inputs = document.querySelectorAll('.input-cantidad');
 let totalAdulto = 0;
 let totalNiños = 0;
 let totalNormal = 0;
-let totalEntradas = 0;
 
 const celdaTotalAdulto = document.querySelector('#totalAdulto');
 inputs[1].addEventListener('input', function(event) {
