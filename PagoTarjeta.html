@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCREEN&EAT</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+
+        #ContenidoPrincipal{
+            display: flex;
+            max-width: 65rem;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 5rem auto;
+            padding: 1rem;
+        }
+
+        .resumen-pago{
+            flex: 1;
+            background-color: #e0e0e0;
+            padding: 3rem;
+            border-radius: 0.5rem;
+        }
+
+
+        .resumen-pago h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 1rem;
+            color: #444;
+        }
+
+        .resumen-pago ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resumen-pago ul li{
+            list-style: none;
+            padding: 0.8rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cuadro-pago{
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: gray;
+            width: 45rem;
+            margin-left: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .cuadro-pago input {
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.25rem;
+        }
+
+
+        .Numero{
+            width: 100%;
+            margin-top: 2rem;
+
+        }
+
+        .CA-CV{
+            display: flex;
+            width: 100%;
+        }
+
+        .labels {
+            display: flex;
+            flex-direction: column;
+            margin: 1.5rem;
+        }
+
+
+        .botones{
+            font-weight: bold;
+            text-align: center;
+            padding: 0.5rem;
+            margin: 1rem;
+        }
+
+        .botones button{
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: lightgray;
+            padding: 1rem 3rem;
+            border-radius: 0.7rem;
+            margin: auto 2rem;
+        }
+
+        .botones button:hover{
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+<main id="ContenidoPrincipal">
+
+    <div class="resumen-pago">
+        <h3>Datos de la operacion</h3>
+        <ul>
+            <li><strong>IMPORTE:</strong> 12$</li>
+            <li><strong>Comercio:</strong> Yelmo Cines</li>
+            <li><strong>Terminal:</strong> 34345677</li>
+            <li><strong>Pedido:</strong> 212343</li>
+            <li><strong>Fecha:</strong> 23/02/2026</li>
+            <li><strong>Descripción:</strong> Entradas Torrente</li>
+        </ul>
+
+    </div>
+
+    <div class="cuadro-pago">
+        <div class="Numero">
+            <label class="labels">
+                <input type="text" placeholder="Número de tarjeta">
+            </label>
+        </div>
+
+        <div class="CA-CV">
+            <label class="labels">
+                <input type="text" placeholder="Caducidad">
+            </label>
+
+            <label class="labels">
+
+                <input type="text" placeholder="CVV">
+            </label>
+        </div>
+
+
+        <div class="botones">
+            <button>Volver</button>
+            <button>Pagar</button>
+        </div>
+
+    </div>
+
+
+
+</main>
+</body>
+</html>

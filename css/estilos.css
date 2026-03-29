@@ -1,0 +1,238 @@
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+    background-color: lightgray;
+}
+
+/* PayTarjet*/
+
+#ContenidoPrincipal{
+    display: flex;
+    max-width: 65rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5rem auto;
+    padding: 1rem;
+}
+
+.resumen-pago{
+    flex: 1;
+    background-color: #e0e0e0;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+
+.resumen-pago h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+    color: #444;
+}
+
+
+.resumen-pago ul li{
+    list-style: none;
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuadro-pago{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    width: 45rem;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
+}
+
+.cuadro-pago input {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+
+.Numero{
+    width: 100%;
+    margin-top: 2rem;
+
+}
+
+.CA-CV{
+    display: flex;
+    width: 100%;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+}
+
+/* Sala */
+
+#container-hall {
+    min-width: 20rem;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#butacas{
+    width: 100%;
+}
+
+#butacas table{
+    border: black 0.1rem solid;
+    width: 100%;
+}
+
+.botones{
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.botones button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 1rem 3rem;
+    border-radius: 0.7rem;
+    margin: auto 2rem;
+}
+
+.botones button:hover{
+    background-color: #f2f2f2;
+}
+#imagen{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#imagen img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/*Pelicula*/
+#container-film {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    margin: auto;
+}
+
+#titulo-pelicula {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#contenido-columnas {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#columna-izquierda {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+#columna-izquierda img {
+    width: 100%;
+    height: auto;
+}
+
+#columna-izquierda a {
+    text-decoration: none;
+    color: black;
+    background-color: #e0e0e0;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#columna-izquierda a:hover {
+    color: green;
+    background-color: #ccc;
+}
+
+#columna-derecha {
+    width: 70%;
+}
+
+#columna-derecha p {
+    margin-top: 0;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+#informacion {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#horarios {
+    margin-left: 3rem;
+}
+
+#pelicula {
+    width: 50%;
+}
+
+#horarios ul, #pelicula ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#pelicula li {
+    margin-bottom: 0.8rem;
+}
+
+#horarios ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 40rem;
+}
+
+#horarios a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+#horarios a:hover {
+    background-color: red;
+}
+
+
+
