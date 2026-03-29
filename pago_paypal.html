@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script type="module" src="Js/main.js"></script>
+</head>
+<body class="paso-5">
+<header xlu-include-file="templates/header.html"></header>
+<header xlu-include-file="templates/Pasos.html"></header>
+<div xlu-include-file="templates/contador.html"></div>
+<div class="container">
+
+    <main class="contenedor-pago">
+
+        <div class="pago-cabecera">
+            <img src="/img/logo_paypal.png" alt="Logo de PayPal" class="logo-paypal">
+        </div>
+
+        <section class="pago-contenido">
+            <h2 class="pago-pregunta">¿Cómo desea pagar sus compras?</h2>
+
+            <form action="pago_realizado_con_exito.html" method="POST">
+
+                <div class="grupo-formulario">
+                    <label for="tipo-pago">Tipo de pago</label>
+                    <select id="tipo-pago" name="tipo_pago" class="input-gris">
+                        <option value="saldo">Saldo de PayPal</option>
+                        <option value="tarjeta">Visa terminada en 4321</option>
+                        <option value="cuenta">Cuenta Bancaria</option>
+                    </select>
+                </div>
+
+                <div class="grupo-formulario direccion-bloque">
+                    <label>Dirección de facturación:</label>
+                    <div class="direccion-datos">
+                        <p><strong>84937, Etiopa, Ghana</strong></p>
+                        <a href="#" class="enlace-cambiar">Cambiar</a>
+                    </div>
+                </div>
+
+                <div class="perfil-acciones acciones-sala">
+                    <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+                    <button class="btn-perfil btn-primario">Continuar</button>
+                </div>
+
+
+            </form>
+        </section>
+    </main>
+</div>
+
+
+</body>
+<script src="Js/header.js"></script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="css/resumen_registrado.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reserva de Entradas</title>
+    <script type="module" src="Js/main.js"></script>
+    <script src="Js/resumen.js"></script>
+</head>
+<body class="paso-4">
+
+<header xlu-include-file="templates/header.html"></header>
+<div xlu-include-file="templates/Pasos.html"></div>
+<div xlu-include-file="templates/contador.html"></div>
+<div class="rectangulo-entero">
+    <main class="main-content">
+        <h2 class="titulo-resumen titulo-movil"></h2>
+        <aside class="sidebar">
+            <div class="cuadrado-peli">
+                <img class="imagenes" alt="Póster Avatar">
+            </div>
+            <div class="info-peli">Screen & Eat Las Palmas </div>
+            <div class="info-peli fecha"></div>
+            <div class="info-peli hora" ></div>
+            <div class="info-peli">Butaca: 14B</div>
+            <div class="info-peli">Fila: 14</div>
+            <div class="iconos-peli">
+                <img src="ticket amarillo.png" alt="Ticket">
+                <img src="imagen audifonos pwm.png" alt="Audífonos">
+            </div>
+        </aside>
+
+        <section class="right-content">
+            <div>
+                <h2 class="titulo-resumen titulo-desktop"></h2>
+                <table class="tabla-resumen">
+                    <thead>
+                    <tr>
+                        <th>Entrada</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody class="contenedor-filas">
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="total"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tarjeta-opcion">
+                <img src="comida cine.webp" alt="Sin gluten">
+                <div class="texto-opcion">¿Alguna comida especial?</div>
+                <button class="btn-accion">Canjear puntos</button>
+            </div>
+
+            <div class="tarjeta-opcion">
+                <img src="Subtitulos.png" alt="Necesidad especial">
+                <div class="texto-opcion" style="text-align: left; padding-left: 57px;">¿Alguna necesidad especial?</div>
+                <div style="width: 140px;"></div>
+            </div>
+
+            <div class="perfil-acciones">
+                <a href="snacks.html" class="btn-perfil btn-secundario">Volver</a>
+                <a href="seleccion-pago.html" class="btn-perfil btn-primario">Siguiente</a>
+            </div>
+
+
+        </section>
+    </main>
+</div>
+<script>
+    document.addEventListener("TemplatesCargados", cargarDatosResumen(".imagenes",".titulo-resumen",".fecha",".hora"));
+</script>
+</body>
+<script src="Js/header.js"></script>
+</html>

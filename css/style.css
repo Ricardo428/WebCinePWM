@@ -1,0 +1,1271 @@
+
+/* 1. Variables globales */
+
+:root {
+    --color-fondo: #f4f4f9;
+    --color-tarjeta: #ffffff;
+    --color-texto: #333333;
+    --color-primario: #1e1e1e;
+    --color-primario-hover: #444444;
+    --color-borde: #cccccc;
+    --radio-borde: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /
+    padding: 60px 20px;
+    min-height: 60vh;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* El contenedor principal  */
+main {
+    background-color: var(--color-tarjeta);
+    width: 100%;
+    max-width: 450px;
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primario);
+}
+
+/* 2.  Formularios (Login y Registro) */
+form div, .input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.1rem, 1.5rem);
+
+}
+
+#captcha{
+    display: flex;
+    float: left;
+    flex-direction: row-reverse;
+}
+
+
+/* 3.  Estilos para las cajas de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+/* Efecto al hacer clic en un input */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+
+/* 4. Botones */
+button[type="submit"],
+.btn-add {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: clamp(1rem, 1.1rem, 1.5rem);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+.btn-add:hover {
+    background-color: var(--color-primario-hover);
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password, .register-link {
+    text-align: right;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 90rem) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+        min-height: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    legend, label[for="actor-input"] {
+        font-size: 20px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+/* 5. Géneros y Actores */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-fondo);
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+
+.grid-checkboxes,
+fieldset > div:not(.buscador-actor) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+}
+
+.opcion,
+fieldset > div > div {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fondo);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+}
+
+.opcion input[type="checkbox"],
+fieldset input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.opcion label,
+fieldset input[type="checkbox"] + label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* 5. Buscador de actores */
+.buscador-actor > div {
+    display: flex;
+    gap: 10px;
+}
+
+.buscador-actor button {
+    width: auto;
+    margin-top: 0;
+    padding: 10px 20px;
+}
+
+/*  6. Pantalla resumen */
+.texto-centrado {
+    text-align: center;
+    color: var(--color-texto);
+    margin-bottom: 25px;
+}
+
+.bloque-resumen {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: var(--color-fondo);
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--color-borde);
+}
+
+.bloque-resumen h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: left; /
+}
+
+
+.lista-pildoras {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Estilo individual de cada género/actor */
+.lista-pildoras li {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Estilo para que el enlace final */
+.acciones-finales {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-enlace {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-enlace:hover {
+    background-color: var(--color-primario-hover);
+    text-decoration: none;
+}
+
+/* 7.  Diseño perfil  */
+
+.perfil-contenedor {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.perfil-etiqueta {
+    background-color: var(--color-primario);
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+}
+
+.perfil-etiqueta h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Datos */
+.perfil-datos {
+    background-color: white;
+    border: 3px solid var(--color-primario);
+    border-radius: 0 8px 8px 8px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Estilo lista de datos */
+.lista-datos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-datos li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.lista-datos li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.dato-label {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.dato-valor {
+    color: #555;
+    font-family: monospace;
+    font-size: 1.15rem;
+}
+
+.texto-destacado {
+    color: #e6b800;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Botones perfil */
+
+.perfil-acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+
+.perfil-acciones .btn-perfil {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 1rem;
+    height: 48px;
+    padding: 0 24px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    width: auto;
+    margin: 0;
+}
+
+.perfil-acciones .btn-secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+
+.perfil-acciones .btn-secundario:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.perfil-acciones .btn-primario {
+    background-color: var(--color-primario);
+    color: white;
+    border: 2px solid var(--color-primario);
+}
+
+.perfil-acciones .btn-primario:hover {
+    background-color: var(--color-primario-hover);
+    border-color: var(--color-primario-hover);
+}
+
+@media (max-width: 35rem) {
+    .perfil-acciones {
+        margin: auto;
+        padding: 1rem 0;
+        width: 100%;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .perfil-acciones .btn-perfil {
+        height: 38px;
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
+
+/* 8. Historial de compra */
+
+
+main:has(.historial-contenedor) {
+    max-width: 600px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.titulo-seccion h1 { margin-bottom: 5px; }
+.titulo-seccion p { color: #666; }
+
+
+/* Lista de Tarjetas de Compra  */
+.lista-compras {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.compra-card {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.compra-card:last-child {
+    border-bottom: none;
+}
+
+/* Estilo del Póster */
+.compra-poster {
+    width: 100px;
+    white-space: nowrap;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de la información a la derecha */
+.compra-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    padding: 5px 0;
+}
+
+/* Cabecera con Título y enlace pequeño */
+.info-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.compra-titulo {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-primario);
+}
+
+/* Botón pequeño para "Ver ticket" */
+.btn-detalles-mini {
+    font-size: 0.8rem;
+    color: var(--color-primario);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Detalles compra  */
+.compra-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detalle-linea {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icono {
+    font-size: 1.1rem;
+}
+
+/* Destacar el precio final */
+.precio-total {
+    font-size: 1.1rem;
+    color: var(--color-primario);
+    margin-top: 5px;
+}
+
+
+
+@media (max-width: 90rem) {
+    main:has(.historial-contenedor) {
+        max-width: 850px;
+        padding: 50px;
+        width: 95%;
+    }
+
+    .compra-info {
+        padding-left: 10px;
+    }
+
+    .compra-titulo {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px 20px 10px 20px;
+        min-height: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .compra-poster {
+        width: 120px;
+        height: 180px;
+    }
+
+    .detalle-linea {
+        font-size: 1.05rem;
+    }
+
+    .btn-pag {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 9. Seleccion de snacks   */
+main.contenedor-ancho {
+    max-width: 1100px;
+    margin: 25px;
+    padding: 0 20px;
+}
+
+.titulo-snacks {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* Rejilla principal  */
+.snacks-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 300px;
+    gap: 25px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+/* Categorías */
+.snacks-categorias {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 15px 0;
+}
+
+.lista-categorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cat-item {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s;
+}
+
+.cat-icono {
+    font-size: 1.5rem;
+}
+
+.cat-item:hover {
+    background-color: var(--color-fondo);
+}
+
+.cat-item.activa {
+    background-color: var(--color-fondo);
+    border-left-color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* Rejilla de Productos  */
+.snacks-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.producto-card {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.prod-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.prod-titulo {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: var(--color-texto);
+}
+
+.prod-precio {
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 0 0 15px 0;
+}
+
+.btn-add-snack {
+    width: 100%;
+    padding: 8px;
+    background-color: white;
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-add-snack:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+/* 10.Resumen del Pedido */
+.snacks-resumen {
+    background-color: #f9f9f9;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.snacks-resumen h3 {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.lista-ticket {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    min-height: 150px;
+}
+
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 0.95rem;
+}
+
+.resumen-footer {
+    border-top: 2px solid var(--color-primario);
+    padding-top: 15px;
+}
+
+.ticket-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-snack-primario, .btn-snack-secundario {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 2px solid var(--color-primario);
+    transition: all 0.2s;
+}
+
+.btn-snack-primario {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.btn-snack-primario:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.btn-snack-secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+}
+
+.btn-snack-secundario:hover {
+    background-color: #eee;
+}
+
+/*  Navegación Inferior */
+.paginacion-inferior {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-top: 1px solid var(--color-borde);
+    padding: 20px;
+    margin: 20px;
+}
+
+.paginacion-inferior .btn-pag {
+    width: 200px;
+}
+
+
+/* Tablet  */
+@media (max-width: 1024px) {
+    .snacks-layout {
+        grid-template-columns: 1fr 17.5rem;
+    }
+
+    .snacks-categorias {
+        grid-column: 1 / -1;
+        padding: 0;
+        overflow-x: auto;
+        border-radius: var(--radio-borde);
+    }
+
+    .lista-categorias {
+        display: flex;
+        white-space: nowrap;
+    }
+
+    .cat-item {
+        border-left: none;
+        border-bottom: 0.25rem solid transparent;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .cat-item.activa {
+        border-left-color: transparent;
+        border-bottom-color: var(--color-primario);
+    }
+}
+
+
+/* Movil  */
+@media (max-width: 768px) {
+    main.contenedor-ancho {
+        padding: 0 0.93rem
+    }
+    .snacks-layout {
+        grid-template-columns: 1fr;
+        gap: 0.93rem;
+    }
+
+    .snacks-resumen {
+        position: static;
+        margin-top: 1.25rem;
+    }
+
+    .snacks-productos {
+        grid-template-columns: repeat(auto-fill, minmax(8.125rem, 1fr));
+        gap: 0.625rem;
+    }
+
+    .prod-titulo {
+        font-size: 0.9rem;
+    }
+
+
+    .paginacion-inferior {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0.625rem;
+    }
+
+    .paginacion-inferior .btn-pag {
+        width: 100%;
+    }
+}
+
+/* PayPal */
+
+.contenedor-pago {
+    max-width: 650px;
+    width: 100%;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera (Logo)  */
+.pago-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-fondo);
+}
+
+.logo-paypal {
+    height: 35px;
+    object-fit: contain;
+}
+
+
+/* Contenido del pago  */
+.pago-pregunta {
+    color: #cc0000;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+}
+
+.input-gris {
+    background-color: #e6e6e6;
+    border: 1px solid #ccc;
+    padding: 12px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Bloque de Dirección */
+.direccion-bloque {
+    margin-top: 30px;
+}
+
+.direccion-datos {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.direccion-datos p {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.enlace-cambiar {
+    color: #0033cc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.enlace-cambiar:hover {
+    text-decoration: underline;
+}
+
+/* 11. Cabecera bizum */
+
+/* Temporizador  */
+.columna-temporizador {
+    width: 200px;
+    text-align: center;
+}
+
+.temporizador-etiqueta {
+    color: red;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.temporizador-tiempo {
+    background-color: #d9d9d9;
+    padding: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Formulario Bizum */
+.columna-formulario {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-bizum {
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.form-bizum {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.grupo-form-bizum {
+    width: 100%;
+    text-align: center;
+}
+
+.grupo-form-bizum label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.1rem;
+}
+
+/* Inputs grises  */
+.input-bizum {
+    background-color: #ccc;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+/* Contenedor especial  */
+.input-con-icono {
+    display: flex;
+    background-color: #ccc;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.input-con-icono .input-bizum {
+    flex-grow: 1;
+    justify-content: start;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.icono-movil {
+    margin-top: 15px;
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.icono-movil img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Botón Final */
+.btn-continuar-compra {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-continuar-compra:hover {
+    background-color: #c0c0c0;
+}
+
+/* 12. Pantalla final */
+
+.contenedor-exito {
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.caja-gris {
+    background-color: #d9d9d9;
+    padding: 15px 20px;
+    color: black;
+}
+
+.caja-gris p, .caja-gris h2 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Mensajes superiores */
+.exito-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.caja-titulo h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.icono-check {
+    color: #00cc44;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: bold;
+}
+
+/* Sección Película y Butacas  */
+.ticket-pelicula {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.ticket-poster {
+    width: 150px;
+    object-fit: cover;
+}
+
+.ticket-info-der {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*  Sección Total y QR */
+.ticket-inferior {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.caja-total {
+    padding: 20px 40px;
+    font-size: 1.1rem;
+}
+
+
+.ticket-qr {
+    width: auto;
+    height: auto;
+}
+
+
+@media (max-width: 40rem) {
+    .container {
+        margin: 1rem auto;
+        width: 95%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    .icono-check {
+        font-size: 3.5rem;
+        margin: 0 auto;
+    }
+
+    .caja-saludo {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+
+    .caja-info-correo {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+
+    .caja-titulo h2 {
+        font-size: 0.8rem;
+
+    }
+
+    .texto-pelicula {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+
+    }
+
+    .ticket-poster {
+        width: 35%;
+        max-width: 6rem;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 0.6rem;
+    }
+
+    .ticket-info-der {
+        width: 65%;
+    }
+
+    .ticket-qr {
+        width: 11rem;
+        height: 11rem;
+    }
+}
+/* 13. Entradas */
+
+.contenedor-entradas {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+}
+
+.fieldset-entradas {
+    border: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.tabla-entradas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-entradas th {
+    text-align: left;
+    padding: 15px 10px;
+    border-bottom: 2px solid #ccc;
+    font-weight: normal;
+    color: #333;
+}
+
+.tabla-entradas td {
+    padding: 20px 10px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+.input-cantidad {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.tabla-entradas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+@media (max-width: 25rem) {
+    .tabla-entradas th,
+    .tabla-entradas td {
+        font-size: 0.75rem !important;
+        padding: 8px 4px !important;
+        white-space: nowrap !important;
+    }
+
+    .input-cantidad {
+        font-size: 0.8rem !important;
+        width: 45px !important;
+        height: 35px !important;
+        padding: 2px !important;
+        text-align: center;
+    }
+
+    .contenedor-entradas {
+        padding: 15px 5px !important;
+        width: 98% !important;
+    }
+}
+
+
+@media (max-width: 48rem) {
+    .contenedor-entradas {
+        width: 95%;
+        max-width: none;
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    .tabla-entradas th,
+    .tabla-entradas td {
+        font-size: 0.95rem;
+        padding: 10px 5px;
+    }
+
+    .input-cantidad {
+        width: 45px;
+        padding: 5px;
+    }
+
+}
+
+
+@media (min-width: 46.5rem) and (max-width: 63rem) {
+    .contenedor-entradas,
+    .contenedor-pago,
+    .contenedor-bizum {
+        width: 90%;
+        max-width: 700px;
+        padding: 40px;
+    }
+
+    .tabla-entradas th,
+    .tabla-entradas td {
+        font-size: 1rem;
+        padding: 15px 10px;
+    }
+
+    .input-cantidad {
+        font-size: 1.1rem;
+        width: 60px;
+        height: 40px;
+    }
+}
+
+
+

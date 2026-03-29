@@ -1,0 +1,130 @@
+.cuadrado-metodo {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin-top: 1rem;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.rectangulo-opciones {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 350px;
+    gap: 70px;
+}
+
+.cuadrado-opcion {
+    flex-direction: column;
+    justify-items: center;
+    width: 370px;
+    background-color: rgb(216, 214, 214);
+    height: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+.cuadrado-opcion:hover {
+    background-color: rgb(216, 214, 233);
+    text-decoration: none;
+}
+
+.cuadrado-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+}
+
+.cuadrado-logo img {
+    width: 90%;
+    height: 100%;
+}
+
+.informacion-opcion {
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+
+
+#volver{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#contenedor-volver {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+@media (max-width: 64rem) {
+
+    .cuadrado-metodo {
+        font-size: 1.2rem;
+        margin-left: 0;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .rectangulo-opciones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-left: 0;
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .cuadrado-opcion {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 25rem;
+        width: 70%;
+        height: auto;
+        padding: 0 1.5rem;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .cuadrado-logo {
+        width: 4rem;
+        height: 4rem;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cuadrado-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .informacion-opcion {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-left: 1.5rem;
+        text-align: left;
+    }
+
+    #volver{
+        margin-top: 1rem;
+        max-width: 15rem;
+    }
+}

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="Js/main.js"></script>
+</head>
+<body class="paso-2">
+<header xlu-include-file="templates/header.html"></header>
+<div xlu-include-file="templates/Pasos.html"></div>
+<div xlu-include-file="templates/contador.html"></div>
+
+<div class="container">
+
+    <main class="contenedor-entradas">
+
+
+        <form method="post" action="snacks.html">
+            <fieldset class="fieldset-entradas">
+                <table class="tabla-entradas">
+                    <thead>
+                    <tr>
+                        <th>Tipo de entrada</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+
+                    <tbody aria-required="true">
+                    <tr>
+                        <td>Normal</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>8,00 €</td>
+                        <td id="totalNormal">0,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Pack familia Adulto</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>6,50 €</td>
+                        <td id="totalAdulto">0,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Pack familia Niño</td>
+                        <td><input type="number" min="0" value="0" class="input-cantidad"></td>
+                        <td>5,00 €</td>
+                        <td id="totalNiño">0,00 €</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+
+            <div class="perfil-acciones acciones-sala">
+                <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+                <button type="submit" class="btn-perfil btn-primario" >Siguiente</button>
+            </div>
+        </form>
+    </main>
+</div>
+<script>
+
+
+</script>
+</body>
+<script src="Js/header.js"></script>
+<script src="Js/entradas.js"></script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <title>SCREEN&EAT</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="module" src="Js/main.js"></script>
+    <script  src="Js/resumen.js"></script>
+</head>
+<body class="paso-5">
+<header xlu-include-file="templates/header.html"></header>
+<div xlu-include-file="templates/Pasos.html"></div>
+<div xlu-include-file="templates/contador.html"></div>
+
+
+<div class="container">
+
+    <main id="ContenidoPrincipal">
+
+        <div class="resumen-pago">
+            <h3>Datos de la operacion</h3>
+            <ul>
+                <li >IMPORTE:</strong><span class="total"></span> </li>
+                <li><strong>Comercio:</strong> Yelmo Cines</li>
+                <li><strong>Terminal:</strong> 34345677</li>
+                <li><strong>Pedido:</strong> 212343</li>
+                <li><strong>Fecha:</strong> 23/02/2026</li>
+                <li><strong>Descripción:</strong> Entradas Torrente</li>
+            </ul>
+
+        </div>
+
+        <div class="resumen-pago">
+            <form action="pago_realizado_con_exito.html" method="POST">
+
+                <div class="Numero">
+                    <label class="labels">
+                        <input type="text"
+                               placeholder="Número de tarjeta"
+                               required
+                               maxlength="16"
+                               minlength="16"
+                               pattern="[0-9]{16}"
+                               inputmode="numeric"
+                               title="Introduce exactamente 16 números sin espacios">
+                    </label>
+                </div>
+
+                <div class="CA-CV">
+                    <label class="labels">
+                        <input type="text" placeholder="Caducidad" required>
+                    </label>
+
+                    <label class="labels">
+
+                        <input type="text"
+                               placeholder="CVV"
+                               required
+                               maxlength="3"
+                               minlength="3"
+                               pattern="[0-9]{3}"
+                               inputmode="numeric"
+                               title="El CVV debe contener exactamente 3 números">
+                    </label>
+                </div>
+
+
+                <nav class="perfil-acciones acciones-sala">
+                    <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+                    <button type="submit" class="btn-perfil btn-primario">Siguiente</button>
+                </nav>
+            </form>
+
+        </div>
+
+
+
+    </main>
+</div>
+
+</body>
+<script src="Js/header.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/seleccion-pago.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Document</title>
+  <script type="module" src="Js/main.js"></script>
+</head>
+<body class="paso-5">
+<header xlu-include-file="templates/header.html"></header>
+<header xlu-include-file="templates/pasos.html"></header>
+<div xlu-include-file="templates/contador.html"></div>
+
+<div class="cuadrado-metodo"><b>Seleccione el método de pago</b></div>
+
+<div id="contenedor-volver">
+  <div class="rectangulo-opciones">
+    <a href="pago_bizum.html" class="cuadrado-opcion">
+      <div class="cuadrado-logo">
+        <img src="/img/logo_bizum.png" alt="">
+      </div>
+      <div class="informacion-opcion">Bizum</div>
+    </a>
+    <a href="pago_paypal.html" class="cuadrado-opcion">
+      <div class="cuadrado-logo">
+        <img src="/img/seleccion_pago_paypal.png" alt="">
+      </div>
+      <div class="informacion-opcion">Paypal</div>
+    </a>
+    <a href="pago_tarjeta.html" class="cuadrado-opcion">
+      <div class="cuadrado-logo">
+        <img src="/img/seleccion_de_pago_logo_tarjetas.webp" alt="">
+      </div>
+      <div class="informacion-opcion">Tarjeta de Crédito</div>
+    </a>
+  </div>
+
+
+  <div class="perfil-acciones">
+    <a href="InfoFilm.html" class="btn-perfil btn-primario" id="volver">Volver</a>
+  </div>
+
+</div>
+
+
+</body>
+<script src="Js/header.js"></script>
+</html>

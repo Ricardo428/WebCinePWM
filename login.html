@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <link rel="stylesheet" href="css/layout.css">
+    <script type="module" src="Js/main.js"></script>
+</head>
+<body>
+<header xlu-include-file="templates/header.html"></header>
+<header xlu-include-file="templates/carrusel.html"></header>
+
+<div class="container">
+    <main>
+        <fieldset >
+            <legend>Log in</legend>
+
+            <form action="index.html" method="post">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required autocomplete="email">
+                </div>
+
+                <div>
+                    <label for ="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="" required autocomplete="current-password" minlength="8">
+                </div>
+
+                <div>
+                    <a href="https://www.google.com/">¿Has olvidado la contraseña?</a>
+                </div>
+
+                <div>
+                    <a href="registro.html">No tengo cuenta</a>
+                </div>
+
+                <div id="captcha">
+                    <label for="captcha-check">No soy un robot</label>
+                    <input type="checkbox" id="captcha-check" required>
+                </div>
+
+                <div>
+                    <button type="submit">Entrar</button>
+                </div>
+
+
+
+            </form>
+        </fieldset>
+
+    </main>
+
+</div>
+<footer xlu-include-file="templates/footer.html"></footer>
+
+
+<script src="Js/login.js"></script>
+<script src="Js/header.js"></script>
+</body>
+</html>

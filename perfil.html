@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <script type="module" src="Js/main.js"></script>
+  <script src="Js/carrusel.js"></script>
+</head>
+<body>
+<header xlu-include-file="templates/header.html"></header>
+<header xlu-include-file="templates/carrusel.html"></header>
+<div class="container">
+  <main>
+    <section class="perfil-contenedor">
+
+      <header class="perfil-etiqueta">
+        <h2 id="perfil-nombre-display">Perfil</h2>
+      </header>
+
+      <div class="perfil-datos">
+        <ul class="lista-datos">
+          <li>
+            <span class="dato-label">Email:</span>
+            <span class="dato-valor" id="perfil-email-display">Cargando...</span>
+          </li>
+
+          <li>
+            <span class="dato-label">Contraseña:</span>
+            <span class="dato-valor">*******</span>
+          </li>
+          <li>
+            <span class="dato-label">Puntos:</span>
+            <span class="dato-valor texto-destacado">2000</span>
+          </li>
+        </ul>
+
+        <div class="perfil-acciones acciones-sala">
+          <a href="historial_peliculas.html" class="btn-perfil btn-primario">Historial</a>
+          <a href="resumen_preferencias.html" class="btn-perfil btn-secundario">Preferencias</a>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+</div>
+<footer xlu-include-file="templates/footer.html"></footer>
+
+
+<script src="Js/header.js"></script>
+<script src="Js/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.85">
+  <title>Pago con Bizum - SCREEN & EAT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script type="module" src="Js/main.js"></script>
+</head>
+<body class="paso-5">
+
+<header xlu-include-file="templates/header.html"></header>
+<header xlu-include-file="templates/Pasos.html"></header>
+<div xlu-include-file="templates/contador.html"></div>
+
+<div class="container">
+  <main class="contenedor-bizum">
+    <section class="columna-formulario">
+      <img src="/img/logo_bizum.png" alt="Bizum" class="logo-bizum">
+
+      <form action="pago_realizado_con_exito.html" method="POST" class="form-bizum">
+
+        <div class="grupo-form-bizum">
+          <label>Teléfono registrado en Bizum</label>
+          <input type="text" class="input-bizum" required>
+        </div>
+
+        <div class="grupo-form-bizum">
+          <label>Introduce número de teléfono</label>
+          <div class="input-con-icono">
+            <div class="icono-movil">
+              <img src="img/MovilBizum.png" alt="">
+            </div>
+            <input type="tel" class="input-bizum" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-continuar-compra">Continuar la compra</button>
+      </form>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+<script src="Js/header.js"></script>
+</html>

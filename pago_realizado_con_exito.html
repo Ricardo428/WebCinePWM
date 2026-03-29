@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Compra Exitosa - SCREEN & EAT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.85">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script type="module" src="Js/main.js"></script>
+  <script src="Js/resumen.js"></script>
+</head>
+<body>
+<header xlu-include-file="templates/header.html"></header>
+<div class="container">
+  <main class="contenedor-exito">
+
+    <div class="exito-header">
+      <div class="caja-gris caja-titulo">
+        <h2><strong>¡PAGO REALIZADO CON ÉXITO!</strong></h2>
+      </div>
+      <span class="icono-check">✔</span>
+    </div>
+
+    <div class="caja-gris caja-saludo">
+      <p>¡Disfruta de la película Pepe!</p>
+    </div>
+
+    <div class="caja-gris caja-info-correo">
+      <p>Hemos enviado un correo de confirmación a pepe@gmail.com</p>
+    </div>
+
+    <section class="ticket-pelicula">
+      <img alt="Foto película" class="ticket-poster">
+
+      <div class="ticket-info-der">
+        <div class="caja-gris texto-pelicula">
+          <p class="titulo-resumen">/p>
+          <p>Screen & Eat Las Palmas - Sala 1</p>
+          <p class="fecha"></p>
+          <p class="hora"></p>
+          <p>BUTACAS: Fila H - 04, 05</p>
+          <p class="total">TOTAL: </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticket-inferior">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Código QR Ticket" class="ticket-qr">
+    </section>
+
+    <div class="perfil-acciones acciones-sala">
+      <a href="index.html" class="btn-perfil btn-secundario">Ir a cartelera</a>
+      <button class="btn-perfil btn-primario">Descargar Ticket</button>
+    </div>
+
+  </main>
+
+</div>
+<script>
+  document.addEventListener("TemplatesCargados", cargarDatosResumen(".ticket-poster",".titulo-resumen",".fecha",".hora"));
+</script>
+</body>
+<script src="Js/header.js"></script>
+</html>

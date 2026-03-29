@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script type="module" src="Js/main.js"></script>
+</head>
+<body>
+<header xlu-include-file="templates/header.html"></header>
+<div xlu-include-file="templates/carrusel.html"></div>
+<div class="container">
+<main>
+    <section class="historial-contenedor">
+
+        <header class="titulo-seccion">
+            <h1>Historial de Compras</h1>
+            <p>Tus últimas adquisiciones en Screen & Eat.</p>
+        </header>
+
+        <ul class="lista-compras">
+
+            <li class="compra-card">
+                <img src="https://via.placeholder.com/100x150/1e1e1e/ffffff?text=Poster+1" alt="Póster Película 1" class="compra-poster">
+
+                <div class="compra-info">
+                    <div class="info-cabecera">
+                        <h3 class="compra-titulo">Dune: Parte Dos</h3>
+
+                    </div>
+
+                    <div class="compra-detalles">
+                        <p class="detalle-linea">
+                            Fecha: <strong>15/10/2026</strong>
+                        </p>
+                        <p class="detalle-linea">
+                            Entradas: <strong>2 Adultos</strong>
+                        </p>
+                        <p class="detalle-linea precio-total">
+                            Total: <strong>18,50 €</strong>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="compra-card">
+                <img src="https://via.placeholder.com/100x150/1e1e1e/ffffff?text=Poster+2" alt="Póster Película 2" class="compra-poster">
+                <div class="compra-info">
+                    <div class="info-cabecera">
+                        <h3 class="compra-titulo">Wonka</h3>
+
+                    </div>
+                    <div class="compra-detalles">
+                        <p class="detalle-linea">Fecha: <strong>02/11/2026</strong></p>
+                        <p class="detalle-linea">Entradas: <strong>1 Adulto</strong></p>
+                        <p class="detalle-linea precio-total">Total: <strong>9,00 €</strong></p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="compra-card">
+                <img src="https://via.placeholder.com/100x150/1e1e1e/ffffff?text=Poster+3" alt="Póster Película 3" class="compra-poster">
+                <div class="compra-info">
+                    <div class="info-cabecera">
+                        <h3 class="compra-titulo">Los Juegos del Hambre</h3>
+
+                    </div>
+                    <div class="compra-detalles">
+                        <p class="detalle-linea">Fecha: <strong>20/12/2026</strong></p>
+                        <p class="detalle-linea">Entradas: <strong>3 Adultos</strong></p>
+                        <p class="detalle-linea precio-total">Total: <strong>25,00 €</strong></p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <nav class="paginacion" aria-label="Paginación del historial">
+            <span class="pag-indicador">Página 1 de 4</span>
+
+            <div class="perfil-acciones acciones-sala">
+                <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+                <a href="entradas.html" class="btn-perfil btn-primario">Siguiente</a>
+            </div>
+        </nav>
+
+    </section>
+</main>
+</div>
+<footer xlu-include-file="templates/footer.html"></footer>
+
+
+</body>
+<script src="Js/header.js"></script>
+</html>

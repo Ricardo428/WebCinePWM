@@ -1,0 +1,459 @@
+
+/*Header*/
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+.header-gris {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 80rem;
+}
+
+.buscador-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 25px;
+    width: 30%;
+    z-index: 1000;
+}
+
+#lista-resultados {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+
+    color: white;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 0 0 16px 16px;
+    background-color: #222;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+#lista-resultados li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    transition: background 0.2s;
+}
+
+#lista-resultados li:last-child {
+    border-bottom: none;
+}
+
+#lista-resultados li:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.circulo_logo {
+    width: 6rem;
+    height: 6rem;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circulo_logo img {
+    width: 80%; height: auto;
+}
+
+.circulo_logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+
+.header-top label {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.header-top input.buscador-principal {
+    flex-direction: column;
+    width: 25rem;
+    height: 2rem;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.header-top input.buscador-principal::placeholder {
+    color: #666;
+}
+
+.btn-sesion {
+    background-color: #e6194b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-sesion:hover {
+    background-color: red;
+    text-decoration: none;
+}
+
+.nav-superior {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-negro-amarillo {
+    background-color: black;
+    color: white;
+    border: 1px solid #ffd700;
+    padding: 5px 0.9rem;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.btn-negro-amarillo:hover {
+    color: white;
+    background-color: #ffd700;
+}
+
+/* Diseño reponsive header */
+@media (max-width: 64rem)  {
+    .buscador-principal {
+        width: 100%;
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 40rem)  {
+    .circulo_logo{
+        display: none;
+    }
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.1rem;
+        padding: 1rem;
+    }
+    .buscador-container {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .buscador-principal {
+        width: 100%;
+        max-width: 13rem;
+        box-sizing: border-box;
+        min-width: 0;
+        font-size: 0.85rem;
+    }
+
+    .btn-negro-amarillo{
+        font-size: 0.6rem;
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+    }
+
+    #sesion-container{
+        margin-left: 4rem;
+        margin-right: 0;
+    }
+
+    #sesion-container a,
+    #sesion-container button {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+        border: none;
+    }
+}
+
+
+
+/*Footer*/
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 2rem;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: auto;
+}
+
+.columna{
+    width: 14rem;
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li{
+    margin-bottom: 0.6rem;
+}
+footer a{
+    text-decoration: none;
+    color: #f2f2f2;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer h3 {
+    display: inline-block;
+    color: #ffd700;
+    width: 100%;
+    border-bottom: 0.06rem solid #f2f2f2;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+
+}
+
+@media (max-width: 64rem)  {
+    footer{
+        font-size: 0.7rem;
+        margin-top: 2rem;
+    }
+}
+
+
+/* Barra de pasos */
+.barra-pasos {
+    background-color: #d3d3d3;
+    padding-top: 1rem;
+}
+
+.barra-pasos ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin-top: 0.25rem;
+}
+
+.barra-pasos li {
+    flex: 1;
+    text-align: center;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+#pista-progreso {
+    width: 100%;
+    height: 0.25rem;
+    background-color: #b3b3b3;
+}
+
+#linea {
+    height: 100%;
+    background-color: #cc0000;
+    width: var(--progreso, 0%);
+    transition: width 0.5s ease;
+}
+
+.paso-1 { --progreso: 20%; }
+.paso-1 .p-1 { color: #000; font-weight: bold; }
+
+.paso-2 { --progreso: 40%; }
+.paso-2 .p-1, .paso-2 .p-2 { color: #000; font-weight: bold; }
+
+.paso-3 { --progreso: 60%; }
+.paso-3 .p-1, .paso-3 .p-2, .paso-3 .p-3 { color: #000; font-weight: bold; }
+
+.paso-4 { --progreso: 80%; }
+.paso-4 .p-1, .paso-4 .p-2, .paso-4 .p-3, .paso-4 .p-4 { color: #000; font-weight: bold; }
+
+.paso-5 { --progreso: 100%; }
+.paso-5 li { color: #000; font-weight: bold; }
+
+@media (max-width: 40rem)  {
+    .barra-pasos li {
+        font-size: 0.7rem;
+    }
+}
+
+/* Temporizador */
+.contador-header {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 2.5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contador-header span {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contador-header strong {
+    font-size: 28px;
+    color: #000;
+    background-color: #d9d9d9;
+    padding: 10px 25px;
+    border-radius: 4px;
+    text-align: center;
+    width: fit-content;
+}
+
+@media (max-width: 40rem)  {
+    .contador-header span {
+        font-size: 0.8rem;
+    }
+
+    .contador-header strong{
+        font-size: 1rem;
+    }
+
+}
+
+
+
+
+/* Imagenes-peliculas */
+
+.banner-container {
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 350px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: yellow;
+}
+
+.flecha-banner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.flecha-banner:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.flecha-izq {
+    left: 20px;
+}
+
+.flecha-der {
+    right: 20px;
+}
+
+
+.oculto {
+    display: none !important;
+}
+
+@media (max-width: 64rem) {
+    .banner-container{
+        position: relative;
+        width: 95%;
+        aspect-ratio: 21 / 9;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin: 1.5rem auto 0;
+    }
+
+    .banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: yellow;
+    }
+
+    .flecha-banner {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        cursor: pointer;
+        user-select: none;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 0.8rem;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+
+    .flecha-banner:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .flecha-izq {
+        left: 0.9rem;
+    }
+
+    .flecha-der {
+        right: 0.9rem;
+    }
+}
