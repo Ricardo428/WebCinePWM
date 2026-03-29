@@ -45,10 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const entradas = tiposEntradas.filter(entradas => entradas.cantidad > 0)
 
+    const contenedorFilas = document.querySelector(".contenedor-filas")
+
     entradas.forEach(entrada => {
         const subtotal = (entrada.cantidad * entrada.precio).toFixed(2);
 
-        document.querySelector(".contenedor-filas").innerHTML += `
+        if (contenedorFilas){
+            contenedorFilas.innerHTML += `
             <tr>
                 <td>${entrada.nombre}</td>
                 <td>${entrada.cantidad}</td>
@@ -56,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td><strong>${subtotal} €</strong></td>
             </tr>
         `;
+        }
     })
-    document.querySelector("#total").textContent = `${total} € `;
+    document.querySelector(".total").textContent += `${total} € `;
 
 })
