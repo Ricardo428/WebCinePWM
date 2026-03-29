@@ -1,7 +1,7 @@
 # SCREEN & EAT
 
 
-## Componentes del grupo 
+## Componentes del grupo
 
 * Ricardo García Rodríguez
 * Juan Daniel López Melainine
@@ -56,7 +56,7 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
 * La siguientes páginas se ha implementado diseños adaptables:
     * Móvil
         * Mantienen la coherencia visual, priorizando el orden vertical.
-    * Tablet 
+    * Tablet
         * Los diseños son generalmente muy parecidos a los originales pero con la herramienta column a disposición si hay saturación de información en pantalla.
 
 * login.html
@@ -76,7 +76,7 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
     * Validaciones
         * Nombre y Apellido: Atributo required para asegurar que el usuario se identifique.
         * Atributo type="email" para validar la estructura del correo y required para que no lo deje vacio.
-        *Fecha de nacimiento: Uso de type="date" que despliega un calendario y asegura una fecha válida.
+          *Fecha de nacimiento: Uso de type="date" que despliega un calendario y asegura una fecha válida.
         * Contraseña: Atributos required y minlength="8" para que la contraseña tenga mínimo 8 carácteres y no esté vacia, además los atributos pattern para que tenga una mayúscula, una minúscula, un número y un carácter especial, y el atributo title mensaje que aparece si el usuario no cumple un patrón.
 
 * eleccion_preferencias.html
@@ -86,28 +86,28 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
         * Selección Múltiple: Uso de etiquetas input type="checkbox" para permitir que el usuario elija varios géneros cinematográficos a la vez.
         * Sugerencias de Datos: Se ha implementado una etiqueta datalist vinculada al campo de texto de "Actores".
 
-* resumen_preferencias.html 
+* resumen_preferencias.html
     * Funciones
         * En esta página hemos añadido una funcionalidad para que sea más dinámica y con el fichero Js/showPreferences.js si has iniciado sesión te saldrán tus géneros, actores favoritos y sino no saldrá ninguna información. Los usuarios con los que hicimos las pruebas son pepe@gmail.com y ana@gmail.com.
     * Carga JSON
-        * Esta página no se realiza carga de contenido JSON.
+        * Se cargan las preferencias de cada cliente desde las variables de Json/users.json.
     * Validaciones
         * Esta página no tiene validaciones.
 
-* entradas.html 
+* entradas.html
     * Carga JSON
         * Esta página no se realiza carga de contenido JSON.
     * Validaciones
         * Tipo de dato: Uso de type="number" en los selectores de cantidad para asegurar que solo se introduzcan cifras.
         * Rango: Atributo min="0" para evitar que el usuario introduzca cantidades negativas de entradas.
-        Accesibilidad: Uso de aria-required="true" en el cuerpo de la tabla para indicar la importancia de la sección.
+          Accesibilidad: Uso de aria-required="true" en el cuerpo de la tabla para indicar la importancia de la sección.
 
-* historial_peliculas.html 
+* historial_peliculas.html
     * Carga JSON
         * Esta página no se realiza carga de contenido JSON.
     * Validaciones
         * Esta página no tiene validaciones.
- 
+
 * pago_bizum.html
     * Carga JSON
         * Esta página no se realiza carga de contenido JSON.
@@ -123,7 +123,7 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
 
 * pago_realizado_con_exito.html
     * Carga JSON
-        * Esta página no se realiza carga de contenido JSON.
+        * Se cargan la imagen de la película, fecha y butaca de la película elegida en el fichero Json/datos.json.
     * Validaciones
         * Esta página no tiene validaciones.
 
@@ -136,17 +136,17 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
         * Pattern="[0-9]{16}": Expresión regular que solo permite números y evita letras o espacios.
         * Inputmode="numeric": Fuerza el teclado numérico en móviles.
         * CVV: * pattern="[0-9]{3}" y maxlength="3" y minlength="3": Solo permite exactamente 3 dígitos numéricos.
-        Ayuda al usuario: Uso del atributo title para mostrar mensajes de error personalizados si no se cumple el formato.
+          Ayuda al usuario: Uso del atributo title para mostrar mensajes de error personalizados si no se cumple el formato.
 
-* perfil.html 
+* perfil.html
     * Carga JSON
-        * Esta página no se realiza carga de contenido JSON.
+        * Se cargan el email y la contraseña de las variables del usuario en el fichero Json/users.json.
     * Validaciones
         * Esta página no tiene validaciones.
 
-* resumen_registrado.html 
+* resumen_registrado.html
     * Carga JSON
-        * Esta página no se realiza carga de contenido JSON.
+        * Se carga la foto de la película elegido desde el fichero Json/datos.json.
     * Validaciones
         * Esta página no tiene validaciones.
 
@@ -156,7 +156,7 @@ En este enlace están el diseño de los Mockups de cada dispositivo:
     * Validaciones
         * Esta página no tiene validaciones.
 
-* snacks.html 
+* snacks.html
     * Carga JSON
         * Esta página no se realiza carga de contenido JSON.
     * Validaciones
