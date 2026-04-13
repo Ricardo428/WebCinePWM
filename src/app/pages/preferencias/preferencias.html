@@ -1,0 +1,29 @@
+<div class="container">
+  <main>
+    <div class="perfil-etiqueta">
+    <h1>Tus Preferencias</h1>
+    <section class="bloque-resumen">
+      <h2>Tus Géneros Favoritos</h2>
+      <ul class="lista-pildoras", id="lista-generos">
+        @for (genero of generos; track genero){
+          <li>{{genero}}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="bloque-resumen">
+      <h2>Tus Actores y Actrices Favoritos</h2>
+      <ul class="lista-pildoras", id="lista-actores">
+        @for (actores of actores; track actores){
+          <li>{{actores}}</li>
+        }
+      </ul>
+    </section>
+
+      <div class="perfil-acciones acciones-sala">
+        <a routerLink="/" class="btn-perfil btn-primario">Ir a la Cartelera (Volver)</a>
+      </div>
+    </div>
+  </main>
+
+</div>

@@ -1,0 +1,92 @@
+
+<div class="paso-5">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+
+  <div class="container">
+
+    <main id="ContenidoPrincipal">
+
+      <div class="resumen-pago">
+        <h3>Datos de la operacion</h3>
+        <ul>
+          <li ><strong>IMPORTE:</strong><span class="total"></span> </li>
+          <li><strong>Comercio:</strong> Yelmo Cines</li>
+          <li><strong>Terminal:</strong> 34345677</li>
+          <li><strong>Pedido:</strong> #{{ Math.floor(Math.random() * 90000) + 10000 }}</li>
+          <li><strong>Fecha:</strong> 23/02/2026</li>
+          <li><strong>Descripción:</strong> Compra de entradas y menú</li>
+        </ul>
+
+      </div>
+
+      <div class="resumen-pago">
+        <form (submit)="procesarPagoTarjeta($event)">
+
+          <div class="Numero">
+            <label class="labels">
+              <input type="text"
+                     name="numero"
+                     [(ngModel)]="numeroTarjeta"
+                     (ngModelChange)="formatearTarjeta($event)"
+                     placeholder="Número de tarjeta"
+                     inputmode="numeric"
+                     title="Introduce exactamente 16 números sin espacios"
+                     [disabled]="procesando"
+                     [class.input-error]="errores.numero !== ''">
+              @if (errores.numero) {
+                <span class="texto-error">{{ errores.numero }}</span>
+              }
+
+            </label>
+          </div>
+
+          <div class="CA-CV">
+            <label class="labels">
+              <input type="text"
+                     name="caducidad"
+                     [(ngModel)]="caducidad"
+                     (ngModelChange)="formatearCaducidad($event)"
+                     placeholder="MM/AA"
+                     required
+                     [disabled]="procesando"
+                     [class.input-error]="errores.caducidad !== ''">
+              @if (errores.caducidad) {
+                <span class="texto-error">{{ errores.caducidad }}</span>
+              }
+            </label>
+
+            <label class="labels">
+              <input type="password"
+                     name="cvv"
+                     [(ngModel)]="cvv"
+                     (ngModelChange)="formatearCVV($event)"
+                     placeholder="CVV"
+                     required
+                     inputmode="numeric"
+                     title="El CVV debe contener exactamente 3 números"
+                     [disabled]="procesando"
+                     [class.input-error]="errores.cvv !== ''">
+              @if (errores.cvv) {
+                <span class="texto-error">{{ errores.cvv }}</span>
+              }
+            </label>
+          </div>
+
+
+          <nav class="perfil-acciones acciones-sala" style="margin-top: 2rem">
+            <button type="button" (click)="volverInfoFilm()" class="btn-perfil btn-secundario" [class.deshabilitado]="procesando">Volver</button>
+            <button type="submit" class="btn-perfil btn-primario" [disabled]="procesando">
+              @if (procesando) {
+                Procesando...
+              } @else {
+                Pagar
+              }
+            </button>
+          </nav>
+        </form>
+
+      </div>
+    </main>
+  </div>
+</div>

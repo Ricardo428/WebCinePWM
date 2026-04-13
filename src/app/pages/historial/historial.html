@@ -1,0 +1,48 @@
+<div class="container">
+  <main>
+    <section class="historial-contenedor">
+
+      <header class="titulo-seccion">
+        <h1>Historial de Compras</h1>
+        <p>Tus últimas adquisiciones en Screen & Eat.</p>
+      </header>
+
+      <ul class="lista-compras">
+        @for (compra of compras; track compra.id){
+          <li class="compra-card">
+            <img [src]="compra.imagen" alt="Póster Película 1" class="compra-poster">
+
+            <div class="compra-info">
+              <div class="info-cabecera">
+                <h3 class="compra-titulo">{{compra?.titulo}}</h3>
+
+              </div>
+
+              <div class="compra-detalles">
+                <p class="detalle-linea">
+                  Fecha: <strong>{{ compra?.fecha }}</strong>
+                </p>
+                <p class="detalle-linea">
+                  Entradas: <strong>{{ compra?.entradas }}</strong>
+                </p>
+                <p class="detalle-linea precio-total">
+                  Total: <strong>{{compra?.total}}</strong>
+                </p>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+
+      <nav class="paginacion" aria-label="Paginación del historial">
+        <span class="pag-indicador">Página 1 de 4</span>
+
+        <div class="perfil-acciones acciones-sala">
+          <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
+          <a href="entradas.html" class="btn-perfil btn-primario">Siguiente</a>
+        </div>
+      </nav>
+
+    </section>
+  </main>
+</div>

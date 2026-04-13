@@ -1,0 +1,136 @@
+/* 11. Cabecera bizum */
+
+/* Temporizador  */
+.columna-temporizador {
+  width: 200px;
+  text-align: center;
+}
+
+.temporizador-etiqueta {
+  color: red;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.temporizador-tiempo {
+  background-color: #d9d9d9;
+  padding: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Formulario Bizum */
+.columna-formulario {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-bizum {
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+.form-bizum {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.grupo-form-bizum {
+  width: 100%;
+  text-align: center;
+}
+
+.grupo-form-bizum label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* Inputs grises  */
+.input-bizum {
+  background-color: #ccc;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+/* Contenedor especial  */
+.input-con-icono {
+  display: flex;
+  background-color: #ccc;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.input-con-icono .input-bizum {
+  flex-grow: 1;
+  justify-content: start;
+  background-color: transparent;
+  padding-left: 10px;
+}
+
+.icono-movil {
+  margin-top: 15px;
+  height: 30px;
+  width: 30px;
+  background-color: green;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.icono-movil img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Botón Final */
+.btn-continuar-compra {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-continuar-compra:hover {
+  background-color: #c0c0c0;
+}
+
+/* Estados visuales para la simulación de pago */
+
+.btn-continuar-compra:disabled {
+  background-color: #888;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-continuar-compra:disabled {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+
+.input-bizum:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+}
