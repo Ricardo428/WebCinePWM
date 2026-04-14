@@ -1,0 +1,32 @@
+<body class="paso-5">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+
+<div class="cuadrado-metodo"><b>Seleccione el método de pago</b></div>
+
+<div id="contenedor-volver">
+  <div class="rectangulo-opciones">
+    @for (metodo of metodos; track metodo.id) {
+
+      <div class="cuadrado-opcion" (click)="irAPasarela(metodo)">
+        <div class="cuadrado-logo">
+          <img [src]="metodo.image" [alt]="metodo.name">
+        </div>
+        <div class="informacion-opcion">
+          <b>{{ metodo.name }}</b>
+        </div>
+      </div>
+    }
+  </div>
+
+
+  <div class="perfil-acciones acciones-botones">
+    <button type="button" (click)="volverInfoFilm()" class="btn-perfil btn-secundario" id="volver">Volver</button>
+  </div>
+
+</div>
+
+
+</body>
+
+

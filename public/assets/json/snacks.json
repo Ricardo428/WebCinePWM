@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Coca-Cola",
+    "price": 2.5,
+    "image": "assets/img/snacks_cocacola.png",
+    "category": "Bebida"
+  },
+  {
+    "id": 2,
+    "name": "Agua 70cl",
+    "price": 1.8,
+    "image": "assets/img/snacks_agua.png",
+    "category": "Bebida"
+  },
+  {
+    "id": 3,
+    "name": "Fanta Naranja",
+    "price": 2.5,
+    "image": "assets/img/snacks_fanta_naranja.webp",
+    "category": "Bebida"
+  },
+  {
+    "id": 4,
+    "name": "Palomitas Pequeñas",
+    "price": 3.50,
+    "image": "/assets/img/palomitas_pequenas.png",
+    "category": "Palomitas"
+  },
+  {
+    "id": 5,
+    "name": "Palomitas Gigantes",
+    "price": 5.00,
+    "image": "/assets/img/palomitas_gigantes.png",
+    "category": "Palomitas"
+  },
+  {
+    "id": 6,
+    "name": "Menú Pareja",
+    "price": 10.50,
+    "image": "/assets/img/menu_pareja.png",
+    "category": "Menús"
+  },
+  {
+    "id": 7,
+    "name": "M&Ms",
+    "price": 2.00,
+    "image": "/assets/img/m&ms.png",
+    "category": "Otros"
+  }
+]
+

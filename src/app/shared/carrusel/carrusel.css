@@ -1,0 +1,93 @@
+
+.banner-container {
+  position: relative;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 350px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: yellow;
+}
+
+.flecha-banner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.flecha-banner:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.flecha-izq {
+  left: 20px;
+}
+
+.flecha-der {
+  right: 20px;
+}
+
+
+.oculto {
+  display: none !important;
+}
+
+@media (max-width: 64rem) {
+  .banner-container{
+    position: relative;
+    width: 95%;
+    aspect-ratio: 21 / 9;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1.5rem auto 0;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: yellow;
+  }
+
+  .flecha-banner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+
+  .flecha-banner:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .flecha-izq {
+    left: 0.9rem;
+  }
+
+  .flecha-der {
+    right: 0.9rem;
+  }
+}

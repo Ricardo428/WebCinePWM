@@ -1,0 +1,37 @@
+<app-carrusel></app-carrusel>
+<div class="container">
+  <main>
+    <section class="perfil-contenedor">
+
+      <header class="perfil-etiqueta">
+        <h2 id="perfil-nombre-display">Perfil</h2>
+      </header>
+
+      <div class="perfil-datos">
+        <ul class="lista-datos">
+          <li>
+            <span class="dato-label">Email:</span>
+            <span class="dato-valor" id="perfil-email-display">{{ user?.email }}</span>
+          </li>
+
+          <li>
+            <span class="dato-label">Contraseña:</span>
+            <span class="dato-valor">*******</span>
+          </li>
+          <li>
+            <span class="dato-label">Puntos:</span>
+            <span class="dato-valor texto-destacado">{{ user?.puntos }}</span>
+          </li>
+        </ul>
+
+        <div class="perfil-acciones acciones-sala">
+          <a routerLink="/historial" class="btn-perfil btn-primario">Historial</a>
+          <a routerLink="/preferencias" class="btn-perfil btn-secundario">Preferencias</a>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+</div>

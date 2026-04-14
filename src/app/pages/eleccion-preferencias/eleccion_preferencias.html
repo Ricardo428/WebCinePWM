@@ -1,0 +1,47 @@
+<app-carrusel></app-carrusel>
+<div class="container">
+  <main>
+    <h1>Preferencias Cinematográficas</h1>
+
+    <form (ngSubmit)="guardar()">
+
+      <fieldset>
+        <legend>Géneros</legend>
+        <div class="grid-generos">
+          <div *ngFor="let gen of listaGenerosDisponibles" class="opcion-check">
+            <input
+              type="checkbox"
+              [id]="gen"
+              [checked]="estaSeleccionado(gen)"
+              (change)="eleccionesGeneros($event, gen)">
+            <label [for]="gen">{{ gen }}</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label class="label-titulo" for="actor-input">Actor o Actriz favoritos</label>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="actor-input"
+            [formControl]="actorControl"
+            placeholder="Escribe un nombre...">
+          <button type="button" class="btn-add" (click)="anadirActor()">Añadir</button>
+        </div>
+
+        <ul class="lista-pildoras">
+          <li *ngFor="let actor of actores_elegidos; let i = index">
+            {{ actor }}
+            <button type="button" class="btn-eliminar" (click)="eliminarActor(i)">×</button>
+          </li>
+        </ul>
+      </fieldset>
+
+      <div class="perfil-acciones">
+        <button type="submit" class="btn-primario">Guardar Preferencias</button>
+      </div>
+    </form>
+  </main>
+</div>

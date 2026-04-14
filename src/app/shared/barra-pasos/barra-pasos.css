@@ -1,0 +1,43 @@
+
+
+.barra-pasos {
+  background-color: #d3d3d3;
+  padding-top: 1rem;
+}
+
+.barra-pasos ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+
+.barra-pasos li {
+  flex: 1;
+  text-align: center;
+  margin: 0.5rem 0;
+  white-space: nowrap;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+#pista-progreso {
+  width: 100%;
+  height: 0.25rem;
+  background-color: #b3b3b3;
+}
+
+#linea {
+  height: 100%;
+  background-color: #cc0000;
+  width: var(--progreso, 0%);
+  transition: width 0.5s ease;
+}
+
+
+
+@media (max-width: 40rem)  {
+  .barra-pasos li {
+    font-size: 0.7rem;
+  }
+}
