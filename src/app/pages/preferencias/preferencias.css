@@ -1,0 +1,49 @@
+.texto-centrado {
+  text-align: center;
+  color: var(--color-texto);
+  margin-bottom: 25px;
+}
+
+.perfil-etiqueta {
+  background-color: var(--color-tarjeta);
+  padding: 30px;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.bloque-resumen {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+}
+
+.bloque-resumen h2 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+
+.lista-pildoras {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Estilo individual de cada género/actor */
+.lista-pildoras li {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+

@@ -1,0 +1,83 @@
+<body class="paso-3">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+<div class="container">
+
+  <main class="contenedor-ancho">
+
+    <form (submit)="onSubmit($event)">
+      <h1 class="titulo-snacks">Selecciona tus Snacks</h1>
+
+      <div class="snacks-layout">
+
+        <aside class="snacks-categorias">
+          <ul class="lista-categorias">
+            @for (cat of categorias; track cat) {
+              <li class="cat-item"
+                  [class.activa]="categoriaSeleccionada === cat"
+                  (click)="cambiarCategoria(cat)">
+                {{ cat }}
+              </li>
+            }
+          </ul>
+        </aside>
+
+        <section class="snacks-productos">
+          @for (prod of productosFiltrados; track prod.id) {
+            <article class="producto-card">
+              <img [src]="prod.image" [alt]="prod.name" class="prod-img">
+              <h3 class="prod-titulo">{{ prod.name }}</h3>
+              <p class="prod-precio">{{ prod.price | number:'1.2-2' }} €</p>
+              <button type="button" class="btn-add-snack" (click)="agregarAlCarrito(prod)">Añadir</button>
+            </article>
+          } @empty {
+            <p style="grid-column: 1 / -1; text-align: center; color: gray;">Próximamente</p>
+          }
+        </section>
+
+        <aside class="snacks-resumen">
+          <h3>Resumen de tu pedido</h3>
+
+          <ul class="lista-ticket">
+            @for (item of carrito; track item.producto.id) {
+              <li class="ticket-item">
+                <div class="ticket-info">
+                  <span>{{ item.cantidad }}x {{ item.producto.name }}</span>
+                  <span class="ticket-precio">{{ item.producto.price * item.cantidad | number:'1.2-2' }} €</span>
+                </div>
+
+                <div class="ticket-acciones">
+                  <button type="button" class="btn-cantidad btn-restar" (click)="eliminarDelCarrito(item.producto)">-</button>
+                  <button type="button" class="btn-cantidad btn-sumar" (click)="agregarAlCarrito(item.producto)">+</button>
+                </div>
+              </li>
+            } @empty {
+              <li class="ticket-item" style="color: gray; justify-content: center;">
+                <span>No hay snacks añadidos</span>
+              </li>
+            }
+          </ul>
+
+          <div class="resumen-footer">
+            <div class="ticket-total">
+              <span>Total:</span>
+              <strong>{{ calcularTotal() | number:'1.2-2' }} €</strong>
+            </div>
+
+            <button type="button" class="btn-snack-secundario">Canjear puntos</button>
+            <button type="submit" class="btn-snack-primario">Confirmar</button>
+          </div>
+        </aside>
+
+      </div>
+      <nav class="perfil-acciones acciones-sala">
+        <button type="button" (click)="volverAtras()" class="btn-perfil btn-secundario">Volver</button>
+        <button type="submit" class="btn-perfil btn-primario">Siguiente</button>
+      </nav>
+    </form>
+
+  </main>
+
+</div>
+
+</body>

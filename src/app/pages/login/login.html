@@ -1,0 +1,63 @@
+<app-carrusel></app-carrusel>
+<div class="container">
+  <main>
+    <fieldset>
+      <legend>Log in</legend>
+
+      <form [formGroup]="loginForm" (ngSubmit)="intentarEntrar()" novalidate>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control"
+                 [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                 formControlName="email" autocomplete="email">
+          <div class="invalid-feedback">
+            @if (loginForm.get('email')?.hasError('required')) { <span>El email es obligatorio.</span> }
+            @else if (loginForm.get('email')?.hasError('email')) { <span>Por favor, introduce un email válido.</span> }
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" class="form-control"
+                 [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                 formControlName="password" autocomplete="current-password">
+          <div class="invalid-feedback">
+            @if (loginForm.get('password')?.hasError('required')) { <span>La contraseña es obligatoria.</span> }
+            @else if (loginForm.get('password')?.hasError('minlength')) { <span>Mínimo 8 caracteres.</span> }
+          </div>
+        </div>
+
+        @if (errorLogin) {
+          <div class="alert alert-danger py-2 text-center small fw-bold" role="alert">
+            Email o contraseña incorrectos.
+          </div>
+        }
+
+        <div class="mb-3 d-flex justify-content-between small">
+          <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+          <a routerLink="/registro" class="text-decoration-none">Crear cuenta</a>
+        </div>
+
+        <div class="mb-3 p-3 border rounded bg-white shadow-sm">
+          <div class="form-check d-flex align-items-center gap-2">
+            <input class="form-check-input" type="checkbox" id="captcha-check"
+                   [class.is-invalid]="loginForm.get('captcha')?.invalid && loginForm.get('captcha')?.touched"
+                   formControlName="captcha">
+            <label class="form-check-label mb-0" for="captcha-check">
+              No soy un robot
+            </label>
+          </div>
+          @if (loginForm.get('captcha')?.invalid && loginForm.get('captcha')?.touched) {
+            <div class="text-danger small mt-1 text-center">
+              Debes confirmar el captcha.
+            </div>
+          }
+        </div>
+
+        <button type="submit">Entrar</button>
+
+      </form>
+    </fieldset>
+  </main>
+</div>

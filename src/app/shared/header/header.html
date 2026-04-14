@@ -1,0 +1,44 @@
+<header class="header-gris">
+  <div class="header-top">
+    <div class="circulo_logo">
+      <a routerLink="index.html">
+        <img src="assets/img/Logo.jpg" alt="Logo">
+      </a>
+    </div>
+    <div class="buscador-container">
+      <input type="text" #buscador (input)="buscarPeliculas($event)" class="buscador-principal" placeholder="Buscar película...">
+
+      @if (resultados.length > 0){
+        <ul id="lista-resultados">
+          @for (peli of resultados; track peli.id){
+            <li class="item-resultado" (click)="irAPelicula(peli.id, buscador)" >
+              {{ peli.titulo }}
+            </li>
+          }
+        </ul>
+      }
+
+    </div>
+    <!--
+        Lista-resultados es para guardar las peliculas que coincidan con las letras que se ponga en el buscador
+    -->
+    <div id="sesion-container">
+      @if (isLoggedIn) {
+        <button (click)="cerrarSesion()" class="btn-sesion btn-logout-header">Salir</button>
+      } @else {
+        <a routerLink="/login" class="btn-sesion">Iniciar Sesión</a>
+      }
+    </div>
+
+  </div>
+  <nav class="nav-superior">
+    <a href="../../../index.html" class="btn-negro-amarillo">Cartelera</a>
+    <a href="../../../index.html" class="btn-negro-amarillo">Para ti</a>
+    @if (isLoggedIn) {
+      <a routerLink="/perfil" class="btn-negro-amarillo">Perfil</a>
+    } @else {
+      <a routerLink="/login" class="btn-negro-amarillo">Perfil</a>
+    }
+  </nav>
+
+</header>

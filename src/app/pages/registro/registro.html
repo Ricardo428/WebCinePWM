@@ -1,0 +1,59 @@
+<div class="container">
+  <main>
+    <fieldset>
+      <legend>Registro</legend>
+
+      <form [formGroup]="registerForm" (ngSubmit)="registro()" novalidate>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" id="name" class="form-control"
+                 [class.is-invalid]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                 formControlName="name">
+          <div class="invalid-feedback">El nombre es obligatorio.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="surname" class="form-label">Apellido</label>
+          <input type="text" id="surname" class="form-control"
+                 [class.is-invalid]="registerForm.get('surname')?.invalid && registerForm.get('surname')?.touched"
+                 formControlName="surname">
+          <div class="invalid-feedback">El apellido es obligatorio.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control"
+                 [class.is-invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                 formControlName="email" autocomplete="email">
+          <div class="invalid-feedback">
+            @if (registerForm.get('email')?.hasError('required')) { <span>El email es obligatorio.</span> }
+            @else if (registerForm.get('email')?.hasError('email')) { <span>Introduce un email válido.</span> }
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" class="form-control"
+                 [class.is-invalid]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                 formControlName="password">
+          <div class="invalid-feedback">
+            @if (registerForm.get('password')?.hasError('required')) { <span>La contraseña es obligatoria.</span> }
+            @else { <span>Debe tener 8 caracteres (1 mayúscula, 1 minúscula, 1 número y 1 símbolo[!@#$%^&*]).</span> }
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="birthday" class="form-label">Fecha de nacimiento</label>
+          <input type="date" id="birthday" class="form-control"
+                 [class.is-invalid]="registerForm.get('born')?.invalid && registerForm.get('born')?.touched"
+                 formControlName="born">
+          <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
+        </div>
+
+        <button type="submit">Registrar</button>
+
+      </form>
+    </fieldset>
+  </main>
+</div>

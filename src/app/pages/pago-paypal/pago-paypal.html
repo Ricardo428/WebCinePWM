@@ -1,0 +1,43 @@
+<div class="paso-5">
+  <app-barra-pasos></app-barra-pasos>
+  <app-temporizador></app-temporizador>
+  <div class="container">
+
+    <main class="contenedor-pago">
+
+      <div class="pago-cabecera">
+        <img src="/assets/img/logo_paypal.png" alt="Logo de PayPal" class="logo-paypal">
+      </div>
+
+      <section class="pago-contenido">
+        <h2 class="pago-pregunta">¿Cómo desea pagar sus compras?</h2>
+
+        <form (submit)="procesarPagoPaypal($event)">
+          <div class="grupo-formulario">
+            <label for="tipo-pago">Tipo de pago</label>
+            <select id="tipo-pago" name="tipo_pago" class="input-gris" [(ngModel)]="tipoPago" [disabled]="procesando">
+              <option value="saldo">Saldo de PayPal</option>
+              <option value="tarjeta">Visa terminada en 4321</option>
+              <option value="cuenta">Cuenta Bancaria</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario direccion-bloque">
+            <label>Dirección de facturación:</label>
+            <div class="direccion-datos">
+              <p><strong>84937, Etiopa, Ghana</strong></p>
+              <a href="#" class="enlace-cambiar" [class.deshabilitado]="procesando">Cambiar</a>
+            </div>
+          </div>
+
+          <div class="perfil-acciones acciones-sala">
+            <button type="button" (click)="volverInfoFilm()" class="btn-perfil btn-secundario">Volver</button>
+            <button class="btn-perfil btn-primario">Continuar</button>
+          </div>
+
+
+        </form>
+      </section>
+    </main>
+  </div>
+</div>

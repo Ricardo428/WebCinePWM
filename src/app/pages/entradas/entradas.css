@@ -1,0 +1,116 @@
+.contenedor-entradas {
+
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  width: 45rem;
+}
+
+.fieldset-entradas {
+  border: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.tabla-entradas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-entradas th {
+  text-align: left;
+  padding: 15px 10px;
+  border-bottom: 2px solid #ccc;
+  font-weight: normal;
+  color: #333;
+}
+
+.tabla-entradas td {
+  padding: 20px 10px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+.input-cantidad {
+  width: 70px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tabla-entradas tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+@media (max-width: 25rem) {
+  .tabla-entradas th,
+  .tabla-entradas td {
+    font-size: 0.75rem !important;
+    padding: 8px 4px !important;
+    white-space: nowrap !important;
+  }
+
+  .input-cantidad {
+    font-size: 0.8rem !important;
+    width: 45px !important;
+    height: 35px !important;
+    padding: 2px !important;
+    text-align: center;
+  }
+
+  .contenedor-entradas {
+    padding: 15px 5px !important;
+    width: 98% !important;
+  }
+}
+
+
+@media (max-width: 48rem) {
+  .contenedor-entradas {
+    width: 95%;
+    max-width: none;
+    padding: 20px 10px;
+    margin: 10px auto;
+  }
+
+  .tabla-entradas th,
+  .tabla-entradas td {
+    font-size: 0.95rem;
+    padding: 10px 5px;
+  }
+
+  .input-cantidad {
+    width: 45px;
+    padding: 5px;
+  }
+
+}
+
+
+@media (min-width: 46.5rem) and (max-width: 63rem) {
+  .contenedor-entradas,
+  .contenedor-pago,
+  .contenedor-bizum {
+    width: 90%;
+    max-width: 700px;
+    padding: 40px;
+  }
+
+  .tabla-entradas th,
+  .tabla-entradas td {
+    font-size: 1rem;
+    padding: 15px 10px;
+  }
+
+  .input-cantidad {
+    font-size: 1.1rem;
+    width: 60px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,146 @@
+.cuadrado-metodo {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin-top: 1rem;
+  font-size: 30px;
+  justify-content: center;
+}
+
+.rectangulo-opciones {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 350px;
+  gap: 70px;
+}
+
+.cuadrado-opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 370px;
+  background-color: rgb(216, 214, 214);
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.cuadrado-opcion:hover {
+  background-color: rgb(216, 214, 233);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.cuadrado-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+.cuadrado-logo img {
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.informacion-opcion {
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#contenedor-volver {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.acciones-botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#volver {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+@media (max-width: 64rem) {
+  .cuadrado-metodo {
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .rectangulo-opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-left: 0;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .cuadrado-opcion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 25rem;
+    width: 90%;
+    height: auto;
+    padding: 15px 1.5rem;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+
+  .cuadrado-logo {
+    width: 10rem;
+    height: auto;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .informacion-opcion {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-left: 1.5rem;
+    text-align: left;
+  }
+
+  .cuadrado-logo img {
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  .acciones-botones {
+    padding: 0 20px;
+  }
+
+  #volver{
+    margin-top: 0;
+    max-width: 15rem;
+  }
+}

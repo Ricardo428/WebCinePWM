@@ -1,0 +1,67 @@
+.perfil-contenedor {
+  width: 100%;
+  max-width: 450px;
+  margin: 40px auto;
+}
+
+.perfil-etiqueta {
+  background-color: var(--color-primario);
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.perfil-etiqueta h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Datos */
+.perfil-datos {
+  background-color: white;
+  border: 3px solid var(--color-primario);
+  border-radius: 0 8px 8px 8px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Estilo lista de datos */
+.lista-datos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-datos li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.lista-datos li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.dato-label {
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.dato-valor {
+  color: #555;
+  font-family: monospace;
+  font-size: 1.15rem;
+}
+
+.texto-destacado {
+  color: #e6b800;
+  font-weight: bold;
+  font-size: 1.3rem;
+}

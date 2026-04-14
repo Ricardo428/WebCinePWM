@@ -1,0 +1,66 @@
+<div class="rectangulo-entero">
+  <main class="main-content">
+    <h2 class="titulo-resumen titulo-movil">{{ pelicula?.titulo }}</h2>
+
+    <aside class="sidebar">
+      <div class="cuadrado-peli">
+        <img [src]="pelicula?.imagen" [alt]="pelicula?.titulo" class="imagenes">
+      </div>
+      <div class="info-peli">Screen & Eat Las Palmas</div>
+      <div class="info-peli fecha">{{ reserva.fecha }}</div>
+      <div class="info-peli hora">{{ reserva.hora }}</div>
+      <div class="info-peli">Butaca: {{ reserva.butaca }}</div>
+      <div class="info-peli">Fila: {{ reserva.fila }}</div>
+
+      <div class="iconos-peli">
+        <img src="assets/img/ticket-amarillo.png" alt="Ticket">
+        <img src="assets/img/imagen-audifonos.png" alt="Audífonos">
+      </div>
+    </aside>
+
+    <section class="right-content">
+      <div>
+        <h2 class="titulo-resumen titulo-desktop">{{ pelicula?.titulo }}</h2>
+        <table class="tabla-resumen">
+          <thead>
+          <tr>
+            <th>Entrada</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody class="contenedor-filas">
+            @for (item of carrito; track item.nombre) {
+              <tr>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.precio | currency:'EUR' }}</td>
+                <td>{{ (item.precio * item.cantidad) | currency:'EUR' }}</td>
+              </tr>
+            }
+          </tbody>
+          <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="total">{{ totalCompra | currency:'EUR' }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tarjeta-opcion">
+        <img src="assets/img/comida-cine.webp" alt="Sin gluten">
+        <div class="texto-opcion">¿Alguna comida especial?</div>
+        <button class="btn-accion">Canjear puntos</button>
+      </div>
+
+      <div class="perfil-acciones">
+        <a routerLink="/snacks" class="btn-perfil btn-secundario">Volver</a>
+        <a routerLink="/seleccion-metodo-pago" class="btn-perfil btn-primario">Siguiente</a>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,102 @@
+/* PayPal */
+
+.contenedor-pago {
+  max-width: 650px;
+  width: 100%;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera (Logo)  */
+.pago-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--color-fondo);
+}
+
+.logo-paypal {
+  height: 35px;
+  object-fit: contain;
+}
+
+
+/* Contenido del pago  */
+.pago-pregunta {
+  color: #cc0000;
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+}
+
+.input-gris {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  padding: 12px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Bloque de Dirección */
+.direccion-bloque {
+  margin-top: 30px;
+}
+
+.direccion-datos {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.direccion-datos p {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.enlace-cambiar {
+  color: #0033cc;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.enlace-cambiar:hover {
+  text-decoration: underline;
+}
+
+
+button:disabled {
+  background-color: #888;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  border-color: #888;
+}
+
+button:disabled {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+
+.input-gris:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.deshabilitado {
+  pointer-events: none; /* Impide hacer clic */
+  opacity: 0.5;
+}

@@ -1,0 +1,90 @@
+
+.contenedor-sala {
+  max-width: 58rem;
+  margin: 40px auto;
+  padding: 40px 40px 0;
+  background-color: var(--color-tarjeta, #ffffff);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* Título de la sala */
+.titulo-sala {
+  color: var(--color-primario, #1e1e1e);
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+
+.mapa-butacas {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 2px solid #eeeeee;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+
+}
+
+
+.img-sala {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.leyenda-butacas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.leyenda-item img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 4px;
+}
+
+
+.acciones-sala {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 40rem) {
+
+  .titulo-sala{
+    font-size: 1rem;
+  }
+
+  .leyenda-item{
+    font-size: 0.6rem;
+  }
+
+  .leyenda-item img {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 4px;
+  }
+}
