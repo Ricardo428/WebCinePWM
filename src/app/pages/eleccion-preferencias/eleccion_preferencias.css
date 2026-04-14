@@ -1,28 +1,3 @@
-/* =========================================
-   VARIABLES Y RESET
-   ========================================= */
-:root {
-  --color-fondo: #f4f4f9;
-  --color-tarjeta: #ffffff;
-  --color-texto: #333333;
-  --color-primario: #1e1e1e;
-  --color-primario-hover: #444444;
-  --color-borde: #cccccc;
-  --radio-borde: 8px;
-}
-
-/* =========================================
-   CONTENEDORES PRINCIPALES
-   ========================================= */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 20px;
-  min-height: 60vh;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
 
 main {
   background-color: var(--color-tarjeta);
@@ -39,9 +14,7 @@ h1 {
   color: var(--color-primario);
 }
 
-/* =========================================
-   FORMULARIOS Y CAMPOS
-   ========================================= */
+
 fieldset {
   border: none;
   padding: 0;
@@ -78,9 +51,7 @@ input[type="text"]:focus {
   outline: none;
 }
 
-/* =========================================
-   REJILLA DE GÉNEROS (CHECKBOXES)
-   ========================================= */
+
 .grid-generos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -114,9 +85,7 @@ input[type="text"]:focus {
   font-weight: normal;
 }
 
-/* =========================================
-   BUSCADOR DE ACTORES E INPUT GROUP
-   ========================================= */
+
 .input-group {
   display: flex;
   gap: 10px;
@@ -138,9 +107,7 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 
-/* =========================================
-   LISTA DE SELECCIONADOS (PILDORAS)
-   ========================================= */
+
 .lista-pildoras {
   list-style-type: none;
   padding: 0;
@@ -170,9 +137,6 @@ input[type="text"]:focus {
   padding: 0;
 }
 
-/* =========================================
-   BOTÓN GUARDAR (ESTILO PERFIL)
-   ========================================= */
 .perfil-acciones {
   display: flex;
   margin-top: 30px;
@@ -195,9 +159,7 @@ input[type="text"]:focus {
   border-color: var(--color-primario-hover);
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+
 @media (max-width: 40rem) {
   .container {
     padding: 20px 10px;

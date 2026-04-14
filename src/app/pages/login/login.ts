@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms'; // ¡Importante!
 import { LoginService } from '../../services/login.service';
+import {Carrusel} from '../../shared/carrusel/carrusel';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule, Carrusel],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
