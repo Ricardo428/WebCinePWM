@@ -1,0 +1,146 @@
+/* 8. Historial de compra */
+
+
+main:has(.historial-contenedor) {
+  max-width: 600px;
+  background-color: var(--color-tarjeta);
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.titulo-seccion h1 { margin-bottom: 5px; }
+.titulo-seccion p { color: #666; }
+
+
+/* Lista de Tarjetas de Compra  */
+.lista-compras {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compra-card {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  align-items: flex-start;
+}
+
+.compra-card:last-child {
+  border-bottom: none;
+}
+
+/* Estilo del Póster */
+.compra-poster {
+  width: 100px;
+  white-space: nowrap;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de la información a la derecha */
+.compra-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  padding: 5px 0;
+}
+
+/* Cabecera con Título y enlace pequeño */
+.info-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.compra-titulo {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-primario);
+}
+
+/* Botón pequeño para "Ver ticket" */
+.btn-detalles-mini {
+  font-size: 0.8rem;
+  color: var(--color-primario);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Detalles compra  */
+.compra-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalle-linea {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icono {
+  font-size: 1.1rem;
+}
+
+/* Destacar el precio final */
+.precio-total {
+  font-size: 1.1rem;
+  color: var(--color-primario);
+  margin-top: 5px;
+}
+
+
+
+@media (max-width: 90rem) {
+  main:has(.historial-contenedor) {
+    max-width: 850px;
+    padding: 50px;
+    width: 95%;
+  }
+
+  .compra-info {
+    padding-left: 10px;
+  }
+
+  .compra-titulo {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 20px 10px 20px;
+    min-height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .compra-poster {
+    width: 120px;
+    height: 180px;
+  }
+
+  .detalle-linea {
+    font-size: 1.05rem;
+  }
+
+  .btn-pag {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+  }
+}

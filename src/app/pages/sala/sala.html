@@ -1,0 +1,39 @@
+<body class="paso-1">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+<div class="container">
+  <main class="contenedor-sala">
+
+    <h1 class="titulo-sala">Selecciona tus butacas</h1>
+
+    <div class="mapa-butacas">
+      <img src="assets/img/butacas.png" alt="Plano interactivo de la sala" class="img-sala">
+    </div>
+
+    <div class="leyenda-butacas">
+      <div class="leyenda-item">
+        <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/am.jpg" alt="Libre">
+        <span>Butaca Libre</span>
+      </div>
+      <div class="leyenda-item">
+        <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/amocupat.jpg" alt="Ocupada">
+        <span>Butaca Ocupada</span>
+      </div>
+      <div class="leyenda-item">
+        <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minus.jpg" alt="Silla Ruedas Libre">
+        <span>Espacio Silla Ruedas Libre</span>
+      </div>
+      <div class="leyenda-item">
+        <img src="https://tickets.ocinepremium7palmas.es/compra/imagesv2/minusocupat.jpg" alt="Silla Ruedas Ocupada">
+        <span>Espacio Silla Ruedas Ocupada</span>
+      </div>
+    </div>
+
+    <div class="perfil-acciones acciones-sala">
+      <button (click)="volverAtras()" class="btn-perfil btn-secundario">Volver</button>
+      <button (click)="continuar()" class="btn-perfil btn-primario">Siguiente</button>
+    </div>
+
+  </main>
+</div>
+</body>

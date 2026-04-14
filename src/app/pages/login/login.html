@@ -1,0 +1,71 @@
+<div class="container">
+  <main>
+    <fieldset>
+      <legend>Log in</legend>
+
+      <form [formGroup]="loginForm" (ngSubmit)="intentarEntrar()">
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" required autocomplete="email">
+
+          @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+            <div style="color: red; font-size: 0.8rem; margin-top: 5px;">
+              @if (loginForm.get('email')?.hasError('required')) {
+                <span>El email es obligatorio.</span>
+              }
+              @if (loginForm.get('email')?.hasError('email')) {
+                <span>Por favor, introduce un email válido.</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" required autocomplete="current-password">
+
+          @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+            <div style="color: red; font-size: 0.8rem; margin-top: 5px;">
+              @if (loginForm.get('password')?.hasError('required')) {
+                <span>La contraseña es obligatoria.</span>
+              }
+              @if (loginForm.get('password')?.hasError('minlength')) {
+                <span>La contraseña debe tener al menos 8 caracteres.</span>
+              }
+            </div>
+          }
+        </div>
+
+        @if (errorLogin) {
+          <div style="color: red; font-size: 0.9rem; margin-bottom: 10px; font-weight: bold; text-align: center;">
+            Email o contraseña incorrectos.
+          </div>
+        }
+
+        <div>
+          <a href="#">¿Has olvidado la contraseña?</a>
+        </div>
+
+        <div>
+          <a routerLink="/registro">No tengo cuenta</a>
+        </div>
+
+        <div id="captcha">
+          <label for="captcha-check">No soy un robot</label>
+          <input type="checkbox" formControlName="captcha" required>
+        </div>
+
+        @if (loginForm.get('captcha')?.invalid && loginForm.get('captcha')?.touched) {
+          <div style="color: red; font-size: 0.8rem; margin-top: -10px; margin-bottom: 15px; float: left; width: 100%; text-align: center;">
+            Debes confirmar que no eres un robot.
+          </div>
+        }
+
+        <div style="clear: both;"> <button type="submit">Entrar</button>
+        </div>
+
+      </form>
+    </fieldset>
+  </main>
+</div>

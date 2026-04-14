@@ -1,0 +1,147 @@
+
+/* PayTarjet */
+
+#ContenidoPrincipal{
+  display: flex;
+  max-width: 50rem;
+  justify-content: center;
+  margin: 5rem auto;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.resumen-pago{
+  max-width: 25rem;
+  background-color: #e0e0e0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.resumen-pago h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 1rem;
+  color: #444;
+}
+
+
+.resumen-pago ul li{
+  list-style: none;
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resumen-pago input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+
+.resumen-pago input:focus {
+  outline: none;
+  border-color: var(--color-primario, #ffcc00);
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+}
+
+.Numero {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.CA-CV {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+
+/* Paytarjet responsive */
+@media (max-width: 770px) {
+  #ContenidoPrincipal {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 1rem auto;
+    width: 95%;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .resumen-pago {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .CA-CV{
+    flex-direction: column;
+  }
+
+}
+
+input:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
+button[type="submit"]:disabled {
+  background-color: #888;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  border-color: #888;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+
+.deshabilitado {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.texto-error {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  margin-left: 2px;
+  font-weight: 500;
+  animation: aparecer 0.3s ease;
+}
+
+.resumen-pago input.input-error {
+  border-color: #d93025;
+  background-color: #fdf3f2;
+}
+
+.resumen-pago input.input-error:focus {
+  box-shadow: 0 0 5px rgba(217, 48, 37, 0.4);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

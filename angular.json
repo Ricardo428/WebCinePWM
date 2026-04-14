@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WebCineAngular20": {
+    "WebCinePWM": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,15 +14,15 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
+            ],
+            "polyfills": [
+              "zone.js"
             ],
             "styles": [
               "src/styles.css"
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "WebCineAngular20:build:production"
+              "buildTarget": "WebCinePWM:build:production"
             },
             "development": {
-              "buildTarget": "WebCineAngular20:build:development"
+              "buildTarget": "WebCinePWM:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,10 +70,6 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {

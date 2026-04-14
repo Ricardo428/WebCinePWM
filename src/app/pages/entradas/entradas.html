@@ -1,0 +1,56 @@
+<body class="paso-2">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+<div class="container">
+  <main class="contenedor-entradas">
+
+    <form (submit)="onSubmit($event)">
+      <fieldset class="fieldset-entradas">
+        <table class="tabla-entradas">
+          <thead>
+          <tr>
+            <th>Tipo de entrada</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td>Normal</td>
+            <td>
+              <input type="number" min="0" [(ngModel)]="cantNormal" name="cantNormal" class="input-cantidad">
+            </td>
+            <td>8,00 €</td>
+            <td>{{ totalNormal | number:'1.2-2' }} €</td>
+          </tr>
+          <tr>
+            <td>Pack familia Adulto</td>
+            <td>
+              <input type="number" min="0" [(ngModel)]="cantAdulto" name="cantAdulto" class="input-cantidad">
+            </td>
+            <td>6,50 €</td>
+            <td>{{ totalAdulto | number:'1.2-2'}} €</td>
+          </tr>
+          <tr>
+            <td>Pack familia Niño</td>
+            <td>
+              <input type="number" min="0" [(ngModel)]="cantNino" name="cantNino" class="input-cantidad">
+            </td>
+            <td>5,00 €</td>
+            <td>{{ totalNino | number:'1.2-2' }} €</td>
+          </tr>
+          </tbody>
+        </table>
+      </fieldset>
+
+      <div class="perfil-acciones acciones-sala">
+        <button type="button" (click)="volverAtras()" class="btn-perfil btn-secundario">Volver</button>
+        <button type="submit" class="btn-perfil btn-primario">Siguiente</button>
+      </div>
+    </form>
+
+  </main>
+</div>
+</body>

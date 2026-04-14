@@ -1,0 +1,39 @@
+<div class="paso-5">
+<app-barra-pasos></app-barra-pasos>
+<app-temporizador></app-temporizador>
+
+<div class="container">
+  <main class="contenedor-bizum">
+    <section class="columna-formulario">
+      <img src="/assets/img/logo_bizum.png" alt="Bizum" class="logo-bizum">
+
+      <form (submit)="procesarPagoBizum($event)" class="form-bizum">
+        <div class="grupo-form-bizum">
+          <label>Introduce número de teléfono</label>
+          <div class="input-con-icono">
+            <div class="icono-movil">
+              <img src="/assets/img/MovilBizum.png" alt="Móvil">
+            </div>
+            <input type="tel"
+                   class="input-bizum"
+                   [(ngModel)]="telefono"
+                   name="telefono"
+                   required
+                   [disabled]="procesando"
+                   placeholder="Ej: 600 123 456">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-continuar-compra" [disabled]="procesando || !telefono">
+          @if (procesando) {
+            Contectando con tu banco...
+          } @else {
+            Continuar y Pagar
+          }
+          </button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+</div>

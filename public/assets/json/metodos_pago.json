@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Bizum",
+    "image": "assets/img/logo_bizum.png",
+    "route": "/pago-bizum"
+  },
+  {
+    "id": 2,
+    "name": "Paypal",
+    "image": "assets/img/logo_paypal.png",
+    "route": "/pago-paypal"
+  },
+  {
+    "id": 3,
+    "name": "Tarjeta de crédito o débito",
+    "image": "assets/img/seleccion_de_pago_logo_tarjetas.webp",
+    "route": "/pago-tarjeta"
+  }
+]
