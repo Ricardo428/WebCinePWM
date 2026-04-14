@@ -119,3 +119,13 @@ body {
 
 .paso-5 { --progreso: 100%; }
 .paso-5 li { color: #000; font-weight: bold; }
+
+input[type="date"].form-control.is-invalid{
+  background-image: none !important;
+}
+
+input[type="password"].form-control.is-invalid{
+  background-image: none !important;
+}
+
+

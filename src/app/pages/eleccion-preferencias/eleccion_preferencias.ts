@@ -3,11 +3,12 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import {Carrusel} from '../../shared/carrusel/carrusel';
 
 @Component({
   selector: 'app-eleccion',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, Carrusel],
   templateUrl: './eleccion_preferencias.html',
   styleUrl: './eleccion_preferencias.css',
 })

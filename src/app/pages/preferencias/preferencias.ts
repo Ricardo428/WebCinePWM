@@ -1,11 +1,12 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {LoginService} from '../../services/login.service';
 import {RouterLink} from '@angular/router';
+import {Carrusel} from '../../shared/carrusel/carrusel';
 
 
 @Component({
   selector: 'app-preferencias',
-  imports: [RouterLink],
+  imports: [RouterLink, Carrusel],
   templateUrl: './preferencias.html',
   styleUrl: './preferencias.css',
   standalone: true,

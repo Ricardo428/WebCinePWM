@@ -3,10 +3,11 @@ import {HttpClient} from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import {Subscription} from 'rxjs';
+import {Carrusel} from '../../shared/carrusel/carrusel';
 
 @Component({
   selector: 'app-perfil',
-  imports: [RouterLink],
+  imports: [RouterLink, Carrusel],
   templateUrl: './perfil.html',
   styleUrl: './perfil.css',
   standalone: true,
