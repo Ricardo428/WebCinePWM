@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms'; // ¡Importante!
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import {Carrusel} from '../../shared/carrusel/carrusel';
 
@@ -22,7 +22,7 @@ export class Login {
 
   constructor(
     private loginService: LoginService,
-    private router: Router,
+    private router: Router
   ) {}
 
   intentarEntrar() {
@@ -34,7 +34,16 @@ export class Login {
     const email = this.loginForm.value.email!;
     const password = this.loginForm.value.password!;
 
+    this.loginService.loginFire(email, password).then(exito =>{
+        this.errorLogin = false;
+        this.loginService.actualizarEstado(true)
+        this.router.navigate(['/']);
+    }).catch(erro => {
+      this.errorLogin = true;
+      console.log("Error: ",erro);
+    })
 
+    /*
     this.loginService.hacerLogin(email, password).subscribe((exito) => {
       if (exito) {
         this.errorLogin = false;
@@ -47,5 +56,7 @@ export class Login {
         this.errorLogin = true;
       }
     });
+    */
+
   }
 }
