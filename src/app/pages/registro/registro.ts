@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
-import {AuthService} from '../../services/auth';
 
 @Component({
   selector: 'app-registro',
@@ -25,15 +24,18 @@ export class Registro {
   });
 
   constructor(private router: Router,
-              private loginService: LoginService,
-              private authService: AuthService) {}
+              private loginService: LoginService) {}
 
   registro(): void {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.authService.registerFire(<string>this.registerForm.value.email,<string>this.registerForm.value.password)
+
+    const email = this.registerForm.value.email!;
+    const password = this.registerForm.value.password!;
+
+    this.loginService.registerFire(email,password)
       .then((value) => {
         console.log("¡Usuario registrado en Firebase con éxito!", value.user.email);
         this.loginService.actualizarEstado(true);
