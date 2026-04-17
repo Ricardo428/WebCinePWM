@@ -37,7 +37,9 @@ export class Login {
     this.loginService.loginFire(email, password).then(exito =>{
         this.errorLogin = false;
         this.loginService.actualizarEstado(true)
+        localStorage.setItem('emailUsuario', this.loginForm.value.email!);
         this.router.navigate(['/']);
+
     }).catch(erro => {
       this.errorLogin = true;
       console.log("Error: ",erro);

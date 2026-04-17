@@ -66,7 +66,8 @@ export class Header implements OnInit, OnDestroy {
   cerrarSesion(): void {
     // TO DO: Revision de emailUsuario .... (Firebase)
     localStorage.removeItem('emailUsuario');
-    this.loginService.cerrarSesion()
-    this.router.navigate(['/']);
+    this.loginService.cerrarSesion().then(r => {
+      this.router.navigate(['/']);
+    })
   }
 }

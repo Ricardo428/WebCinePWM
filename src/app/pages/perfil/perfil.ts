@@ -1,8 +1,6 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Router, RouterLink } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import {Subscription} from 'rxjs';
 import {Carrusel} from '../../shared/carrusel/carrusel';
 
 @Component({
@@ -12,42 +10,18 @@ import {Carrusel} from '../../shared/carrusel/carrusel';
   styleUrl: './perfil.css',
   standalone: true,
 })
-export class Perfil implements OnInit, OnDestroy {
+export class Perfil implements OnInit {
   user: any;
-  loginSub!: Subscription;
 
   constructor(
-    private http: HttpClient,
-    private router: Router,
     private loginService: LoginService,
-    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
-    this.loginSub =  this.loginService.estadoLogin$.subscribe((estado) => {
-      const email = localStorage.getItem('emailUsuario');
-
-      if (estado && email) {
-        this.cargarDatos(email);
-      } else {
-        this.router.navigate(['/login']);
-      }
-    });
-  }
-  ngOnDestroy(): void {
-    if (this.loginSub) {
-      this.loginSub.unsubscribe();
-    }
-  }
-
-
-  private cargarDatos(email: string) {
-    this.loginService.getUsers().subscribe({
-      next: (data) => {
-        this.user = data.find((dateUser: any) => dateUser.email == email);
-        this.cdr.detectChanges();
-      },
-      error: (err) => console.error("No se pudo conectar con el JSON", err)
+    // Nos suscribimos para recibir los datos (email, puntos, preferencias...)
+    this.loginService.obtnerUsuarioActual().subscribe(datos => {
+      this.user = datos;
+      console.log('Datos cargados de Firestore:', this.user);
     });
   }
 }
