@@ -1,10 +1,7 @@
 {
-  "name": "AngularV20(PWM)",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "web-cine-pwm",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -23,7 +20,6 @@
       }
     ]
   },
-  "private": true
   "private": true,
   "dependencies": {
     "@angular/common": "^20.3.0",
