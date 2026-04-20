@@ -1,7 +1,7 @@
 <header class="header-gris">
   <div class="header-top">
     <div class="circulo_logo">
-      <a routerLink="index.html">
+      <a routerLink="/">
         <img src="assets/img/Logo.jpg" alt="Logo">
       </a>
     </div>
@@ -32,8 +32,8 @@
 
   </div>
   <nav class="nav-superior">
-    <a href="../../../index.html" class="btn-negro-amarillo">Cartelera</a>
-    <a href="../../../index.html" class="btn-negro-amarillo">Para ti</a>
+    <a routerLink="/" class="btn-negro-amarillo">Cartelera</a>
+    <a routerLink="/" class="btn-negro-amarillo">Para ti</a>
     @if (isLoggedIn) {
       <a routerLink="/perfil" class="btn-negro-amarillo">Perfil</a>
     } @else {
