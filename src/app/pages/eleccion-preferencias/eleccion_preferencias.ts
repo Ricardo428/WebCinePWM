@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Carrusel } from '../../shared/carrusel/carrusel';
-import { Database, ref, update, get } from '@angular/fire/database';
+
+// 1. IMPORTAMOS LOS MÉTODOS DE FIRESTORE
+import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-eleccion',
@@ -14,7 +16,8 @@ import { Database, ref, update, get } from '@angular/fire/database';
   styleUrl: './eleccion_preferencias.css',
 })
 export class Eleccion implements OnInit {
-  private db: Database = inject(Database);
+  // 2. INYECTAMOS FIRESTORE
+  private firestore: Firestore = inject(Firestore);
 
   listaGenerosDisponibles = ['Acción', 'Comedia', 'Drama', 'Terror', 'Sci-Fi', 'Infantil'];
   actores_elegidos: string[] = [];
@@ -33,26 +36,25 @@ export class Eleccion implements OnInit {
     this.cargarDatos();
   }
 
-  cargarDatos(): void {
+  // Convertimos la función en async para usar await y que quede más limpia
+  async cargarDatos(): Promise<void> {
     if (!this.emailActivo) return;
 
-    const emailKey = this.emailActivo.replace(/\./g, '_');
-    const userRef = ref(this.db, `usuarios/${emailKey}`);
+    // En Firestore usamos 'doc' y podemos usar el email normal con puntos
+    const userRef = doc(this.firestore, `usuarios/${this.emailActivo}`);
 
-    get(userRef).then((snapshot) => {
+    try {
+      const snapshot = await getDoc(userRef); // Usamos getDoc
+
       if (snapshot.exists()) {
-        const datos = snapshot.val();
-        console.log("Datos recuperados de Firebase:", datos);
+        const datos = snapshot.data(); // En Firestore es .data(), no .val()
+        console.log("Datos recuperados de Firestore:", datos);
 
-        const aArray = (valor: any) => {
-          if (!valor) return [];
-          if (Array.isArray(valor)) return valor;
-          return Object.values(valor);
-        };
+        // Firestore respeta los arrays, solo nos aseguramos de que no vengan undefined
+        const g_raw = Array.isArray(datos['generos']) ? datos['generos'] : [];
+        const a_raw = Array.isArray(datos['actores']) ? datos['actores'] : [];
 
-        const g_raw = aArray(datos.generos);
-        const a_raw = aArray(datos.actores);
-
+        // Limpiamos la palabra Vacio si por algún motivo la tiene
         this.generos_elegidos = g_raw.filter((g: any) =>
           typeof g === 'string' && g.toLowerCase() !== 'vacio' && g.toLowerCase() !== 'inicial'
         );
@@ -63,7 +65,9 @@ export class Eleccion implements OnInit {
 
         this.cdr.detectChanges();
       }
-    }).catch(err => console.error("Error al cargar datos:", err));
+    } catch (err) {
+      console.error("Error al cargar datos:", err);
+    }
   }
 
   eleccionesGeneros(evento: any, genero: string): void {
@@ -100,19 +104,19 @@ export class Eleccion implements OnInit {
   async guardar(): Promise<void> {
     if (!this.emailActivo) return;
 
-    const emailKey = this.emailActivo.replace(/\./g, '_');
-    const userRef = ref(this.db, `usuarios/${emailKey}`);
+    const userRef = doc(this.firestore, `usuarios/${this.emailActivo}`);
 
     const generosLimpios = this.generos_elegidos.filter(g => g.toLowerCase() !== 'vacio');
     const actoresLimpios = this.actores_elegidos.filter(a => a.toLowerCase() !== 'vacio');
 
     const updates: any = {};
-    updates['generos'] = generosLimpios.length > 0 ? [...new Set(generosLimpios)] : null;
-    updates['actores'] = actoresLimpios.length > 0 ? actoresLimpios : null;
+    // En Firestore no hay problema en guardar arrays vacíos []
+    updates['generos'] = generosLimpios.length > 0 ? [...new Set(generosLimpios)] : [];
+    updates['actores'] = actoresLimpios.length > 0 ? actoresLimpios : [];
 
     try {
-      await update(userRef, updates);
-      console.log("¡Datos actualizados!");
+      await updateDoc(userRef, updates); // Usamos updateDoc
+      console.log("¡Datos actualizados en Firestore!");
 
       localStorage.setItem(`preferencias_${this.emailActivo}`, JSON.stringify({
         generos: generosLimpios,

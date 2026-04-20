@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Database, ref, set } from '@angular/fire/database';
+import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +13,7 @@ import { Database, ref, set } from '@angular/fire/database';
   standalone: true,
 })
 export class Registro {
-  private db: Database = inject(Database);
+  private firestore: Firestore = inject(Firestore);
 
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -30,11 +31,8 @@ export class Registro {
               private loginService: LoginService) {}
 
   async crearUsuario(usuario: any) {
-    const emailKey = usuario.email.replace(/\./g, '_');
-
-    const userRef = ref(this.db, 'usuarios/' + emailKey);
-
-    return set(userRef, usuario);
+    const userRef = doc(this.firestore, `usuarios/${usuario.email}`);
+    return setDoc(userRef, usuario);
   }
 
   registro(): void {
