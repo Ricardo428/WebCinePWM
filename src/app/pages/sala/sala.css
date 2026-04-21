@@ -88,3 +88,81 @@
     border-radius: 4px;
   }
 }
+
+.contenedor-panzoom {
+  width: 100%;
+  height: 450px;
+  background: #1a1a1a;
+  overflow: hidden;
+  border-radius: 8px;
+  touch-action: none;
+}
+
+.lienzo-butacas {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pantalla {
+  width: 300px;
+  height: 5px;
+  background: #555;
+  box-shadow: 0 -10px 20px rgba(255,255,255,0.2);
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #333;
+}
+
+.grid-asientos {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* 10 columnas */
+  gap: 10px;
+  justify-content: center;
+}
+
+.asiento {
+  width: 40px;
+  height: 40px;
+  background-color: transparent !important;
+  border: none !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.asiento:hover:not(.ocupada) {
+  transform: scale(1.15);
+}
+.asiento.libre {
+  background-image: url('/assets/img/butaca-libre.png');
+}
+
+.asiento.ocupada {
+  background-image: url('/assets/img/butaca-ocupada.png');
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.asiento.seleccionada {
+  background-image: url('/assets/img/butaca-seleccionada.png');
+  transform: scale(1.1); /* Se queda un poco más grande para destacar */
+}
+
+/* Leyenda actualizada para usar imágenes */
+.leyenda-butacas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.muestra {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
