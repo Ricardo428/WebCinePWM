@@ -22,6 +22,8 @@ export class Entradas implements OnInit {
   cantAdulto = 0;
   cantNino = 0;
 
+  butacasPermitidas: number = 0;
+
   constructor(
     private location: Location,
     private router: Router,
@@ -29,6 +31,7 @@ export class Entradas implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.butacasPermitidas = parseInt(sessionStorage.getItem("total_butacas") || '0', 10)
     const cantNormalSession = sessionStorage.getItem('cantNormal') || 0;
     const cantAdultoSession = sessionStorage.getItem('cantAdulto') || 0;
     const cantNinoSession = sessionStorage.getItem('cantNino') || 0;
@@ -63,6 +66,10 @@ export class Entradas implements OnInit {
     if (this.totalEntradas == 0) {
       event.preventDefault();
       alert('Por favor, selecciona al menos una entrada para poder continuar.');
+      return;
+    }
+    if (this.totalEntradas !== this.butacasPermitidas) {
+      alert(`Has reservado ${this.butacasPermitidas} butacas. Tienes que elegir exactamente ${this.butacasPermitidas} entradas. Actualmente has elegido ${this.totalEntradas}.`);
       return;
     }
 
