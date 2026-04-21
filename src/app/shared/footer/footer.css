@@ -47,7 +47,12 @@ footer h3 {
 
 @media (max-width: 64rem)  {
   footer{
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-top: 2rem;
   }
+
+  footer h3{
+    font-size: 1rem;
+  }
+
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Observable, map, BehaviorSubject, switchMap, of} from 'rxjs';
+import {Observable, BehaviorSubject, switchMap, of} from 'rxjs';
 import {Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from '@angular/fire/auth';
 import {doc, docData, Firestore, setDoc, updateDoc} from '@angular/fire/firestore';
+import {Usuario} from '../models/usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -13,13 +13,9 @@ export class LoginService {
 
   estadoLogin$ = this.estadoLogin.asObservable();
 
-  constructor(private http: HttpClient,
-              private auth: Auth,
+  constructor(private auth: Auth,
               private firestore: Firestore) {}
 
-  getUsers(): Observable<any>{
-    return this.http.get<any>('/assets/json/users.json');
-  }
 
   actualizarEstado(estado: boolean) {
     this.estadoLogin.next(estado);
@@ -38,7 +34,6 @@ export class LoginService {
         actores: [],
         generos: [],
         puntos: 0,
-        historial: []
       });
 
       return credenciales;
@@ -57,17 +52,17 @@ export class LoginService {
     this.actualizarEstado(false);
   }
 
-  obtnerUsuarioActual(): Observable<any> {
+  obtnerUsuarioActual(): Observable<Usuario | null> {
     return authState(this.auth).pipe(
       switchMap((user) => {
-        if (user){
-          const userRef = doc(this.firestore, `usuarios/${user.uid}`)
-
-          return docData(userRef)
-        } else
+        if (user) {
+          const userRef = doc(this.firestore, `usuarios/${user.uid}`);
+          return docData(userRef, { idField: 'uid' }) as Observable<Usuario>;
+        } else {
           return of(null);
+        }
       })
-    )
+    );
 
   }
 
