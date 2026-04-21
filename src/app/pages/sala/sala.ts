@@ -27,8 +27,6 @@ export class Sala implements OnInit {
   continuar() {
     sessionStorage.setItem('butacas_seleccionadas', '14A, 14B');
     sessionStorage.setItem('fila_seleccionada', '14');
-
-    // Navegamos al siguiente paso
     this.router.navigate(['/entradas']);
   }
 }

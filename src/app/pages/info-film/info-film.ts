@@ -19,10 +19,16 @@ export class InfoFilm implements OnInit {
   ) {}
 
   seleccionarSesion(hora: string, peliId: number) {
+    const emailActivo = localStorage.getItem('emailUsuario');
+
+    if (!emailActivo) {
+      this.router.navigate(['/registro']);
+      return;
+    }
+
     sessionStorage.setItem('pelicula_id', peliId.toString());
     sessionStorage.setItem('hora_seleccionada', hora);
 
-    //Aqui no se si la web es sala o resumen, pero yo probé con resuemn y funciona perfe.
     this.router.navigate(['/sala']);
   }
 
