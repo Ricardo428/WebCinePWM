@@ -18,7 +18,6 @@ export class Perfil implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Nos suscribimos para recibir los datos (email, puntos, preferencias...)
     this.loginService.obtnerUsuarioActual().subscribe(datos => {
       this.user = datos;
       console.log('Datos cargados de Firestore:', this.user);

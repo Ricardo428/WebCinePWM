@@ -1,12 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, inject, NgZone } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Carrusel } from '../../shared/carrusel/carrusel';
 
-// 1. IMPORTAMOS LOS MÉTODOS DE FIRESTORE
-import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-eleccion',
@@ -16,8 +15,9 @@ import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
   styleUrl: './eleccion_preferencias.css',
 })
 export class Eleccion implements OnInit {
-  // 2. INYECTAMOS FIRESTORE
-  private firestore: Firestore = inject(Firestore);
+
+  private usuariosService: UsuariosService = inject(UsuariosService);
+  private ngZone: NgZone = inject(NgZone);
 
   listaGenerosDisponibles = ['Acción', 'Comedia', 'Drama', 'Terror', 'Sci-Fi', 'Infantil'];
   actores_elegidos: string[] = [];
@@ -36,37 +36,26 @@ export class Eleccion implements OnInit {
     this.cargarDatos();
   }
 
-  // Convertimos la función en async para usar await y que quede más limpia
   async cargarDatos(): Promise<void> {
     if (!this.emailActivo) return;
 
-    // En Firestore usamos 'doc' y podemos usar el email normal con puntos
-    const userRef = doc(this.firestore, `usuarios/${this.emailActivo}`);
-
     try {
-      const snapshot = await getDoc(userRef); // Usamos getDoc
+      const datos: any = await this.usuariosService.obtenerPreferencias(this.emailActivo);
 
-      if (snapshot.exists()) {
-        const datos = snapshot.data(); // En Firestore es .data(), no .val()
-        console.log("Datos recuperados de Firestore:", datos);
+      if (datos) {
+        this.ngZone.run(() => {
+          const g_raw = Array.isArray(datos['generos']) ? datos['generos'] : [];
+          this.generos_elegidos = g_raw.filter((g: any) => g.toLowerCase() !== 'vacio');
 
-        // Firestore respeta los arrays, solo nos aseguramos de que no vengan undefined
-        const g_raw = Array.isArray(datos['generos']) ? datos['generos'] : [];
-        const a_raw = Array.isArray(datos['actores']) ? datos['actores'] : [];
+          const a_raw = Array.isArray(datos['actores']) ? datos['actores'] : [];
+          this.actores_elegidos = a_raw.filter((a: any) => a.toLowerCase() !== 'vacio');
 
-        // Limpiamos la palabra Vacio si por algún motivo la tiene
-        this.generos_elegidos = g_raw.filter((g: any) =>
-          typeof g === 'string' && g.toLowerCase() !== 'vacio' && g.toLowerCase() !== 'inicial'
-        );
-
-        this.actores_elegidos = a_raw.filter((a: any) =>
-          typeof a === 'string' && a.toLowerCase() !== 'vacio' && a.toLowerCase() !== 'inicial'
-        );
-
-        this.cdr.detectChanges();
+          console.log("Datos listos para el HTML de elección:", this.generos_elegidos);
+          this.cdr.detectChanges();
+        });
       }
     } catch (err) {
-      console.error("Error al cargar datos:", err);
+      console.error("Error cargando:", err);
     }
   }
 
@@ -104,23 +93,20 @@ export class Eleccion implements OnInit {
   async guardar(): Promise<void> {
     if (!this.emailActivo) return;
 
-    const userRef = doc(this.firestore, `usuarios/${this.emailActivo}`);
-
     const generosLimpios = this.generos_elegidos.filter(g => g.toLowerCase() !== 'vacio');
     const actoresLimpios = this.actores_elegidos.filter(a => a.toLowerCase() !== 'vacio');
 
-    const updates: any = {};
-    // En Firestore no hay problema en guardar arrays vacíos []
-    updates['generos'] = generosLimpios.length > 0 ? [...new Set(generosLimpios)] : [];
-    updates['actores'] = actoresLimpios.length > 0 ? actoresLimpios : [];
+    const generosFinales = generosLimpios.length > 0 ? [...new Set(generosLimpios)] : [];
+    const actoresFinales = actoresLimpios.length > 0 ? actoresLimpios : [];
 
     try {
-      await updateDoc(userRef, updates); // Usamos updateDoc
-      console.log("¡Datos actualizados en Firestore!");
+      await this.usuariosService.guardarPreferencias(this.emailActivo, generosFinales, actoresFinales);
+
+      console.log("¡Datos actualizados mediante el servicio!");
 
       localStorage.setItem(`preferencias_${this.emailActivo}`, JSON.stringify({
-        generos: generosLimpios,
-        actores: actoresLimpios
+        generos: generosFinales,
+        actores: actoresFinales
       }));
 
       this.router.navigate(['/preferencias']);
