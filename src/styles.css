@@ -105,17 +105,18 @@ body {
 
 /* Visualización de los pasos dinamicamente */
 
+/* Visualización de los pasos dinamicamente */
 .paso-1 { --progreso: 20%; }
-.paso-1 .p-1 { color: #000; font-weight: bold; }
+.paso-1 .step-1 { color: #000; font-weight: bold; }
 
 .paso-2 { --progreso: 40%; }
-.paso-2 .p-1, .paso-2 .p-2 { color: #000; font-weight: bold; }
+.paso-2 .step-1, .paso-2 .step-2 { color: #000; font-weight: bold; }
 
 .paso-3 { --progreso: 60%; }
-.paso-3 .p-1, .paso-3 .p-2, .paso-3 .p-3 { color: #000; font-weight: bold; }
+.paso-3 .step-1, .paso-3 .step-2, .paso-3 .step-3 { color: #000; font-weight: bold; }
 
 .paso-4 { --progreso: 80%; }
-.paso-4 .p-1, .paso-4 .p-2, .paso-4 .p-3, .paso-4 .p-4 { color: #000; font-weight: bold; }
+.paso-4 .step-1, .paso-4 .step-2, .paso-4 .step-3, .paso-4 .step-4 { color: #000; font-weight: bold; }
 
 .paso-5 { --progreso: 100%; }
 .paso-5 li { color: #000; font-weight: bold; }

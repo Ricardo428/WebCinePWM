@@ -1,46 +1,51 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {LoginService} from '../../services/login.service';
-import {RouterLink} from '@angular/router';
-import {Carrusel} from '../../shared/carrusel/carrusel';
+import { ChangeDetectorRef, Component, OnInit, inject, NgZone } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Carrusel } from '../../shared/carrusel/carrusel';
+import { CommonModule } from '@angular/common';
 
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-preferencias',
-  imports: [RouterLink, Carrusel],
+  standalone: true,
+  imports: [RouterLink, Carrusel, CommonModule],
   templateUrl: './preferencias.html',
   styleUrl: './preferencias.css',
-  standalone: true,
 })
 export class Preferencias implements OnInit {
+
+  private usuariosService: UsuariosService = inject(UsuariosService);
+  private ngZone: NgZone = inject(NgZone);
+
   generos: any[] = [];
   actores: any[] = [];
 
   constructor(
-    private loginService: LoginService,
     private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
+    this.cargarPreferencias();
+  }
+
+  async cargarPreferencias() {
     const email = localStorage.getItem('emailUsuario');
+    if (!email) return;
 
-    const preferenciasGuardadas = localStorage.getItem(`preferencias_${email}`);
+    try {
+      const datos: any = await this.usuariosService.obtenerPreferencias(email);
 
-    if (preferenciasGuardadas) {
-      const datos = JSON.parse(preferenciasGuardadas);
-      this.generos = datos.generos;
-      this.actores = datos.actores;
-      this.cdr.detectChanges();
-    } else {
-      this.loginService.getUsers().subscribe({
-        next: (data) => {
-          const usuarioJson = data.find((user: any) => user.email === email);
-          if (usuarioJson) {
-            this.generos = usuarioJson.generos;
-            this.actores = usuarioJson.actores;
-            this.cdr.detectChanges();
-          }
-        },
-      });
+      if (datos) {
+        this.ngZone.run(() => {
+          this.generos = datos['generos'] || [];
+          this.actores = datos['actores'] || [];
+
+          console.log('Preferencias cargadas mediante el servicio:', this.generos, this.actores);
+          this.cdr.detectChanges();
+        });
+      }
+    } catch (error) {
+      console.error("Error al cargar preferencias:", error);
     }
   }
 }

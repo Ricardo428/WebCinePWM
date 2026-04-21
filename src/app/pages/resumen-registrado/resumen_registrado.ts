@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { Peliculas } from '../../services/peliculas';
 import { CommonModule } from '@angular/common';
+import {BarraPasos} from '../../shared/barra-pasos/barra-pasos';
+import {Temporizador} from '../../shared/temporizador/temporizador';
 
 interface ItemTicket {
   nombre: string;
@@ -12,7 +14,7 @@ interface ItemTicket {
 @Component({
   selector: 'app-resumen',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, BarraPasos, Temporizador],
   templateUrl: './resumen_registrado.html',
   styleUrl: './resumen_registrado.css',
 })
