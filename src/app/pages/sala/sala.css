@@ -149,10 +149,10 @@
 
 .asiento.seleccionada {
   background-image: url('/assets/img/butaca-seleccionada.png');
-  transform: scale(1.1); /* Se queda un poco más grande para destacar */
+  transform: scale(1.1);
 }
 
-/* Leyenda actualizada para usar imágenes */
+
 .leyenda-butacas {
   display: flex;
   gap: 20px;

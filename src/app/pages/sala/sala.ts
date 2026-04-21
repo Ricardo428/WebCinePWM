@@ -26,10 +26,8 @@ export class Sala implements AfterViewInit, OnDestroy {
   @ViewChild('contenedorPanzoom') contenedor!: ElementRef;
   panzoomInstance!: PanzoomObject;
 
-  // SIGNAL: Estado principal de todas las butacas
   butacas = signal<Butaca[]>([]);
 
-  // COMPUTED: Se actualiza solo cuando cambia el signal de butacas
   seleccionadasCount = computed(() =>
     this.butacas().filter(b => b.estado === 'seleccionada').length
   );
