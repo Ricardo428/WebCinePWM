@@ -137,32 +137,34 @@
 .asiento:hover:not(.ocupada) {
   transform: scale(1.15);
 }
-.asiento.libre {
+
+.asiento.normal.libre, .muestra.normal.libre {
   background-image: url('/assets/img/butaca-libre.png');
 }
 
-.asiento.ocupada {
+.asiento.normal.ocupada, .muestra.normal.ocupada {
   background-image: url('/assets/img/butaca-ocupada.png');
   cursor: not-allowed;
   opacity: 0.8;
 }
 
-.asiento.seleccionada {
+.asiento.normal.seleccionada, .muestra.normal.seleccionada {
   background-image: url('/assets/img/butaca-seleccionada.png');
   transform: scale(1.1);
 }
 
 
-.leyenda-butacas {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+.asiento.silla-ruedas.libre, .muestra.silla-ruedas.libre {
+  background-image: url('/assets/img/silla-libre.png');
 }
-.muestra {
-  width: 25px;
-  height: 25px;
-  background-size: contain;
-  display: inline-block;
-  vertical-align: middle;
+
+.asiento.silla-ruedas.ocupada, .muestra.silla-ruedas.ocupada {
+  background-image: url('/assets/img/silla-ocupada.png');
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.asiento.silla-ruedas.seleccionada, .muestra.silla-ruedas.seleccionada {
+  background-image: url('/assets/img/silla-seleccionada.png');
+  transform: scale(1.1);
 }

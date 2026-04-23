@@ -3,21 +3,24 @@ import { Router, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import {Carrusel} from '../../shared/carrusel/carrusel';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, Carrusel],
+  imports: [RouterModule, ReactiveFormsModule, Carrusel, RecaptchaModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
   errorLogin: boolean = false;
+  recaptchaResuelto: boolean = false;
+  siteKey: string = environment.recaptchaSiteKey;
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    captcha: new FormControl(false, [Validators.requiredTrue]),
   });
 
   constructor(
@@ -25,9 +28,16 @@ export class Login {
     private router: Router
   ) {}
 
-  intentarEntrar() {
+    captchaResuelto(tokenValido: string | null) {
+    this.recaptchaResuelto = !!tokenValido;
+    }
+    intentarEntrar() {
     if (this.loginForm.invalid){
       this.loginForm.markAllAsTouched();
+      return;
+    }
+    if (!this.recaptchaResuelto) {
+      alert("Por favor, verifica que no eres un robot resolviendo el captcha.");
       return;
     }
 
@@ -45,20 +55,7 @@ export class Login {
       console.log("Error: ",erro);
     })
 
-    /*
-    this.loginService.hacerLogin(email, password).subscribe((exito) => {
-      if (exito) {
-        this.errorLogin = false;
 
-        localStorage.setItem('isloggedIn', 'true');
-        localStorage.setItem('emailUsuario', email);
-
-        this.router.navigate(['']);
-      } else {
-        this.errorLogin = true;
-      }
-    });
-    */
 
   }
 }

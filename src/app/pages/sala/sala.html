@@ -20,7 +20,7 @@
             @for (b of butacas(); track b.id) {
               <div
                 class="asiento"
-                [ngClass]="b.estado"
+                [ngClass]="[b.estado, b.tipo]"
                 (click)="seleccionarButaca(b)">
               </div>
             }
@@ -32,6 +32,8 @@
         <div class="leyenda-item"><div class="muestra libre"></div> Libre</div>
         <div class="leyenda-item"><div class="muestra ocupada"></div> Ocupada</div>
         <div class="leyenda-item"><div class="muestra seleccionada"></div> Tu selección</div>
+        <div class="leyenda-item"><div class="muestra silla-ruedas libre"></div> Silla ruedas</div>
+        <div class="leyenda-item"><div class="muestra silla-ruedas ocupada"></div> Silla (Ocupada)</div>
       </div>
 
       <p>Butacas seleccionadas: <strong>{{ seleccionadasCount() }}</strong></p>

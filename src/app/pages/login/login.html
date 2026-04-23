@@ -39,24 +39,19 @@
           <a routerLink="/registro" class="text-decoration-none">Crear cuenta</a>
         </div>
 
-        <div class="mb-3 p-3 border rounded bg-white shadow-sm">
-          <div class="form-check d-flex align-items-center gap-2">
-            <input class="form-check-input" type="checkbox" id="captcha-check"
-                   [class.is-invalid]="loginForm.get('captcha')?.invalid && loginForm.get('captcha')?.touched"
-                   formControlName="captcha">
-            <label class="form-check-label mb-0" for="captcha-check">
-              No soy un robot
-            </label>
-          </div>
-          @if (loginForm.get('captcha')?.invalid && loginForm.get('captcha')?.touched) {
-            <div class="text-danger small mt-1 text-center">
-              Debes confirmar el captcha.
-            </div>
-          }
+        <div class="mb-4 d-flex justify-content-center">
+          <re-captcha
+            (resolved)="captchaResuelto($event)"
+            [siteKey]="siteKey">
+          </re-captcha>
         </div>
 
-        <button type="submit">Entrar</button>
-
+        <button
+          type="submit"
+          class="btn-perfil btn-primario"
+          [disabled]="loginForm.invalid || !recaptchaResuelto">
+          Entrar
+        </button>
       </form>
     </fieldset>
   </main>

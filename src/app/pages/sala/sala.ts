@@ -6,12 +6,14 @@ import {Temporizador} from '../../shared/temporizador/temporizador';
 import Panzoom, {PanzoomObject} from '@panzoom/panzoom';
 
 export type EstadoButaca = 'libre' | 'ocupada' | 'seleccionada';
+export type TipoButaca = 'normal' | 'silla-ruedas';
 
 export interface Butaca {
   id: string;
   fila: number;
   asiento: number;
   estado: EstadoButaca;
+  tipo: TipoButaca;
 }
 
 @Component({
@@ -43,11 +45,13 @@ export class Sala implements AfterViewInit, OnDestroy {
 
     for (let f = 1; f <= filas; f++) {
       for (let a = 1; a <= asientosPorFila; a++) {
+        const esSillaRuedas = (f === 1 && (a === 2 || a === 9));
         mapa.push({
           id: `F${f}-A${a}`,
           fila: f,
           asiento: a,
-          estado: Math.random() < 0.15 ? 'ocupada' : 'libre' // 15% ocupadas al azar
+          estado: Math.random() < 0.15 ? 'ocupada' : 'libre',
+          tipo: esSillaRuedas ? 'silla-ruedas' : 'normal'
         });
       }
     }

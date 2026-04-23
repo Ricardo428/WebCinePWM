@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+  recaptchaSiteKey: '6LeEh8YsAAAAAB0hLzcU3GjL0ZnWFwR6oMmDH3AW',
   firebase: {
     projectId: "screen-and-eat",
     appId: "1:790009746135:web:67a02c5e3e482a98f39692",

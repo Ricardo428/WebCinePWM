@@ -22,7 +22,7 @@ export class InfoFilm implements OnInit {
     const emailActivo = localStorage.getItem('emailUsuario');
 
     if (!emailActivo) {
-      this.router.navigate(['/registro']);
+      this.router.navigate(['/login']);
       return;
     }
 
