@@ -14,7 +14,6 @@ import {UsuariosService} from '../../services/usuarios.service';
   standalone: true,
 })
 export class Registro {
-  private firestore: Firestore = inject(Firestore);
 
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -45,9 +44,10 @@ export class Registro {
 
     this.loginService.registerFire(email, password)
       .then(async (value) => {
-        console.log("¡Usuario autenticado!", value.user.email);
+        console.log("¡Usuario autenticado!", value.user.uid);
 
         const nuevoUsuario = {
+          uid: value.user.uid,
           nombre: this.registerForm.value.name,
           apellido: this.registerForm.value.surname,
           email: email,
@@ -60,7 +60,6 @@ export class Registro {
         await this.usuariosService.crearUsuario(nuevoUsuario);
 
         this.loginService.actualizarEstado(true);
-        localStorage.setItem('emailUsuario', email);
         this.router.navigate(['/eleccion']);
       })
       .catch((error) => {

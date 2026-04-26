@@ -7,19 +7,19 @@ import {Firestore, doc, getDoc, updateDoc, setDoc} from '@angular/fire/firestore
 export class UsuariosService {
   private firestore: Firestore = inject(Firestore);
 
-  async obtenerPreferencias(email: string) {
-    const userRef = doc(this.firestore, `usuarios/${email}`);
+  async obtenerPreferencias(uid: string) {
+    const userRef = doc(this.firestore, `usuarios/${uid}`);
     const snapshot = await getDoc(userRef);
     return snapshot.exists() ? snapshot.data() : null;
   }
 
-  async guardarPreferencias(email: string, generos: string[], actores: string[]) {
-    const userRef = doc(this.firestore, `usuarios/${email}`);
+  async guardarPreferencias(uid: string, generos: string[], actores: string[]) {
+    const userRef = doc(this.firestore, `usuarios/${uid}`);
     return updateDoc(userRef, { generos, actores });
   }
 
   async crearUsuario(usuario: any) {
-    const userRef = doc(this.firestore, `usuarios/${usuario.email}`);
+    const userRef = doc(this.firestore, `usuarios/${usuario.uid}`);
     return setDoc(userRef, usuario);
   }
 }

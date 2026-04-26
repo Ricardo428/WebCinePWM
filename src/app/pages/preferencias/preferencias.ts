@@ -4,6 +4,8 @@ import { Carrusel } from '../../shared/carrusel/carrusel';
 import { CommonModule } from '@angular/common';
 
 import { UsuariosService } from '../../services/usuarios.service';
+import {Subscription} from 'rxjs';
+import {LoginService} from '../../services/login.service';
 
 @Component({
   selector: 'app-preferencias',
@@ -19,21 +21,32 @@ export class Preferencias implements OnInit {
 
   generos: any[] = [];
   actores: any[] = [];
+  authSub: Subscription | null = null;
+  uidActivo: string | null | undefined = null;
 
   constructor(
     private cdr: ChangeDetectorRef,
+    private loginService: LoginService,
+
   ) {}
 
   ngOnInit(): void {
-    this.cargarPreferencias();
+    this.authSub = this.loginService.obtnerUsuarioActual().subscribe(user => {
+      if (user) {
+        this.uidActivo = user.uid;
+        console.log("Usuario detectado por Firebase:", this.uidActivo);
+        this.cargarPreferencias();
+      } else {
+        console.warn("No hay usuario autenticado");
+      }
+    });
   }
 
   async cargarPreferencias() {
-    const email = localStorage.getItem('emailUsuario');
-    if (!email) return;
+    if (!this.uidActivo) return;
 
     try {
-      const datos: any = await this.usuariosService.obtenerPreferencias(email);
+      const datos: any = await this.usuariosService.obtenerPreferencias(this.uidActivo!);
 
       if (datos) {
         this.ngZone.run(() => {

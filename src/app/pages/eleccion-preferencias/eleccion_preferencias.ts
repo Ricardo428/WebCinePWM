@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, inject, NgZone } from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef, inject, NgZone, OnDestroy} from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/login.service';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Carrusel } from '../../shared/carrusel/carrusel';
 
 import { UsuariosService } from '../../services/usuarios.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-eleccion',
@@ -14,7 +15,7 @@ import { UsuariosService } from '../../services/usuarios.service';
   templateUrl: './eleccion_preferencias.html',
   styleUrl: './eleccion_preferencias.css',
 })
-export class Eleccion implements OnInit {
+export class Eleccion implements OnInit, OnDestroy {
 
   private usuariosService: UsuariosService = inject(UsuariosService);
   private ngZone: NgZone = inject(NgZone);
@@ -23,7 +24,8 @@ export class Eleccion implements OnInit {
   actores_elegidos: string[] = [];
   generos_elegidos: string[] = [];
   actorControl = new FormControl('');
-  emailActivo: string | null = null;
+  uidActivo: string | null | undefined = null;
+  private authSub: Subscription | null = null;
 
   constructor(
     private loginService: LoginService,
@@ -32,15 +34,27 @@ export class Eleccion implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.emailActivo = localStorage.getItem('emailUsuario');
-    this.cargarDatos();
+    this.authSub = this.loginService.obtnerUsuarioActual().subscribe(user => {
+      if (user) {
+        this.uidActivo = user.uid;
+        console.log("Usuario detectado por Firebase:", this.uidActivo);
+        this.cargarDatos();
+      } else {
+        console.warn("No hay usuario autenticado");
+      }
+    });
+
+  }
+  ngOnDestroy(): void {
+    if (this.authSub) this.authSub.unsubscribe();
   }
 
+
   async cargarDatos(): Promise<void> {
-    if (!this.emailActivo) return;
+    if (!this.uidActivo) return;
 
     try {
-      const datos: any = await this.usuariosService.obtenerPreferencias(this.emailActivo);
+      const datos: any = await this.usuariosService.obtenerPreferencias(this.uidActivo);
 
       if (datos) {
         this.ngZone.run(() => {
@@ -91,7 +105,7 @@ export class Eleccion implements OnInit {
   }
 
   async guardar(): Promise<void> {
-    if (!this.emailActivo) return;
+    if (!this.uidActivo) return;
 
     const generosLimpios = this.generos_elegidos.filter(g => g.toLowerCase() !== 'vacio');
     const actoresLimpios = this.actores_elegidos.filter(a => a.toLowerCase() !== 'vacio');
@@ -100,14 +114,9 @@ export class Eleccion implements OnInit {
     const actoresFinales = actoresLimpios.length > 0 ? actoresLimpios : [];
 
     try {
-      await this.usuariosService.guardarPreferencias(this.emailActivo, generosFinales, actoresFinales);
+      await this.usuariosService.guardarPreferencias(this.uidActivo, generosFinales, actoresFinales);
 
       console.log("¡Datos actualizados mediante el servicio!");
-
-      localStorage.setItem(`preferencias_${this.emailActivo}`, JSON.stringify({
-        generos: generosFinales,
-        actores: actoresFinales
-      }));
 
       this.router.navigate(['/preferencias']);
     } catch (error) {
