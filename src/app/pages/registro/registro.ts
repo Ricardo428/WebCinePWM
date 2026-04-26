@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Database, ref, set } from '@angular/fire/database';
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import {UsuariosService} from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-registro',
@@ -28,12 +29,10 @@ export class Registro {
   });
 
   constructor(private router: Router,
-              private loginService: LoginService) {}
+              private loginService: LoginService,
+              private usuariosService: UsuariosService) {}
 
-  async crearUsuario(usuario: any) {
-    const userRef = doc(this.firestore, `usuarios/${usuario.email}`);
-    return setDoc(userRef, usuario);
-  }
+
 
   registro(): void {
     if (this.registerForm.invalid) {
@@ -58,7 +57,7 @@ export class Registro {
           actores: ['Vacio']
         };
 
-        await this.crearUsuario(nuevoUsuario);
+        await this.usuariosService.crearUsuario(nuevoUsuario);
 
         this.loginService.actualizarEstado(true);
         localStorage.setItem('emailUsuario', email);

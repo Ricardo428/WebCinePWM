@@ -3,7 +3,7 @@ import {CommonModule, Location} from '@angular/common';
 import {Router} from '@angular/router';
 import {BarraPasos} from '../../shared/barra-pasos/barra-pasos';
 import {Temporizador} from '../../shared/temporizador/temporizador';
-import Panzoom, {PanzoomObject} from '@panzoom/panzoom';
+import Panzoom, {PanzoomObject} from "@panzoom/panzoom";
 
 export type EstadoButaca = 'libre' | 'ocupada' | 'seleccionada';
 export type TipoButaca = 'normal' | 'silla-ruedas';
