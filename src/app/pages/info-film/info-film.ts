@@ -1,6 +1,8 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterLink, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Peliculas} from '../../services/peliculas';
+import {LoginService} from '../../services/login.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-info-film',
@@ -10,18 +12,21 @@ import {Peliculas} from '../../services/peliculas';
 })
 export class InfoFilm implements OnInit {
   pelicula: any;
+  private loginSub!: Subscription;
+  isLoggedIn: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
     private peliculasService: Peliculas,
     private cdr: ChangeDetectorRef,
     private router: Router,
+    private loginService: LoginService,
   ) {}
 
   seleccionarSesion(hora: string, peliId: number) {
-    const emailActivo = localStorage.getItem('emailUsuario');
 
-    if (!emailActivo) {
+    if (!this.isLoggedIn) {
       this.router.navigate(['/login']);
       return;
     }
@@ -33,13 +38,16 @@ export class InfoFilm implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginSub = this.loginService.estadoLogin$.subscribe(estado => {
+      this.isLoggedIn = estado;
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
 
     if (id) {
       this.peliculasService.getPeliculas().subscribe({
         next: (datos) => {
-          const todas = datos.peliculas ? datos.peliculas : datos;
-          this.pelicula = todas.find((p: any) => p.id == id);
+          this.pelicula = datos.find((p: any) => p.id == id);
           this.cdr.detectChanges();
         },
       });

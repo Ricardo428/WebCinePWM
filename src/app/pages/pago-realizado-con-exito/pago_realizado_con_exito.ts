@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, RouterLink, Router } from '@angular/router';
-import { Peliculas } from '../../services/peliculas';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import {Peliculas} from '../../services/peliculas';
+import {CommonModule} from '@angular/common';
 
 interface ItemTicket {
   nombre: string;
@@ -54,8 +54,7 @@ export class Exito implements OnInit {
 
     this.peliculasService.getPeliculas().subscribe({
       next: (datos) => {
-        const todas = datos.peliculas ? datos.peliculas : datos;
-        this.pelicula = todas.find((p: any) => String(p.id) === String(peliId));
+        this.pelicula = datos.find((p: any) => String(p.id) === String(peliId));
         this.cdr.detectChanges();
       },
     });

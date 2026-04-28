@@ -33,7 +33,7 @@ export class Header implements OnInit, OnDestroy {
 
     this.peliculas.getPeliculas().subscribe({
       next: (datos) => {
-        this.todasPeliculas = datos.peliculas ? datos.peliculas : datos;
+        this.todasPeliculas = datos;
       },
     });
 

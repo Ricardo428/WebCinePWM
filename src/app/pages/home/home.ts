@@ -27,7 +27,7 @@ export class Home implements OnInit {
   ngOnInit(): void {
     this.peliculasService.getPeliculas().subscribe({
       next: (datos) => {
-        this.peliculas = datos.peliculas ? datos.peliculas : datos;
+        this.peliculas = datos;
         this.peliculasFiltradas = [...this.peliculas];
 
         this.cdr.detectChanges();

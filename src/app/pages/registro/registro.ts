@@ -54,7 +54,8 @@ export class Registro {
           nacimiento: this.registerForm.value.born,
           password: password,
           generos: ['Vacio'],
-          actores: ['Vacio']
+          actores: ['Vacio'],
+          puntos: 0
         };
 
         await this.usuariosService.crearUsuario(nuevoUsuario);

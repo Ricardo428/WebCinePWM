@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {collection, collectionData, Firestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Peliculas {
-  private jsonUrl = "/assets/json/datos.json";
 
-  constructor(private http: HttpClient) {}
+  constructor(private fire: Firestore) { }
 
-  getPeliculas(): Observable<any> {
-    return this.http.get(this.jsonUrl);
+  getPeliculas(){
+    const colRef = collection(this.fire, 'peliculas');
+    return collectionData(colRef, { idField: 'id' }) as Observable<any[]>
   }
+
 }
