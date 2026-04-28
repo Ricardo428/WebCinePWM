@@ -59,8 +59,6 @@ export class Registro {
         };
 
         await this.usuariosService.crearUsuario(nuevoUsuario);
-
-        this.loginService.actualizarEstado(true);
         this.router.navigate(['/eleccion']);
       })
       .catch((error) => {

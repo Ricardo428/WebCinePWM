@@ -12,7 +12,7 @@ import {Subscription} from 'rxjs';
   standalone: true,
 })
 export class Header implements OnInit, OnDestroy {
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean | null = null;
   todasPeliculas: any[] = [];
   resultados: any[] = [];
   private loginSub!: Subscription;
