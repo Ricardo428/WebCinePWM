@@ -12,8 +12,10 @@
       <div class="info-peli">Screen & Eat Las Palmas</div>
       <div class="info-peli fecha">{{ reserva.fecha }}</div>
       <div class="info-peli hora">{{ reserva.hora }}</div>
-      <div class="info-peli">Butaca: {{ reserva.butaca }}</div>
-      <div class="info-peli">Fila: {{ reserva.fila }}</div>
+      <div class="info-peli" style="font-size: 0.95rem;">
+        <strong>Butacas:</strong> <br>
+        {{ reserva.butaca }}
+      </div>
 
       <div class="iconos-peli">
         <img src="assets/img/ticket-amarillo.png" alt="Ticket">

@@ -14,24 +14,24 @@
 
     <div class="caja-gris caja-info-correo">
       <p *ngIf="user.email; else noEmail">
-        Hemos enviado un correo de confirmación con los detalles de tu compra a <strong>{{ user.email }}</strong>.
+        Hemos enviado un correo de confirmación a <strong>{{ user.email }}</strong>.
       </p>
-
       <ng-template #noEmail>
         <p>Hemos enviado un correo de confirmación con los detalles de tu compra.</p>
       </ng-template>
     </div>
 
     <section class="ticket-pelicula">
-      <img [src]="pelicula.imagen || pelicula.poster" alt="Foto película" class="ticket-poster">
+      <img [src]="pelicula.imagen || pelicula.poster" alt="Póster" class="ticket-poster">
 
       <div class="ticket-info-der">
         <div class="caja-gris texto-pelicula">
           <p class="titulo-resumen">{{ pelicula.titulo || pelicula.title }}</p>
           <p>Screen & Eat Las Palmas - Sala 1</p>
-          <p class="fecha">{{ reserva.fecha }}</p>
-          <p class="hora">{{ reserva.hora }}</p>
-          <p>BUTACAS: Fila {{ reserva.fila }} - {{ reserva.butaca }}</p>
+          <p class="fecha">Fecha: {{ reserva.fecha }}</p>
+          <p class="hora">Sesión: {{ reserva.hora }}</p>
+
+          <p><strong>BUTACAS:</strong> {{ reserva.butaca }}</p>
 
           <p class="total">TOTAL: {{ totalCompra | currency:'EUR' }}</p>
         </div>
@@ -39,18 +39,18 @@
     </section>
 
     <section class="ticket-inferior">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Código QR Ticket" class="ticket-qr">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Código QR" class="ticket-qr">
     </section>
 
     <div class="perfil-acciones acciones-sala">
-      <button type="button" routerLink="/" class="btn-perfil btn-secundario"> Ir a cartelera</button>
+      <button routerLink="/" class="btn-perfil btn-primario">Finalizar</button>
     </div>
 
   </main>
 
   <ng-template #cargando>
-    <main class="contenedor-exito">
-      <h2 style="text-align: center;">Cargando tu ticket...</h2>
-    </main>
+    <div class="text-center p-5">
+      <p>Generando tu ticket...</p>
+    </div>
   </ng-template>
 </div>

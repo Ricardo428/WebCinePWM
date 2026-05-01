@@ -5,13 +5,7 @@ import {Router} from '@angular/router';
 import {OnInit} from '@angular/core';
 import { SeleccionPagoService } from '../../services/seleccion-metodo-pago.service';
 import { CommonModule } from '@angular/common';
-
-interface MetodoPago {
-  id: number;
-  name: string;
-  image: string;
-  route: string;
-}
+import {MetodoPago} from '../../models/metodo-pago';
 
 @Component({
   selector: 'app-seleccion-metodo-pago',

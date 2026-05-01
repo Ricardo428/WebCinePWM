@@ -4,17 +4,7 @@ import {Router} from '@angular/router';
 import {BarraPasos} from '../../shared/barra-pasos/barra-pasos';
 import {Temporizador} from '../../shared/temporizador/temporizador';
 import Panzoom, {PanzoomObject} from "@panzoom/panzoom";
-
-export type EstadoButaca = 'libre' | 'ocupada' | 'seleccionada';
-export type TipoButaca = 'normal' | 'silla-ruedas';
-
-export interface Butaca {
-  id: string;
-  fila: number;
-  asiento: number;
-  estado: EstadoButaca;
-  tipo: TipoButaca;
-}
+import {Butaca} from '../../models/butaca';
 
 @Component({
   selector: 'app-sala',
@@ -88,12 +78,13 @@ export class Sala implements AfterViewInit, OnDestroy {
       return;
     }
 
-    const butacaFilas = (seleccion.map(b => b.id).join(', ')).split("-");
-    const fila = butacaFilas.filter(((_, n)=> n % 2 === 0));
-    const butaca = butacaFilas.filter((_, n) => n % 2 !== 0);
-    sessionStorage.setItem('butacas_seleccionadas', butaca.join(', '));
-    sessionStorage.setItem('total_butacas', seleccion.length.toString())
-    sessionStorage.setItem('fila_seleccionada', fila.join(', '));
+    const butacasNombres = seleccion.map(b => b.id).join(', ');
+    const filasAfectadas = [...new Set(seleccion.map(b => b.fila))].join(', ');
+
+    sessionStorage.setItem('butacas_seleccionadas', butacasNombres);
+    sessionStorage.setItem('fila_seleccionada', filasAfectadas);
+    sessionStorage.setItem('total_butacas', seleccion.length.toString());
+
     this.router.navigate(['/entradas']);
   }
 

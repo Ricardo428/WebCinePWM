@@ -4,19 +4,7 @@ import { Temporizador } from '../../shared/temporizador/temporizador';
 import { Location, CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { SnacksService } from '../../services/snacks.service';
-
-interface Producto {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-}
-
-interface ItemCarrito {
-  producto: Producto;
-  cantidad: number;
-}
+import {ItemCarrito, Producto} from '../../models/snack';
 
 @Component({
   selector: 'app-snacks',

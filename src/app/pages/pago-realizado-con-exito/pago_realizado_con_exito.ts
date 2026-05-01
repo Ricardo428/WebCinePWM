@@ -4,12 +4,7 @@ import {Peliculas} from '../../services/peliculas';
 import {CommonModule} from '@angular/common';
 import {HistorialService} from '../../services/historialService';
 import {LoginService} from '../../services/login.service';
-
-interface ItemTicket {
-  nombre: string;
-  cantidad: number;
-  precio: number;
-}
+import {ItemTicket} from '../../models/ticket';
 
 @Component({
   selector: 'app-exito',
@@ -31,7 +26,7 @@ export class Exito implements OnInit {
 
   carrito: ItemTicket[] = [];
   totalCompra: number = 0;
-  public user: any;
+  public user: any = { email: '' };
 
   constructor(
     private router: Router,
