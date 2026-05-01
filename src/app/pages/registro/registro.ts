@@ -2,9 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
-import { Database, ref, set } from '@angular/fire/database';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 import {UsuariosService} from '../../services/usuarios.service';
+import {Usuario} from '../../models/usuario';
 
 @Component({
   selector: 'app-registro',
@@ -46,17 +45,18 @@ export class Registro {
       .then(async (value) => {
         console.log("¡Usuario autenticado!", value.user.uid);
 
-        const nuevoUsuario = {
+        const nuevoUsuario: Usuario = {
           uid: value.user.uid,
-          nombre: this.registerForm.value.name,
-          apellido: this.registerForm.value.surname,
+          nombre: this.registerForm.value.name ?? '',
+          apellido: this.registerForm.value.surname ?? '',
           email: email,
-          nacimiento: this.registerForm.value.born,
+          nacimiento: this.registerForm.value.born ?? '',
           password: password,
           generos: ['Vacio'],
           actores: ['Vacio'],
           puntos: 0
         };
+
 
         await this.usuariosService.crearUsuario(nuevoUsuario);
         this.router.navigate(['/eleccion']);
