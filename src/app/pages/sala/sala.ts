@@ -88,8 +88,12 @@ export class Sala implements AfterViewInit, OnDestroy {
       return;
     }
 
-    sessionStorage.setItem('butacas_seleccionadas', seleccion.map(b => b.id).join(', '));
+    const butacaFilas = (seleccion.map(b => b.id).join(', ')).split("-");
+    const fila = butacaFilas.filter(((_, n)=> n % 2 === 0));
+    const butaca = butacaFilas.filter((_, n) => n % 2 !== 0);
+    sessionStorage.setItem('butacas_seleccionadas', butaca.join(', '));
     sessionStorage.setItem('total_butacas', seleccion.length.toString())
+    sessionStorage.setItem('fila_seleccionada', fila.join(', '));
     this.router.navigate(['/entradas']);
   }
 

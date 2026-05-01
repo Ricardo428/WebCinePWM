@@ -60,12 +60,6 @@
   color: #555;
 }
 
-.leyenda-item img {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 4px;
-}
-
 
 .acciones-sala {
   width: 100%;
@@ -134,6 +128,15 @@
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.muestra {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
 .asiento:hover:not(.ocupada) {
   transform: scale(1.15);
 }
