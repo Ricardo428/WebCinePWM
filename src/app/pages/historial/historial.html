@@ -10,23 +10,23 @@
       <ul class="lista-compras">
         @for (compra of compras; track compra.id){
           <li class="compra-card">
-            <img [src]="compra.imagen" alt="Póster Película 1" class="compra-poster">
+            <img [src]="compra.pelicula.imagen" alt="Póster Película 1" class="compra-poster">
 
             <div class="compra-info">
               <div class="info-cabecera">
-                <h3 class="compra-titulo">{{compra?.titulo}}</h3>
+                <h3 class="compra-titulo">{{compra.pelicula.titulo}}</h3>
 
               </div>
 
               <div class="compra-detalles">
                 <p class="detalle-linea">
-                  Fecha: <strong>{{ compra?.fecha }}</strong>
+                  <strong>Fecha:</strong> {{ compra?.fecha }}
                 </p>
                 <p class="detalle-linea">
-                  Entradas: <strong>{{ compra?.entradas }}</strong>
+                  <strong>Hora:</strong>{{ compra?.hora }}
                 </p>
-                <p class="detalle-linea precio-total">
-                  Total: <strong>{{compra?.total}}</strong>
+                <p class="detalle-linea ">
+                  <strong>Total:</strong> {{compra?.totalCompra}} €
                 </p>
               </div>
             </div>
@@ -35,11 +35,9 @@
       </ul>
 
       <nav class="paginacion" aria-label="Paginación del historial">
-        <span class="pag-indicador">Página 1 de 4</span>
 
         <div class="perfil-acciones acciones-sala">
-          <a href="InfoFilm.html" class="btn-perfil btn-secundario">Volver</a>
-          <a href="entradas.html" class="btn-perfil btn-primario">Siguiente</a>
+          <a routerLink="/perfil" class="btn-perfil btn-secundario">Volver</a>
         </div>
       </nav>
 

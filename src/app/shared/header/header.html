@@ -23,9 +23,9 @@
         Lista-resultados es para guardar las peliculas que coincidan con las letras que se ponga en el buscador
     -->
     <div id="sesion-container">
-      @if (isLoggedIn) {
+      @if (isLoggedIn === true) {
         <button (click)="cerrarSesion()" class="btn-sesion btn-logout-header">Salir</button>
-      } @else {
+      } @else if (isLoggedIn === false) {
         <a routerLink="/login" class="btn-sesion">Iniciar Sesión</a>
       }
     </div>

@@ -1,26 +1,25 @@
-import { Injectable } from '@angular/core';
-import {Observable, BehaviorSubject, switchMap, of} from 'rxjs';
+import {Injectable, OnInit} from '@angular/core';
+import {Observable, BehaviorSubject, switchMap, of, map} from 'rxjs';
 import {Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from '@angular/fire/auth';
-import {doc, docData, Firestore, setDoc, updateDoc} from '@angular/fire/firestore';
+import {doc, docData, Firestore, setDoc} from '@angular/fire/firestore';
 import {Usuario} from '../models/usuario';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  // TO DO: Quitar el getusers y el JSON(lo usa el de preferencias) cuando este el firestore
-  private estadoLogin = new BehaviorSubject<boolean>(false);
 
-  estadoLogin$ = this.estadoLogin.asObservable();
+  estadoLogin$!: Observable<boolean>;
 
   constructor(private auth: Auth,
-              private firestore: Firestore) {}
+              private firestore: Firestore) {
 
-
-  actualizarEstado(estado: boolean) {
-    this.estadoLogin.next(estado);
+    this.estadoLogin$ = authState(this.auth).pipe(
+      map(auth => {
+        return !!auth;
+      })
+    );
   }
-
   // Firebase
   async registerFire(email: string, password: string) {
     try {
@@ -49,7 +48,6 @@ export class LoginService {
 
   async cerrarSesion() {
     await signOut(this.auth);
-    this.actualizarEstado(false);
   }
 
   obtnerUsuarioActual(): Observable<Usuario | null> {

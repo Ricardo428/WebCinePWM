@@ -1,7 +1,9 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import { Router, RouterLink} from '@angular/router';
 import {Peliculas} from '../../services/peliculas';
 import {CommonModule} from '@angular/common';
+import {HistorialService} from '../../services/historialService';
+import {LoginService} from '../../services/login.service';
 
 interface ItemTicket {
   nombre: string;
@@ -25,26 +27,44 @@ export class Exito implements OnInit {
     butaca: '',
     fila: '',
   };
+  private uuid: any;
 
   carrito: ItemTicket[] = [];
   totalCompra: number = 0;
-  public emailUsuario: any;
+  public user: any;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private peliculasService: Peliculas,
     private cdr: ChangeDetectorRef,
+    private historialService: HistorialService,
+    private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
     const peliId = sessionStorage.getItem('pelicula_id');
     console.log('Iniciando pelicula');
-    this.emailUsuario = localStorage.getItem('emailUsuario');
-    console.log('El email es: ' +  this.emailUsuario);
-    this.reserva.hora = localStorage.getItem('hora_seleccionada') || 'Sin hora';
-    this.reserva.butaca = localStorage.getItem('butacas_seleccionadas') || 'N/A';
-    this.reserva.fila = localStorage.getItem('fila_seleccionada') || 'N/A';
+    this.reserva.hora = sessionStorage.getItem('hora_seleccionada') || 'Sin hora';
+    this.reserva.butaca = sessionStorage.getItem('butacas_seleccionadas') || 'N/A';
+    this.reserva.fila = sessionStorage.getItem('fila_seleccionada') || 'N/A';
+
+    // User
+    this.loginService.obtnerUsuarioActual().subscribe(user => {
+      if (user) {
+        this.user = user;
+        // Compra
+        const compra = {
+          user: this.user.uid,
+          pelicula: this.pelicula,
+          fecha: new Date().toLocaleDateString(),
+          hora: this.reserva.hora,
+          totalCompra: this.totalCompra,
+        };
+
+        this.historialService.addBuy(compra);
+      }
+    })
+
 
     if (!peliId) {
       alert('Error: No se encontró ninguna compra en curso.');
@@ -96,6 +116,5 @@ export class Exito implements OnInit {
     }
 
     this.totalCompra = sumatorioTotal;
-
   }
 }

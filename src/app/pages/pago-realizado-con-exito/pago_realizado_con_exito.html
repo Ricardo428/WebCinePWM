@@ -13,8 +13,8 @@
     </div>
 
     <div class="caja-gris caja-info-correo">
-      <p *ngIf="emailUsuario; else noEmail">
-        Hemos enviado un correo de confirmación con los detalles de tu compra a <strong>{{ emailUsuario }}</strong>.
+      <p *ngIf="user.email; else noEmail">
+        Hemos enviado un correo de confirmación con los detalles de tu compra a <strong>{{ user.email }}</strong>.
       </p>
 
       <ng-template #noEmail>
@@ -43,7 +43,7 @@
     </section>
 
     <div class="perfil-acciones acciones-sala">
-      <a routerLink="/" class="btn-perfil btn-secundario">Ir a cartelera</a>
+      <button type="button" routerLink="/" class="btn-perfil btn-secundario"> Ir a cartelera</button>
     </div>
 
   </main>
