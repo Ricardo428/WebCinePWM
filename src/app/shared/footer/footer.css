@@ -47,12 +47,21 @@ footer h3 {
 
 @media (max-width: 64rem)  {
   footer{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-top: 2rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .columna {
+    width: 100%;
   }
 
   footer h3{
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
-
 }

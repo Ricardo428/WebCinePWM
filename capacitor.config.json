@@ -1,0 +1,10 @@
+{
+  "appId": "com.webcine.pwm",
+  "appName": "WebCinePWM",
+  "webDir": "dist/webcinepwm/browser",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

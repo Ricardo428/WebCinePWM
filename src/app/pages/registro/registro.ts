@@ -5,9 +5,12 @@ import { Router } from '@angular/router';
 import {UsuariosService} from '../../services/usuarios.service';
 import {Usuario} from '../../models/usuario';
 
+import { IonicModule } from '@ionic/angular';
+import { Footer } from '../../shared/footer/footer';
+
 @Component({
   selector: 'app-registro',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, IonicModule, Footer],
   templateUrl: './registro.html',
   styleUrl: './registro.css',
   standalone: true,

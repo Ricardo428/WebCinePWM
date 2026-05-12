@@ -1,12 +1,13 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
+import { IonHeader } from '@ionic/angular/standalone';
 import {Peliculas} from '../../services/peliculas';
 import {LoginService} from '../../services/login.service';
 import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, IonHeader],
   templateUrl: './header.html',
   styleUrl: './header.css',
   standalone: true,

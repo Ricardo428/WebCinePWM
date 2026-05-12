@@ -4,11 +4,15 @@ import {Peliculas} from '../../services/peliculas';
 import {LoginService} from '../../services/login.service';
 import {Subscription} from 'rxjs';
 
+import { IonicModule } from '@ionic/angular';
+import { Footer } from '../../shared/footer/footer';
+
 @Component({
   selector: 'app-info-film',
   templateUrl: './info-film.html',
   styleUrl: './info-film.css',
   standalone: true,
+  imports: [IonicModule, Footer]
 })
 export class InfoFilm implements OnInit {
   pelicula: any;

@@ -3,9 +3,12 @@ import {RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import {Carrusel} from '../../shared/carrusel/carrusel';
 
+import { IonicModule } from '@ionic/angular';
+import { Footer } from '../../shared/footer/footer';
+
 @Component({
   selector: 'app-perfil',
-  imports: [RouterLink, Carrusel],
+  imports: [RouterLink, Carrusel, IonicModule, Footer],
   templateUrl: './perfil.html',
   styleUrl: './perfil.css',
   standalone: true,

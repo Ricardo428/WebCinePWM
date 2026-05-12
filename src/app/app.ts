@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import {Header} from './shared/header/header';
-import {Footer} from './shared/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer],
+  imports: [IonApp, IonRouterOutlet, Header],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css',

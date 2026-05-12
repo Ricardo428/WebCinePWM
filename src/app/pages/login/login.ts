@@ -6,10 +6,13 @@ import {Carrusel} from '../../shared/carrusel/carrusel';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { environment } from '../../../environments/environment';
 
+import { IonicModule } from '@ionic/angular';
+import { Footer } from '../../shared/footer/footer';
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, Carrusel, RecaptchaModule],
+  imports: [RouterModule, ReactiveFormsModule, Carrusel, RecaptchaModule, IonicModule, Footer],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })

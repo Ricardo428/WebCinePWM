@@ -1,10 +1,19 @@
 
-<app-carrusel></app-carrusel>
-<main class="contenido-principal">
+<ion-content>
+  <app-carrusel></app-carrusel>
+  <div class="contenido-principal">
 
   <div class="barra-filtros">
-    <button (click)="cargarCartelera(false)" class="btn-negro-amarillo">Cartelera</button>
-    <button (click)="cargarCartelera(true)" class="btn-negro-amarillo">Próximamente</button>
+    <button (click)="setFiltroPrincipal('cartelera')"
+            [class.activo]="filtroActivo === 'cartelera'"
+            class="btn-negro-amarillo">Cartelera</button>
+    <button (click)="setFiltroPrincipal('proximamente')"
+            [class.activo]="filtroActivo === 'proximamente'"
+            class="btn-negro-amarillo">Próximamente</button>
+    <button (click)="setFiltroPrincipal('favoritos')"
+            [class.activo]="filtroActivo === 'favoritos'"
+            class="btn-negro-amarillo">Favoritos</button>
+
     <div class="contenedor-generos">
       <button (click)="toggleFiltros()" class="btn-negro-amarillo-filtros">Filtros</button>
 
@@ -23,24 +32,33 @@
   <div class="contenedor-peliculas" id="cartelera">
 
     @for (pelicula of peliculasFiltradas; track pelicula.id) {
-      <a [routerLink]="['/info', pelicula.id]"
-         class="card-pelicula"
-         [style.position]="esEstreno(pelicula.fecha) ? 'relative' : 'static'">
+      <ion-card class="card-pelicula"
+                (click)="irADetalle(pelicula.id, $event)"
+                style="cursor:pointer; position:relative;">
 
         <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
 
+        <!-- Botón de favorito -->
+        <button class="btn-favorito" (click)="toggleFavorito(pelicula.id, $event)">
+          <ion-icon [name]="isFavorito(pelicula.id) ? 'heart' : 'heart-outline'"
+                    [style.color]="isFavorito(pelicula.id) ? 'red' : 'white'">
+          </ion-icon>
+        </button>
+
         @if (esEstreno(pelicula.fecha)) {
-          <div style="position:absolute; background:red; color:white; padding:4px 8px; font-size:10px; top:5px; left:5px; border-radius:3px; font-weight:bold; z-index:10;">
+          <div class="badge-estreno">
             ESTRENO
           </div>
         }
-      </a>
+      </ion-card>
     } @empty {
-      <p style="color:black; text-align:center; width:100%;">
+      <p style="color:white; text-align:center; width:100%;">
         No hay películas con este filtro.
       </p>
     }
 
   </div>
 
-</main>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

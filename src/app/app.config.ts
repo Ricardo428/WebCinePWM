@@ -7,16 +7,32 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { provideIonicAngular } from '@ionic/angular/standalone';
+
+import { APP_INITIALIZER } from '@angular/core';
+import { DatabaseService } from './services/database.service';
 
 const app = initializeApp(environment.firebase)
+
+export function initDB(db: DatabaseService) {
+  return () => db.initDb();
+}
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
+    provideIonicAngular({}),
     provideFirebaseApp(() => app),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initDB,
+      deps: [DatabaseService],
+      multi: true
+    }
   ]
 };
