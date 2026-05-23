@@ -41,4 +41,14 @@
   </main>
 </div>
 <app-footer></app-footer>
+
+<!-- Botón flotante de favorito (SQLite) -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="toggleFavorito()"
+                  [color]="isFavorito ? 'danger' : 'medium'"
+                  id="btn-favorito-detalle">
+    <ion-icon [name]="isFavorito ? 'heart' : 'heart-outline'"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 </ion-content>

@@ -52,7 +52,27 @@
           <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
         </div>
 
-        <button type="submit">Registrar</button>
+        <!-- Foto de perfil -->
+        <div class="mb-4">
+          <label class="form-label">Foto de perfil</label>
+          <div class="foto-perfil-container">
+            @if (fotoPreview) {
+              <img [src]="fotoPreview" alt="Vista previa" class="foto-preview">
+            } @else {
+              <div class="foto-placeholder">
+                <ion-icon name="person-circle-outline" style="font-size: 64px; color: #aaa;"></ion-icon>
+              </div>
+            }
+            <ion-button fill="outline" size="small" (click)="fileInput.click()" type="button" id="btn-seleccionar-foto">
+              <ion-icon name="camera-outline" slot="start"></ion-icon>
+              Seleccionar foto
+            </ion-button>
+            <input #fileInput type="file" accept="image/*" style="display:none"
+                   (change)="onFotoSeleccionada($event)">
+          </div>
+        </div>
+
+        <ion-button expand="block" type="submit" color="warning" id="btn-registrar">Registrar</ion-button>
 
       </form>
     </fieldset>

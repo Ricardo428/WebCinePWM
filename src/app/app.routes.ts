@@ -16,24 +16,27 @@ import { Eleccion } from './pages/eleccion-preferencias/eleccion_preferencias'
 import {PagoBizum} from './pages/pago-bizum/pago-bizum';
 import { PagoPaypal } from './pages/pago-paypal/pago-paypal';
 import { PagoTarjeta } from './pages/pago-tarjeta/pago-tarjeta';
+import { authGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'info/:id', component: InfoFilm },
-  { path: 'sala', component: Sala },
-  { path: 'entradas', component: Entradas },
-  { path: 'snacks', component: Snacks },
   { path: 'login', component: Login },
-  { path: 'seleccion-metodo-pago', component: SeleccionMetodoPago },
   { path: 'registro', component: Registro },
-  { path: 'resumen/:id', component: Resumen },
-  { path: 'perfil', component: Perfil },
-  { path: 'historial', component: Historial },
-  { path: 'preferencias', component: Preferencias },
-  { path: 'pago-bizum', component: PagoBizum },
-  { path: 'pago-paypal', component: PagoPaypal },
-  { path: 'pago-tarjeta', component: PagoTarjeta },
-  { path: 'exito/:id', component: Exito },
-  { path: 'eleccion', component: Eleccion },
+
+  // Rutas protegidas — requieren sesión iniciada
+  { path: 'sala',                  component: Sala,                  canActivate: [authGuard] },
+  { path: 'entradas',              component: Entradas,              canActivate: [authGuard] },
+  { path: 'snacks',                component: Snacks,                canActivate: [authGuard] },
+  { path: 'seleccion-metodo-pago', component: SeleccionMetodoPago,   canActivate: [authGuard] },
+  { path: 'resumen/:id',           component: Resumen,               canActivate: [authGuard] },
+  { path: 'perfil',                component: Perfil,                canActivate: [authGuard] },
+  { path: 'historial',             component: Historial,             canActivate: [authGuard] },
+  { path: 'preferencias',          component: Preferencias,          canActivate: [authGuard] },
+  { path: 'pago-bizum',            component: PagoBizum,             canActivate: [authGuard] },
+  { path: 'pago-paypal',           component: PagoPaypal,            canActivate: [authGuard] },
+  { path: 'pago-tarjeta',          component: PagoTarjeta,           canActivate: [authGuard] },
+  { path: 'exito/:id',             component: Exito,                 canActivate: [authGuard] },
+  { path: 'eleccion',              component: Eleccion,              canActivate: [authGuard] },
 ];

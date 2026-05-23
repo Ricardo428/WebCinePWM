@@ -9,6 +9,7 @@ import { heart, heartOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { DatabaseService } from '../../services/database.service';
 import { Auth, authState } from '@angular/fire/auth';
+import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -25,7 +26,9 @@ export class Home implements OnInit, OnDestroy {
   generos: string[] = ["Comedia", "Drama", "Accion"];
   menuFiltrosVisible: boolean = false;
   filtroActivo: 'cartelera' | 'proximamente' | 'favoritos' = 'cartelera';
+  isLoggedIn: boolean = false;
   private authSub!: Subscription;
+  private loginSub!: Subscription;
 
   constructor(
     private peliculasService: Peliculas,
@@ -33,6 +36,7 @@ export class Home implements OnInit, OnDestroy {
     private db: DatabaseService,
     private router: Router,
     private auth: Auth,
+    private loginService: LoginService,
   ) {
     addIcons({ heart, heartOutline });
   }
@@ -46,6 +50,12 @@ export class Home implements OnInit, OnDestroy {
         this.cdr.detectChanges();
       },
       error: (error) => console.error("Fallo:", error)
+    });
+
+    // Suscribirse al estado de login para mostrar/ocultar favoritos
+    this.loginSub = this.loginService.estadoLogin$.subscribe(estado => {
+      this.isLoggedIn = estado;
+      this.cdr.detectChanges();
     });
 
     // Recargar favoritos cada vez que el usuario cambia (login/logout)
@@ -62,6 +72,7 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.authSub) this.authSub.unsubscribe();
+    if (this.loginSub) this.loginSub.unsubscribe();
   }
 
   /** Navegar al detalle evitando el problema de doble clic de ion-card */

@@ -10,9 +10,11 @@
     <button (click)="setFiltroPrincipal('proximamente')"
             [class.activo]="filtroActivo === 'proximamente'"
             class="btn-negro-amarillo">Próximamente</button>
-    <button (click)="setFiltroPrincipal('favoritos')"
-            [class.activo]="filtroActivo === 'favoritos'"
-            class="btn-negro-amarillo">Favoritos</button>
+    @if (isLoggedIn) {
+      <button (click)="setFiltroPrincipal('favoritos')"
+              [class.activo]="filtroActivo === 'favoritos'"
+              class="btn-negro-amarillo">Favoritos</button>
+    }
 
     <div class="contenedor-generos">
       <button (click)="toggleFiltros()" class="btn-negro-amarillo-filtros">Filtros</button>
@@ -38,12 +40,14 @@
 
         <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
 
-        <!-- Botón de favorito -->
-        <button class="btn-favorito" (click)="toggleFavorito(pelicula.id, $event)">
-          <ion-icon [name]="isFavorito(pelicula.id) ? 'heart' : 'heart-outline'"
-                    [style.color]="isFavorito(pelicula.id) ? 'red' : 'white'">
-          </ion-icon>
-        </button>
+        <!-- Botón de favorito (solo visible si está logueado) -->
+        @if (isLoggedIn) {
+          <button class="btn-favorito" (click)="toggleFavorito(pelicula.id, $event)">
+            <ion-icon [name]="isFavorito(pelicula.id) ? 'heart' : 'heart-outline'"
+                      [style.color]="isFavorito(pelicula.id) ? 'red' : 'white'">
+            </ion-icon>
+          </button>
+        }
 
         @if (esEstreno(pelicula.fecha)) {
           <div class="badge-estreno">
