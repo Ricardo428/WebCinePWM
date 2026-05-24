@@ -103,26 +103,113 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.foto-avatar-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.foto-avatar-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .foto-preview {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--color-primario, #ffc409);
+  border: 3px solid var(--color-primario);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .foto-placeholder {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: #f0f0f0;
+  background: #f7f7f9;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #ccc;
+  border: 2px dashed #b5b5b5;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.foto-avatar-wrapper:hover .foto-placeholder {
+  border-color: var(--color-primario);
+  background-color: #ededf0;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  color: #a0a0a0;
+  transition: color 0.3s;
+}
+
+.foto-avatar-wrapper:hover .placeholder-icon {
+  color: var(--color-primario);
+}
+
+/* Floating camera badge on bottom right */
+.upload-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-primario);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--color-tarjeta);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.foto-avatar-wrapper:hover .upload-badge {
+  background-color: var(--color-primario-hover);
+  transform: scale(1.1);
+}
+
+.upload-badge ion-icon {
+  font-size: 16px;
+}
+
+/* Styled select photo button */
+.btn-seleccionar-foto {
+  background-color: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-borde);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-seleccionar-foto:hover {
+  background-color: var(--color-primario);
+  color: white;
+  border-color: var(--color-primario);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-seleccionar-foto ion-icon {
+  font-size: 1.1rem;
 }
 
 @media (max-width: 480px) {
