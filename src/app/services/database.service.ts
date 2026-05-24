@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
 import { Auth, authState } from '@angular/fire/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 /**
  * DatabaseService — maneja SQLite para nativo y localStorage como fallback en web.
@@ -22,12 +23,17 @@ export class DatabaseService {
   private readonly DB_NAME = 'webcine.db';
   private currentUid: string | null = null;
 
+  private favoritosSubject = new BehaviorSubject<string[]>([]);
+  public favoritos$: Observable<string[]> = this.favoritosSubject.asObservable();
+
   constructor(private auth: Auth) {
     this.isWeb = Capacitor.getPlatform() === 'web';
 
-    // Escuchar cambios de sesión para actualizar el UID activo
-    authState(this.auth).subscribe(user => {
+    // Escuchar cambios de sesión para actualizar el UID activo y emitir favoritos
+    authState(this.auth).subscribe(async user => {
       this.currentUid = user?.uid ?? null;
+      const favs = await this.getFavoritos();
+      this.favoritosSubject.next(favs);
     });
   }
 
@@ -40,9 +46,11 @@ export class DatabaseService {
   async initDb(): Promise<void> {
     if (this.isWeb) {
       await this.initWebFallback();
-      return;
+    } else {
+      await this.initNativeDb();
     }
-    await this.initNativeDb();
+    const favs = await this.getFavoritos();
+    this.favoritosSubject.next(favs);
   }
 
   // ──────────────── INICIALIZACIÓN NATIVA ────────────────
@@ -132,6 +140,8 @@ export class DatabaseService {
         localStorage.setItem(this.getStorageKey(), JSON.stringify(favs));
       }
     }
+    const updated = await this.getFavoritos();
+    this.favoritosSubject.next(updated);
   }
 
   /** Elimina una película de favoritos del usuario actual */
@@ -144,6 +154,8 @@ export class DatabaseService {
       const favs = this.getFavoritosLocal().filter((f) => f !== id);
       localStorage.setItem(this.getStorageKey(), JSON.stringify(favs));
     }
+    const updated = await this.getFavoritos();
+    this.favoritosSubject.next(updated);
   }
 
   /** Comprueba si una película es favorita del usuario actual */

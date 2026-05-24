@@ -12,6 +12,7 @@ import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-info-film',
+  host: { class: 'ion-page' },
   templateUrl: './info-film.html',
   styleUrl: './info-film.css',
   standalone: true,
@@ -22,6 +23,7 @@ export class InfoFilm implements OnInit, OnDestroy {
   isFavorito: boolean = false;
   isLoggedIn: boolean = false;
   private loginSub!: Subscription;
+  private favoritosSub!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -52,12 +54,9 @@ export class InfoFilm implements OnInit, OnDestroy {
     const idStr = String(this.pelicula.id);
     if (this.isFavorito) {
       await this.db.removeFavorito(idStr);
-      this.isFavorito = false;
     } else {
       await this.db.addFavorito(idStr);
-      this.isFavorito = true;
     }
-    this.cdr.detectChanges();
   }
 
   async ngOnInit(): Promise<void> {
@@ -68,17 +67,21 @@ export class InfoFilm implements OnInit, OnDestroy {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.peliculasService.getPeliculas().subscribe({
-        next: async (datos) => {
+        next: (datos) => {
           this.pelicula = datos.find((p: any) => p.id == id);
-          // Consultar si ya es favorita en la BD local
-          this.isFavorito = await this.db.isFavorito(String(id));
           this.cdr.detectChanges();
         },
+      });
+
+      this.favoritosSub = this.db.favoritos$.subscribe(ids => {
+        this.isFavorito = ids.includes(String(id));
+        this.cdr.detectChanges();
       });
     }
   }
 
   ngOnDestroy(): void {
     if (this.loginSub) this.loginSub.unsubscribe();
+    if (this.favoritosSub) this.favoritosSub.unsubscribe();
   }
 }

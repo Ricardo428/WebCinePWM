@@ -1,3 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
 <app-carrusel></app-carrusel>
 <div class="container">
@@ -9,6 +17,26 @@
       </header>
 
       <div class="perfil-datos">
+        <div class="avatar-seccion">
+          <div class="avatar-wrapper" (click)="fileInput.click()" style="cursor: pointer; position: relative;">
+            @if (user?.foto) {
+              <img [src]="user.foto" class="perfil-avatar" alt="Foto de perfil">
+            } @else {
+              <div class="avatar-placeholder">
+                <ion-icon name="person-circle-outline"></ion-icon>
+              </div>
+            }
+            <div class="edit-overlay">
+              <ion-icon name="camera-outline"></ion-icon>
+            </div>
+          </div>
+          <input #fileInput type="file" accept="image/*" style="display:none" (change)="onFotoSeleccionada($event)">
+
+          <h3 class="perfil-nombre" id="perfil-nombre-completo">
+            {{ user?.nombre ? (user.nombre + ' ' + (user.apellido || '')) : 'Cargando usuario...' }}
+          </h3>
+        </div>
+
         <ul class="lista-datos">
           <li>
             <span class="dato-label">Email:</span>

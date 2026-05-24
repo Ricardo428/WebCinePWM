@@ -5,6 +5,7 @@ import { RouterModule, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Carrusel } from '../../shared/carrusel/carrusel';
 import { Footer } from '../../shared/footer/footer';
+import { Header } from '../../shared/header/header';
 import { heart, heartOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { DatabaseService } from '../../services/database.service';
@@ -14,8 +15,9 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [CommonModule, RouterModule, Carrusel, IonicModule, Footer],
+  imports: [CommonModule, RouterModule, Carrusel, IonicModule, Footer, Header],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -27,6 +29,7 @@ export class Home implements OnInit, OnDestroy {
   menuFiltrosVisible: boolean = false;
   filtroActivo: 'cartelera' | 'proximamente' | 'favoritos' = 'cartelera';
   isLoggedIn: boolean = false;
+  cargando: boolean = true;
   private authSub!: Subscription;
   private loginSub!: Subscription;
 
@@ -47,9 +50,13 @@ export class Home implements OnInit, OnDestroy {
       next: (datos) => {
         this.peliculas = datos;
         this.aplicarFiltros();
+        this.cargando = false;
         this.cdr.detectChanges();
       },
-      error: (error) => console.error("Fallo:", error)
+      error: (error) => {
+        console.error("Fallo:", error);
+        this.cargando = false;
+      }
     });
 
     // Suscribirse al estado de login para mostrar/ocultar favoritos
@@ -58,11 +65,10 @@ export class Home implements OnInit, OnDestroy {
       this.cdr.detectChanges();
     });
 
-    // Recargar favoritos cada vez que el usuario cambia (login/logout)
-    this.authSub = authState(this.auth).subscribe(async () => {
-      this.favoritosIds = await this.db.getFavoritos();
-      // Si estaba en el filtro de favoritos y se deslogueó, volvemos a cartelera
-      if (this.filtroActivo === 'favoritos') {
+    // Recargar favoritos reactivamente en tiempo real
+    this.authSub = this.db.favoritos$.subscribe(ids => {
+      this.favoritosIds = ids;
+      if (this.filtroActivo === 'favoritos' && !this.isLoggedIn) {
         this.filtroActivo = 'cartelera';
       }
       this.aplicarFiltros();
@@ -115,16 +121,9 @@ export class Home implements OnInit, OnDestroy {
 
     if (this.favoritosIds.includes(idStr)) {
       await this.db.removeFavorito(idStr);
-      this.favoritosIds = this.favoritosIds.filter(id => id !== idStr);
     } else {
       await this.db.addFavorito(idStr);
-      this.favoritosIds.push(idStr);
     }
-
-    if (this.filtroActivo === 'favoritos') {
-      this.aplicarFiltros();
-    }
-    this.cdr.detectChanges();
   }
 
   isFavorito(peliId: any): boolean {

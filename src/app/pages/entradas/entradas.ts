@@ -4,12 +4,14 @@ import { DecimalPipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { BarraPasos } from '../../shared/barra-pasos/barra-pasos';
 import { Temporizador } from '../../shared/temporizador/temporizador';
-import {ChangeDetectorRef} from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
+import { IonicModule, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-entradas',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [FormsModule, DecimalPipe, BarraPasos, Temporizador],
+  imports: [FormsModule, DecimalPipe, BarraPasos, Temporizador, IonicModule],
   templateUrl: './entradas.html',
   styleUrl: './entradas.css',
 })
@@ -28,7 +30,17 @@ export class Entradas implements OnInit {
     private location: Location,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef,
+    private alertController: AlertController,
   ) {}
+
+  async mostrarAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
 
   ngOnInit() {
     this.butacasPermitidas = parseInt(sessionStorage.getItem("total_butacas") || '0', 10)
@@ -37,8 +49,8 @@ export class Entradas implements OnInit {
     const cantNinoSession = sessionStorage.getItem('cantNino') || 0;
 
     if (cantNormalSession) this.cantNormal = parseInt(cantNormalSession);
-    if (cantAdultoSession) this.cantNormal = parseInt(cantAdultoSession);
-    if (cantNinoSession) this.cantNormal = parseInt(cantNinoSession);
+    if (cantAdultoSession) this.cantAdulto = parseInt(cantAdultoSession);
+    if (cantNinoSession) this.cantNino = parseInt(cantNinoSession);
     this.changeDetectorRef.detectChanges();
   }
 
@@ -65,11 +77,12 @@ export class Entradas implements OnInit {
   onSubmit(event: Event) {
     if (this.totalEntradas == 0) {
       event.preventDefault();
-      alert('Por favor, selecciona al menos una entrada para poder continuar.');
+      this.mostrarAlert('Por favor, selecciona al menos una entrada para poder continuar.');
       return;
     }
     if (this.totalEntradas !== this.butacasPermitidas) {
-      alert(`Has reservado ${this.butacasPermitidas} butacas. Tienes que elegir exactamente ${this.butacasPermitidas} entradas. Actualmente has elegido ${this.totalEntradas}.`);
+      event.preventDefault(); // Evitar envío
+      this.mostrarAlert(`Has reservado ${this.butacasPermitidas} butacas. Tienes que elegir exactamente ${this.butacasPermitidas} entradas. Actualmente has elegido ${this.totalEntradas}.`);
       return;
     }
 

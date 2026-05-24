@@ -124,3 +124,9 @@ button[type="submit"]:hover {
   justify-content: center;
   border: 2px dashed #ccc;
 }
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px 15px;
+  }
+}

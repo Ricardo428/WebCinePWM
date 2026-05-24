@@ -5,9 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {Router} from '@angular/router';
 
+import { IonicModule } from '@ionic/angular';
+
 @Component({
   selector: 'app-pago-tarjeta',
-  imports: [BarraPasos, Temporizador, FormsModule, CommonModule],
+  host: { class: 'ion-page' },
+  imports: [BarraPasos, Temporizador, FormsModule, CommonModule, IonicModule],
   templateUrl: './pago-tarjeta.html',
   styleUrl: './pago-tarjeta.css',
   standalone: true,

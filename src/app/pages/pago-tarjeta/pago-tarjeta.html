@@ -1,5 +1,13 @@
 
-<div class="paso-5">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pago con Tarjeta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="paso-5">
 <app-barra-pasos></app-barra-pasos>
 <app-temporizador></app-temporizador>
 
@@ -10,7 +18,7 @@
       <div class="resumen-pago">
         <h3>Datos de la operacion</h3>
         <ul>
-          <li ><strong>IMPORTE:</strong><span class="total"></span> </li>
+          <li ><strong>IMPORTE:</strong><span class="total">{{ importeTotal | currency:'EUR' }}</span> </li>
           <li><strong>Comercio:</strong> Yelmo Cines</li>
           <li><strong>Terminal:</strong> 34345677</li>
           <li><strong>Pedido:</strong> #{{ Math.floor(Math.random() * 90000) + 10000 }}</li>
@@ -75,8 +83,7 @@
 
 
           <nav class="perfil-acciones acciones-sala" style="margin-top: 2rem">
-            <button type="button" (click)="volverInfoFilm()" class="btn-perfil btn-secundario" [class.deshabilitado]="procesando">Volver</button>
-            <button type="submit" class="btn-perfil btn-primario" [disabled]="procesando">
+            <button type="submit" class="btn-perfil btn-primario" [disabled]="procesando" style="width: 100%;">
               @if (procesando) {
                 Procesando...
               } @else {
@@ -89,4 +96,4 @@
       </div>
     </main>
   </div>
-</div>
+</ion-content>

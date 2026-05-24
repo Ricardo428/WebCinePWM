@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, inject, NgZone } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy, inject, NgZone } from '@angular/core';
 import { Carrusel } from '../../shared/carrusel/carrusel';
 import { CommonModule } from '@angular/common';
 
@@ -7,14 +6,17 @@ import { UsuariosService } from '../../services/usuarios.service';
 import {Subscription} from 'rxjs';
 import {LoginService} from '../../services/login.service';
 
+import { IonicModule } from '@ionic/angular';
+
 @Component({
   selector: 'app-preferencias',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [RouterLink, Carrusel, CommonModule],
+  imports: [Carrusel, CommonModule, IonicModule],
   templateUrl: './preferencias.html',
   styleUrl: './preferencias.css',
 })
-export class Preferencias implements OnInit {
+export class Preferencias implements OnInit, OnDestroy {
 
   private usuariosService: UsuariosService = inject(UsuariosService);
   private ngZone: NgZone = inject(NgZone);
@@ -59,6 +61,12 @@ export class Preferencias implements OnInit {
       }
     } catch (error) {
       console.error("Error al cargar preferencias:", error);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.authSub) {
+      this.authSub.unsubscribe();
     }
   }
 }

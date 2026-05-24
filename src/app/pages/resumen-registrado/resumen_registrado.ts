@@ -4,6 +4,7 @@ import {Peliculas} from '../../services/peliculas';
 import {CommonModule} from '@angular/common';
 import {BarraPasos} from '../../shared/barra-pasos/barra-pasos';
 import {Temporizador} from '../../shared/temporizador/temporizador';
+import { IonicModule, AlertController } from '@ionic/angular';
 
 interface ItemTicket {
   nombre: string;
@@ -13,8 +14,9 @@ interface ItemTicket {
 
 @Component({
   selector: 'app-resumen',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [CommonModule, RouterLink, BarraPasos, Temporizador],
+  imports: [CommonModule, RouterLink, BarraPasos, Temporizador, IonicModule],
   templateUrl: './resumen_registrado.html',
   styleUrl: './resumen_registrado.css',
 })
@@ -36,7 +38,17 @@ export class Resumen implements OnInit {
     private route: ActivatedRoute,
     private peliculasService: Peliculas,
     private cdr: ChangeDetectorRef,
+    private alertController: AlertController
   ) {}
+
+  async mostrarAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
 
   ngOnInit(): void {
     const peliId = sessionStorage.getItem('pelicula_id');
@@ -45,7 +57,7 @@ export class Resumen implements OnInit {
     this.reserva.fila = sessionStorage.getItem('fila_seleccionada') || 'N/A';
 
     if (!peliId) {
-      alert('Error: No se encontró ninguna compra en curso.');
+      this.mostrarAlert('Error: No se encontró ninguna compra en curso.');
       this.router.navigate(['/']);
       return; // Detenemos la ejecución
     }

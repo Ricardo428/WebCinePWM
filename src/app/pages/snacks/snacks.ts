@@ -4,12 +4,14 @@ import { Temporizador } from '../../shared/temporizador/temporizador';
 import { Location, CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { SnacksService } from '../../services/snacks.service';
-import {ItemCarrito, Producto} from '../../models/snack';
+import { ItemCarrito, Producto } from '../../models/snack';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-snacks',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [BarraPasos, Temporizador, CommonModule],
+  imports: [BarraPasos, Temporizador, CommonModule, IonicModule],
   templateUrl: './snacks.html',
   styleUrl: './snacks.css',
 })

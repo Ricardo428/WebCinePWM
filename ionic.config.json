@@ -1,0 +1,7 @@
+{
+  "name": "WebCinePWM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

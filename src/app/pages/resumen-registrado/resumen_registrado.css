@@ -133,6 +133,12 @@
     display: block;
   }
 
+  .tabla-resumen th,
+  .tabla-resumen td {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+
 }
 
 .sidebar {

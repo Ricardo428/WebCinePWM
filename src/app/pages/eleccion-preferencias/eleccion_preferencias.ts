@@ -8,10 +8,13 @@ import { Carrusel } from '../../shared/carrusel/carrusel';
 import { UsuariosService } from '../../services/usuarios.service';
 import {Subscription} from 'rxjs';
 
+import { IonicModule, AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-eleccion',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, Carrusel],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, Carrusel, IonicModule],
   templateUrl: './eleccion_preferencias.html',
   styleUrl: './eleccion_preferencias.css',
 })
@@ -31,7 +34,17 @@ export class Eleccion implements OnInit, OnDestroy {
     private loginService: LoginService,
     private cdr: ChangeDetectorRef,
     private router: Router,
+    private alertController: AlertController
   ) {}
+
+  async mostrarAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
 
   ngOnInit(): void {
     this.authSub = this.loginService.obtnerUsuarioActual().subscribe(user => {
@@ -121,7 +134,7 @@ export class Eleccion implements OnInit, OnDestroy {
       this.router.navigate(['/preferencias']);
     } catch (error) {
       console.error("Error al guardar:", error);
-      alert("Error al conectar con la base de datos.");
+      this.mostrarAlert("Error al conectar con la base de datos.");
     }
   }
 }

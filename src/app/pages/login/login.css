@@ -110,3 +110,9 @@ button[type="submit"]:hover {
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px 15px;
+  }
+}

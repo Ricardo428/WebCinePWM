@@ -1,3 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Selección de Butacas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
 <div class="paso-1">
   <app-barra-pasos></app-barra-pasos>
   <app-temporizador></app-temporizador>
@@ -39,9 +48,9 @@
       <p>Butacas seleccionadas: <strong>{{ seleccionadasCount() }}</strong></p>
 
       <div class="perfil-acciones acciones-sala">
-        <button (click)="volverAtras()" class="btn-perfil btn-secundario">Volver</button>
-        <button (click)="continuar()" class="btn-perfil btn-primario">Siguiente</button>
+        <button (click)="continuar()" class="btn-perfil btn-primario" style="width: 100%;">Siguiente</button>
       </div>
     </main>
   </div>
 </div>
+</ion-content>

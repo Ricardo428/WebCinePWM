@@ -116,6 +116,7 @@
   overflow: hidden;
   text-decoration: none;
   object-fit: cover;
+  margin: 0 !important;
 }
 
 .card-pelicula img {
@@ -168,10 +169,12 @@
   z-index: 10;
 }
 
-.card-pelicula:hover {
-  transform: translateY(-1rem);
-  background-color: #ffd700;
-  box-shadow: 10px 10px 10px #555;
+@media (hover: hover) {
+  .card-pelicula:hover {
+    transform: translateY(-1rem);
+    background-color: #ffd700;
+    box-shadow: 10px 10px 10px #555;
+  }
 }
 
 .fila-redes { display: flex; gap: 20px; }
@@ -194,21 +197,63 @@
 /* Diseño responsive peliculas   */
 
 @media (max-width: 50rem) {
-  .contenedor-peliculas{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
+  .contenedor-peliculas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     width: 100%;
-    margin: 1rem 0;
-    max-width: 50rem;
-    gap: 1rem;
-    padding: 0 1rem;
+    max-width: none;
+    margin: 1.5rem auto;
+    padding: 0 15px;
   }
 
   .card-pelicula {
-    width: 30%;
-    max-width: 10rem;
+    width: 100%;
+    max-width: none;
+    border-width: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+  .btn-negro-amarillo {
+    font-size: 12px;
+    padding: 6px 12px;
+    height: auto;
+    margin: 0;
+  }
+  .contenedor-generos {
+    width: auto;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+  .btn-negro-amarillo-filtros {
+    font-size: 12px;
+    padding: 6px 12px;
+    height: auto;
+    width: auto;
+  }
+  #lista-generos {
+    width: 160px;
+    right: 0;
+    left: auto;
+  }
+  .contenedor-peliculas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 12px;
+  }
+  .card-pelicula {
+    border-width: 3px;
   }
 }
 

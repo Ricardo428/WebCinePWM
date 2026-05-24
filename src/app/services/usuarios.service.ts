@@ -22,4 +22,9 @@ export class UsuariosService {
     const userRef = doc(this.firestore, `usuarios/${usuario.uid}`);
     return setDoc(userRef, usuario);
   }
+
+  async actualizarFotoPerfil(uid: string, foto: string) {
+    const userRef = doc(this.firestore, `usuarios/${uid}`);
+    return updateDoc(userRef, { foto });
+  }
 }

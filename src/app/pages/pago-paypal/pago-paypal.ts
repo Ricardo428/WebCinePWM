@@ -5,9 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
+import { IonicModule } from '@ionic/angular';
+
 @Component({
   selector: 'app-pago-paypal',
-  imports: [Temporizador, BarraPasos, FormsModule, CommonModule],
+  host: { class: 'ion-page' },
+  imports: [Temporizador, BarraPasos, FormsModule, CommonModule, IonicModule],
   templateUrl: './pago-paypal.html',
   styleUrl: './pago-paypal.css',
   standalone: true,

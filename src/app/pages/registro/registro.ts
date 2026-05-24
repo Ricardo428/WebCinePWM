@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../services/usuarios.service';
 import { Usuario } from '../../models/usuario';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
 import { Footer } from '../../shared/footer/footer';
 
 @Component({
   selector: 'app-registro',
+  host: { class: 'ion-page' },
   imports: [ReactiveFormsModule, IonicModule, Footer],
   templateUrl: './registro.html',
   styleUrl: './registro.css',
@@ -36,18 +37,61 @@ export class Registro {
     private router: Router,
     private loginService: LoginService,
     private usuariosService: UsuariosService,
+    private alertController: AlertController,
+    private cdr: ChangeDetectorRef
   ) {}
 
-  /** Captura la foto seleccionada y la convierte a Base64 para previsualizar y guardar */
+  async mostrarErrorAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Error al registrar',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
+
+  /** Captura la foto seleccionada, la redimensiona y comprime usando un canvas para evitar exceder el límite de Firestore (1MB) */
   onFotoSeleccionada(event: Event): void {
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = () => {
-      this.fotoBase64 = reader.result as string;
-      this.fotoPreview = this.fotoBase64;
+    reader.onload = (e: any) => {
+      const img = new Image();
+      img.onload = () => {
+        // Ajustar a un tamaño máximo de 300px manteniendo el aspecto
+        const maxDim = 300;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > maxDim) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          }
+        } else {
+          if (height > maxDim) {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.drawImage(img, 0, 0, width, height);
+          // Comprimir como JPEG al 70% de calidad (tamaño típico <30KB)
+          const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+          this.fotoBase64 = compressedBase64;
+          this.fotoPreview = compressedBase64;
+          this.cdr.detectChanges();
+        }
+      };
+      img.src = e.target.result;
     };
     reader.readAsDataURL(file);
   }
@@ -83,7 +127,7 @@ export class Registro {
       })
       .catch((error) => {
         console.error('Error en el registro:', error);
-        alert('Error al registrar: ' + error.message);
+        this.mostrarErrorAlert(error.message);
       });
   }
 }

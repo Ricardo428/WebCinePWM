@@ -23,7 +23,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
-    provideIonicAngular({}),
+    provideIonicAngular({ mode: 'md' }),
     provideFirebaseApp(() => app),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

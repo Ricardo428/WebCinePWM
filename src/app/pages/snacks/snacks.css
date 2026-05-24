@@ -242,7 +242,9 @@ main.contenedor-ancho {
 /* Movil  */
 @media (max-width: 768px) {
   main.contenedor-ancho {
-    padding: 0 0.93rem
+    padding: 0 0.93rem;
+    margin: 10px auto;
+    width: auto;
   }
   .snacks-layout {
     grid-template-columns: 1fr;

@@ -1,4 +1,12 @@
-<body class="paso-2">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Selección de Entradas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="paso-2">
 <app-barra-pasos></app-barra-pasos>
 <app-temporizador></app-temporizador>
 <div class="container">
@@ -49,11 +57,10 @@
       </fieldset>
 
       <div class="perfil-acciones acciones-sala">
-        <button type="button" (click)="volverAtras()" class="btn-perfil btn-secundario">Volver</button>
-        <button type="submit" class="btn-perfil btn-primario">Siguiente</button>
+        <button type="submit" class="btn-perfil btn-primario" style="width: 100%;">Siguiente</button>
       </div>
     </form>
 
   </main>
 </div>
-</body>
+</ion-content>

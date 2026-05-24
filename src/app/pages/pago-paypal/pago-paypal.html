@@ -1,4 +1,12 @@
-<div class="paso-5">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pago con PayPal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="paso-5">
   <app-barra-pasos></app-barra-pasos>
   <app-temporizador></app-temporizador>
   <div class="container">
@@ -31,8 +39,7 @@
           </div>
 
           <div class="perfil-acciones acciones-sala">
-            <button type="button" (click)="volverInfoFilm()" class="btn-perfil btn-secundario">Volver</button>
-            <button class="btn-perfil btn-primario">Continuar</button>
+            <button class="btn-perfil btn-primario" style="width: 100%;">Continuar</button>
           </div>
 
 
@@ -40,4 +47,4 @@
       </section>
     </main>
   </div>
-</div>
+</ion-content>

@@ -6,13 +6,15 @@ import {Carrusel} from '../../shared/carrusel/carrusel';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { environment } from '../../../environments/environment';
 
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/angular/standalone';
+import { ToastController } from '@ionic/angular';
 import { Footer } from '../../shared/footer/footer';
 
 @Component({
   selector: 'app-login',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, Carrusel, RecaptchaModule, IonicModule, Footer],
+  imports: [RouterModule, ReactiveFormsModule, Carrusel, RecaptchaModule, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, Footer],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -28,8 +30,19 @@ export class Login {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) {}
+
+  async mostrarToast(mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'bottom',
+      color: 'warning'
+    });
+    await toast.present();
+  }
 
     captchaResuelto(tokenValido: string | null) {
     this.recaptchaResuelto = !!tokenValido;
@@ -40,7 +53,7 @@ export class Login {
       return;
     }
     if (!this.recaptchaResuelto) {
-      alert("Por favor, verifica que no eres un robot resolviendo el captcha.");
+      this.mostrarToast("Por favor, verifica que no eres un robot resolviendo el captcha.");
       return;
     }
 

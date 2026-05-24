@@ -1,4 +1,5 @@
 
+<app-header></app-header>
 <ion-content>
   <app-carrusel></app-carrusel>
   <div class="contenido-principal">
@@ -33,32 +34,38 @@
 
   <div class="contenedor-peliculas" id="cartelera">
 
-    @for (pelicula of peliculasFiltradas; track pelicula.id) {
-      <ion-card class="card-pelicula"
-                (click)="irADetalle(pelicula.id, $event)"
-                style="cursor:pointer; position:relative;">
+    @if (cargando) {
+      <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 200px;">
+        <ion-spinner name="crescent" color="warning"></ion-spinner>
+      </div>
+    } @else {
+      @for (pelicula of peliculasFiltradas; track pelicula.id) {
+        <ion-card class="card-pelicula"
+                  (click)="irADetalle(pelicula.id, $event)"
+                  style="cursor:pointer; position:relative;">
 
-        <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
+          <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
 
-        <!-- Botón de favorito (solo visible si está logueado) -->
-        @if (isLoggedIn) {
-          <button class="btn-favorito" (click)="toggleFavorito(pelicula.id, $event)">
-            <ion-icon [name]="isFavorito(pelicula.id) ? 'heart' : 'heart-outline'"
-                      [style.color]="isFavorito(pelicula.id) ? 'red' : 'white'">
-            </ion-icon>
-          </button>
-        }
+          <!-- Botón de favorito (solo visible si está logueado) -->
+          @if (isLoggedIn) {
+            <button class="btn-favorito" (click)="toggleFavorito(pelicula.id, $event)">
+              <ion-icon [name]="isFavorito(pelicula.id) ? 'heart' : 'heart-outline'"
+                        [style.color]="isFavorito(pelicula.id) ? 'red' : 'white'">
+              </ion-icon>
+            </button>
+          }
 
-        @if (esEstreno(pelicula.fecha)) {
-          <div class="badge-estreno">
-            ESTRENO
-          </div>
-        }
-      </ion-card>
-    } @empty {
-      <p style="color:white; text-align:center; width:100%;">
-        No hay películas con este filtro.
-      </p>
+          @if (esEstreno(pelicula.fecha)) {
+            <div class="badge-estreno">
+              ESTRENO
+            </div>
+          }
+        </ion-card>
+      } @empty {
+        <p style="color:white; text-align:center; width:100%;">
+          No hay películas con este filtro.
+        </p>
+      }
     }
 
   </div>

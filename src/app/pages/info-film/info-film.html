@@ -1,44 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de la Película</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
 <div class="container">
-  <main class="contenedor-pelicula">
+  @if (pelicula) {
+    <main class="contenedor-pelicula">
 
-    <h1>{{pelicula?.titulo}}</h1>
+      <h1 class="titulo-pelicula">{{pelicula.titulo}}</h1>
 
-    <div class="pelicula-grid">
+      <div class="pelicula-grid">
 
-      <div class="pelicula-poster">
-        <img [src]="pelicula.imagen" class="imagenes" [alt]="pelicula.titulo">
-        <a [href]="pelicula.trailer" id="trailer" class="btn-trailer">Ver Tráiler</a>
-      </div>
-
-      <div class="pelicula-datos">
-
-        <p class="pelicula-sinopsis">{{pelicula.sinopsis}}</p>
-
-        <div class="horarios-contenedor">
-          <ul class="lista-info">
-            <li><strong>Duración:</strong> <span id="info-duracion">{{pelicula.duracion}}</span></li>
-            <li><strong>Reparto:</strong> <span id="info-reparto">{{pelicula.reparto}}</span></li>
-            <li><strong>Género:</strong> <span id="info-genero">{{pelicula.genero}}</span></li>
-            <li><strong>Calificación:</strong> <span id="info-clasificacion">{{pelicula.clasificacion}}</span></li>
-          </ul>
+        <div class="pelicula-poster">
+          <img [src]="pelicula.imagen" class="imagenes" [alt]="pelicula.titulo">
+          <a [href]="pelicula.trailer" id="trailer" class="btn-trailer">Ver Tráiler</a>
         </div>
 
-        <div class="horarios-contenedor">
-          <h3>Selecciona una sesión:</h3>
-          <ul class="lista-horarios">
-            @for (hora of pelicula.horarios; track hora){
-              <li>
-                <button (click)="seleccionarSesion(hora, pelicula.id)" class="btn-hora">
-                  {{hora}}
-                </button>
-              </li>
-            }
-          </ul>
+        <div class="pelicula-datos">
+
+          <p class="pelicula-sinopsis">{{pelicula.sinopsis}}</p>
+
+          <div class="horarios-contenedor">
+            <ul class="lista-info">
+              <li><strong>Duración:</strong> <span id="info-duracion">{{pelicula.duracion}}</span></li>
+              <li><strong>Reparto:</strong> <span id="info-reparto">{{pelicula.reparto}}</span></li>
+              <li><strong>Género:</strong> <span id="info-genero">{{pelicula.genero}}</span></li>
+              <li><strong>Calificación:</strong> <span id="info-clasificacion">{{pelicula.clasificacion}}</span></li>
+            </ul>
+          </div>
+
+          <div class="horarios-contenedor">
+            <h3>Selecciona una sesión:</h3>
+            <ul class="lista-horarios">
+              @for (hora of pelicula.horarios; track hora){
+                <li>
+                  <button (click)="seleccionarSesion(hora, pelicula.id)" class="btn-hora">
+                    {{hora}}
+                  </button>
+                </li>
+              }
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  }
 </div>
 <app-footer></app-footer>
 

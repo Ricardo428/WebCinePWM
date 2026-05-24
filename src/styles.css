@@ -24,6 +24,14 @@
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+html, body, app-root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -128,6 +136,14 @@ input[type="date"].form-control.is-invalid{
 
 input[type="password"].form-control.is-invalid{
   background-image: none !important;
+}
+
+@media (max-width: 48rem) {
+  .container {
+    padding: 20px 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 

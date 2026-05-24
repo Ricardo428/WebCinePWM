@@ -1,14 +1,16 @@
 import {AfterViewInit, Component, computed, ElementRef, OnDestroy, OnInit, signal, ViewChild} from '@angular/core';
 import {CommonModule, Location} from '@angular/common';
 import {Router} from '@angular/router';
-import {BarraPasos} from '../../shared/barra-pasos/barra-pasos';
-import {Temporizador} from '../../shared/temporizador/temporizador';
-import Panzoom, {PanzoomObject} from "@panzoom/panzoom";
-import {Butaca} from '../../models/butaca';
+import { BarraPasos } from '../../shared/barra-pasos/barra-pasos';
+import { Temporizador } from '../../shared/temporizador/temporizador';
+import Panzoom, { PanzoomObject } from "@panzoom/panzoom";
+import { Butaca } from '../../models/butaca';
+import { IonicModule, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sala',
-  imports: [BarraPasos, Temporizador, CommonModule],
+  host: { class: 'ion-page' },
+  imports: [BarraPasos, Temporizador, CommonModule, IonicModule],
   templateUrl: './sala.html',
   styleUrl: './sala.css',
   standalone: true,
@@ -24,8 +26,21 @@ export class Sala implements AfterViewInit, OnDestroy {
     this.butacas().filter(b => b.estado === 'seleccionada').length
   );
 
-  constructor(private location: Location, private router: Router) {
+  constructor(
+    private location: Location,
+    private router: Router,
+    private alertController: AlertController
+  ) {
     this.inicializarMapa();
+  }
+
+  async mostrarAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
   }
 
   inicializarMapa() {
@@ -74,7 +89,7 @@ export class Sala implements AfterViewInit, OnDestroy {
   continuar() {
     const seleccion = this.butacas().filter(b => b.estado === 'seleccionada');
     if (seleccion.length === 0) {
-      alert('Por favor, selecciona al menos una butaca.');
+      this.mostrarAlert('Por favor, selecciona al menos una butaca.');
       return;
     }
 

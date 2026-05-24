@@ -65,3 +65,92 @@
   font-weight: bold;
   font-size: 1.3rem;
 }
+
+/* Avatar Sección */
+.avatar-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.perfil-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--color-primario);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f7f7f7;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.avatar-placeholder {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #eee;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.avatar-placeholder ion-icon {
+  font-size: 80px;
+  color: #bbb;
+}
+
+/* Edit Overlay on Profile Picture */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  overflow: visible;
+}
+
+.edit-overlay {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: var(--color-primario);
+  color: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.edit-overlay ion-icon {
+  font-size: 18px;
+  color: white;
+}
+
+.avatar-wrapper:hover .perfil-avatar,
+.avatar-wrapper:hover .avatar-placeholder {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+.avatar-wrapper:hover .edit-overlay {
+  background-color: var(--color-primario-hover, #d4a300);
+  transform: scale(1.08);
+}
+
+.perfil-nombre {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}

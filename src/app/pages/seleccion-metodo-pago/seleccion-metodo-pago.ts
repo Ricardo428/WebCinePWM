@@ -5,11 +5,13 @@ import {Router} from '@angular/router';
 import {OnInit} from '@angular/core';
 import { SeleccionPagoService } from '../../services/seleccion-metodo-pago.service';
 import { CommonModule } from '@angular/common';
-import {MetodoPago} from '../../models/metodo-pago';
+import { MetodoPago } from '../../models/metodo-pago';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-seleccion-metodo-pago',
-  imports: [BarraPasos, Temporizador, CommonModule],
+  host: { class: 'ion-page' },
+  imports: [BarraPasos, Temporizador, CommonModule, IonicModule],
   templateUrl: './seleccion-metodo-pago.html',
   styleUrl: './seleccion-metodo-pago.css',
   standalone: true,

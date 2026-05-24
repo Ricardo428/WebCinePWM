@@ -1,4 +1,12 @@
-<body class="paso-4">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resumen del Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="paso-4">
 <app-barra-pasos></app-barra-pasos>
 <app-temporizador></app-temporizador>
 <div class="rectangulo-entero">
@@ -63,10 +71,9 @@
       </div>
 
       <div class="perfil-acciones">
-        <a routerLink="/snacks" class="btn-perfil btn-secundario">Volver</a>
-        <a routerLink="/seleccion-metodo-pago" class="btn-perfil btn-primario">Siguiente</a>
+        <a routerLink="/seleccion-metodo-pago" class="btn-perfil btn-primario" style="width: 100%;">Siguiente</a>
       </div>
     </section>
   </main>
 </div>
-</body>
+</ion-content>

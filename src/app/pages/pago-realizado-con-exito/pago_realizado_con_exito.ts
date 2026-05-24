@@ -6,15 +6,19 @@ import {HistorialService} from '../../services/historialService';
 import {LoginService} from '../../services/login.service';
 import {ItemTicket} from '../../models/ticket';
 
+import { IonicModule, AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-exito',
+  host: { class: 'ion-page' },
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, IonicModule],
   templateUrl: './pago_realizado_con_exito.html',
   styleUrl: './pago_realizado_con_exito.css',
 })
 export class Exito implements OnInit {
   pelicula: any;
+  private compraRegistrada: boolean = false;
 
   reserva = {
     fecha: new Date().toLocaleDateString(),
@@ -33,8 +37,46 @@ export class Exito implements OnInit {
     private peliculasService: Peliculas,
     private cdr: ChangeDetectorRef,
     private historialService: HistorialService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private alertController: AlertController
   ) {}
+
+  async mostrarAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
+
+  registrarCompra() {
+    if (this.compraRegistrada || !this.user?.uid || !this.pelicula) {
+      return;
+    }
+    this.compraRegistrada = true;
+    const compra = {
+      user: this.user.uid,
+      pelicula: this.pelicula,
+      fecha: new Date().toLocaleDateString(),
+      hora: this.reserva.hora,
+      totalCompra: this.totalCompra,
+    };
+    this.historialService.addBuy(compra);
+
+    // Clear all reservation data from sessionStorage upon successful booking registration
+    sessionStorage.removeItem('tiempo_restante');
+    sessionStorage.removeItem('pelicula_id');
+    sessionStorage.removeItem('hora_seleccionada');
+    sessionStorage.removeItem('butacas_seleccionadas');
+    sessionStorage.removeItem('fila_seleccionada');
+    sessionStorage.removeItem('total_butacas');
+    sessionStorage.removeItem('dinero');
+    sessionStorage.removeItem('Adulto');
+    sessionStorage.removeItem('Niños');
+    sessionStorage.removeItem('Normal');
+    sessionStorage.removeItem('carritoSnacks');
+  }
 
   ngOnInit(): void {
     const peliId = sessionStorage.getItem('pelicula_id');
@@ -47,22 +89,12 @@ export class Exito implements OnInit {
     this.loginService.obtnerUsuarioActual().subscribe(user => {
       if (user) {
         this.user = user;
-        // Compra
-        const compra = {
-          user: this.user.uid,
-          pelicula: this.pelicula,
-          fecha: new Date().toLocaleDateString(),
-          hora: this.reserva.hora,
-          totalCompra: this.totalCompra,
-        };
-
-        this.historialService.addBuy(compra);
+        this.registrarCompra();
       }
-    })
-
+    });
 
     if (!peliId) {
-      alert('Error: No se encontró ninguna compra en curso.');
+      this.mostrarAlert('Error: No se encontró ninguna compra en curso.');
       this.router.navigate(['/']);
       return; // Detenemos la ejecución
     }
@@ -70,6 +102,7 @@ export class Exito implements OnInit {
     this.peliculasService.getPeliculas().subscribe({
       next: (datos) => {
         this.pelicula = datos.find((p: any) => String(p.id) === String(peliId));
+        this.registrarCompra();
         this.cdr.detectChanges();
       },
     });
